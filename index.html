@@ -1,0 +1,2023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lancefield Advisory — Practical help. Principled approach.</title>
+<meta name="description" content="Independent insolvency and restructuring advice from licensed practitioners in Glasgow. Confidential, no-obligation guidance for businesses and individuals. Free initial consultation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231B2A4A'/><text x='16' y='22' font-family='serif' font-size='18' fill='%23E8DFD0' text-anchor='middle'>LA</text></svg>">
+<style>
+/* ============================================
+   DESIGN TOKENS
+   ============================================ */
+:root {
+  --navy: #1B2A4A;
+  --navy-dark: #111d33;
+  --stone: #E8DFD0;
+  --teal: #2A7B7B;
+  --teal-light: #35918f;
+  --cream: #F5F1EB;
+  --gold: #B8943E;
+  --charcoal: #2D2D2D;
+  --warm-grey: #6B6B6B;
+  --white: #FFFFFF;
+  --navy-90: rgba(27, 42, 74, 0.9);
+  --navy-80: rgba(27, 42, 74, 0.8);
+  --navy-05: rgba(27, 42, 74, 0.05);
+  --teal-10: rgba(42, 123, 123, 0.1);
+  --shadow-sm: 0 1px 3px rgba(27,42,74,0.08);
+  --shadow-md: 0 4px 12px rgba(27,42,74,0.1);
+  --shadow-lg: 0 8px 30px rgba(27,42,74,0.12);
+  --shadow-hover: 0 8px 25px rgba(27,42,74,0.18);
+  --radius: 8px;
+  --radius-lg: 12px;
+  --max-width: 1200px;
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --transition: 0.3s ease;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-sans);
+  color: var(--charcoal);
+  background: var(--white);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--teal); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--navy); }
+ul, ol { list-style: none; }
+h1, h2, h3, h4, h5 { font-family: var(--font-serif); color: var(--navy); line-height: 1.25; font-weight: 400; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+h2 { font-size: clamp(1.7rem, 3.5vw, 2.6rem); }
+h3 { font-size: clamp(1.15rem, 2.5vw, 1.5rem); }
+h4 { font-size: 1.1rem; }
+p { margin-bottom: 1rem; }
+p:last-child { margin-bottom: 0; }
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+.section { padding: 90px 0; }
+.section--cream { background: var(--cream); }
+.section--light { background: #f7f5f2; }
+.section--navy { background: var(--navy); color: var(--stone); }
+.section--navy h2, .section--navy h3, .section--navy h4 { color: var(--white); }
+.text-center { text-align: center; }
+.text-teal { color: var(--teal); }
+.text-gold { color: var(--gold); }
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 32px; border-radius: 4px;
+  font-family: var(--font-sans); font-weight: 600; font-size: 0.88rem;
+  text-decoration: none; border: 2px solid transparent;
+  cursor: pointer; transition: all var(--transition);
+  line-height: 1.3; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.btn--primary { background: var(--teal); color: var(--white); border-color: var(--teal); }
+.btn--primary:hover { background: var(--teal-light); border-color: var(--teal-light); color: var(--white); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn--outline { background: transparent; color: var(--white); border-color: var(--white); }
+.btn--outline:hover { background: var(--white); color: var(--navy); }
+.btn--navy { background: var(--navy); color: var(--white); border-color: var(--navy); }
+.btn--navy:hover { background: var(--navy-dark); border-color: var(--navy-dark); color: var(--white); transform: translateY(-2px); }
+.btn--ghost { background: transparent; color: var(--teal); border: none; padding: 8px 0; text-transform: none; letter-spacing: 0; font-size: 0.95rem; }
+.btn--ghost::after { content: ' \2192'; transition: transform var(--transition); }
+.btn--ghost:hover { color: var(--navy); }
+
+/* ============================================
+   TOP BAR
+   ============================================ */
+.topbar {
+  background: var(--navy-dark);
+  color: rgba(232,223,208,0.7);
+  font-size: 0.82rem;
+  padding: 8px 0;
+}
+.topbar__inner {
+  max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.topbar__left { display: flex; gap: 24px; align-items: center; }
+.topbar__left span { display: flex; align-items: center; gap: 6px; }
+.topbar__left svg { width: 14px; height: 14px; opacity: 0.6; }
+.topbar__right { display: flex; gap: 8px; }
+.topbar__social {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--teal); display: flex; align-items: center; justify-content: center;
+  transition: all var(--transition);
+}
+.topbar__social:hover { background: var(--teal-light); transform: translateY(-2px); }
+.topbar__social svg { width: 14px; height: 14px; color: var(--white); }
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  position: sticky; top: 0; z-index: 1000;
+}
+.header__inner {
+  max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 76px;
+}
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo__mark {
+  width: 42px; height: 42px; background: var(--navy); border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-serif); color: var(--stone); font-size: 16px;
+}
+.logo__text { font-family: var(--font-serif); color: var(--navy); font-size: 1.2rem; }
+.logo__sub { display: block; font-family: var(--font-sans); font-size: 0.65rem; color: var(--warm-grey); letter-spacing: 0.06em; text-transform: uppercase; margin-top: -2px; }
+
+.nav { display: flex; align-items: center; gap: 4px; }
+.nav__item { position: relative; }
+.nav__link {
+  display: flex; align-items: center; gap: 4px;
+  padding: 10px 16px; color: var(--charcoal); font-weight: 500;
+  font-size: 0.9rem; text-decoration: none; transition: all var(--transition);
+}
+.nav__link:hover, .nav__link--active { color: var(--teal); }
+.nav__arrow { font-size: 0.6rem; transition: transform var(--transition); }
+.nav__item:hover .nav__arrow { transform: rotate(180deg); }
+
+/* Mega Menu */
+.mega {
+  display: none; position: absolute; top: 100%; left: 0;
+  background: var(--white); border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: var(--shadow-lg); padding: 20px 24px;
+  min-width: 280px; border-top: 3px solid var(--teal); z-index: 100;
+}
+.nav__item:hover .mega { display: block; }
+.mega__link {
+  display: block; padding: 7px 0; color: var(--charcoal); font-size: 0.88rem;
+  text-decoration: none; transition: all var(--transition);
+}
+.mega__link:hover { color: var(--teal); padding-left: 8px; }
+.mega__link--sub { padding-left: 16px; font-size: 0.82rem; color: var(--warm-grey); }
+.mega__link--sub:hover { color: var(--teal); padding-left: 24px; }
+
+/* Mobile */
+.mobile-toggle {
+  display: none; background: none; border: none; cursor: pointer;
+  width: 40px; height: 40px; position: relative;
+}
+.mobile-toggle span {
+  display: block; width: 22px; height: 2px; background: var(--navy);
+  margin: 5px auto; transition: all var(--transition);
+}
+.mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.mobile-toggle.active span:nth-child(2) { opacity: 0; }
+.mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.mobile-nav {
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--white); z-index: 999; overflow-y: auto; padding: 80px 24px 24px;
+}
+.mobile-nav.active { display: block; }
+.mobile-nav__title {
+  font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--warm-grey); margin: 20px 0 8px;
+}
+.mobile-nav__link {
+  display: block; padding: 10px 0; color: var(--charcoal); font-size: 1rem;
+  text-decoration: none; border-bottom: 1px solid rgba(27,42,74,0.06);
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  position: relative; min-height: 600px;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 100px 24px;
+  overflow: hidden;
+}
+.hero__bg {
+  position: absolute; inset: 0; z-index: 0;
+}
+.hero__bg svg { width: 100%; height: 100%; }
+.hero__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(27,42,74,0.88) 0%, rgba(27,42,74,0.75) 40%, rgba(42,123,123,0.7) 100%);
+  z-index: 1;
+}
+.hero__content { position: relative; z-index: 2; max-width: 800px; }
+.hero__label {
+  display: inline-block; font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 20px;
+}
+.hero h1 { color: var(--white); margin-bottom: 20px; }
+.hero__sub {
+  font-size: 1.1rem; color: rgba(232,223,208,0.8);
+  line-height: 1.7; margin-bottom: 36px; max-width: 620px; margin-left: auto; margin-right: auto;
+}
+.hero__actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ============================================
+   SUB HERO (CTA Banner)
+   ============================================ */
+.sub-hero {
+  background: var(--teal);
+  padding: 48px 24px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.sub-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='rgba(255,255,255,0.04)'/%3E%3C/svg%3E");
+}
+.sub-hero h2 { color: var(--white); margin-bottom: 20px; position: relative; z-index: 1; }
+.sub-hero .btn { position: relative; z-index: 1; }
+
+/* ============================================
+   ABOUT SECTION (Features + Text)
+   ============================================ */
+.about { padding: 90px 0; }
+.about__grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+}
+.about__features {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+}
+.feature-card {
+  background: var(--white); border-radius: var(--radius); padding: 28px 24px;
+  box-shadow: var(--shadow-sm); border: 1px solid rgba(27,42,74,0.06);
+  transition: all var(--transition);
+}
+.feature-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
+.feature-card--active { background: var(--teal); border-color: var(--teal); }
+.feature-card--active h4, .feature-card--active p { color: var(--white); }
+.feature-card--active .feature-card__icon { background: rgba(255,255,255,0.2); }
+.feature-card__icon {
+  width: 52px; height: 52px; border-radius: var(--radius);
+  background: var(--teal-10); display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+}
+.feature-card__icon svg { width: 26px; height: 26px; color: var(--teal); }
+.feature-card--active .feature-card__icon svg { color: var(--white); }
+.feature-card h4 { font-family: var(--font-sans); font-weight: 700; margin-bottom: 8px; color: var(--navy); font-size: 1rem; }
+.feature-card p { font-size: 0.88rem; color: var(--warm-grey); margin: 0; }
+
+.about__text-label {
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 12px;
+}
+.about__text h2 { margin-bottom: 20px; }
+.about__text p { color: var(--warm-grey); font-size: 0.95rem; }
+
+/* ============================================
+   ABOUT IMAGE SECTION
+   ============================================ */
+.about-image { padding: 90px 0; background: var(--white); }
+.about-image__grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+}
+.about-image__visual {
+  position: relative; border-radius: var(--radius-lg); overflow: hidden;
+  min-height: 420px;
+}
+.about-image__visual svg { width: 100%; height: 100%; }
+.about-image__play {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 64px; height: 64px; border-radius: 50%; background: var(--teal);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(42,123,123,0.4); cursor: pointer;
+  transition: all var(--transition); z-index: 2;
+}
+.about-image__play:hover { transform: translate(-50%, -50%) scale(1.1); background: var(--teal-light); }
+.about-image__play svg { width: 24px; height: 24px; color: var(--white); margin-left: 3px; }
+.about-image__text-label {
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 12px;
+}
+.about-image__text h2 { margin-bottom: 20px; }
+.about-image__text p { color: var(--warm-grey); font-size: 0.95rem; }
+
+/* ============================================
+   SERVICES GRID
+   ============================================ */
+.services { padding: 90px 0; background: #f7f5f2; }
+.services__header { text-align: center; margin-bottom: 50px; }
+.services__header-label {
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 12px;
+}
+.services__grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+}
+.service-card {
+  background: var(--white); border-radius: var(--radius); padding: 32px 24px;
+  text-align: center; box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(27,42,74,0.04);
+  transition: all var(--transition); cursor: pointer;
+}
+.service-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); border-color: var(--teal); }
+.service-card__icon {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: var(--teal-10); display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+}
+.service-card__icon svg { width: 28px; height: 28px; color: var(--teal); }
+.service-card:hover .service-card__icon { background: var(--teal); }
+.service-card:hover .service-card__icon svg { color: var(--white); }
+.service-card h4 { font-family: var(--font-sans); font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.service-card p { font-size: 0.85rem; color: var(--warm-grey); margin: 0; }
+
+/* ============================================
+   CASE STUDIES / GALLERY
+   ============================================ */
+.gallery { padding: 90px 0; }
+.gallery__header { text-align: center; margin-bottom: 50px; }
+.gallery__header-label {
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 12px;
+}
+.gallery__grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+}
+.gallery__item {
+  position: relative; overflow: hidden; aspect-ratio: 1/0.75; cursor: pointer;
+}
+.gallery__item-img {
+  position: absolute; inset: 0;
+}
+.gallery__item-img svg { width: 100%; height: 100%; }
+.gallery__item-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(27,42,74,0.85) 0%, rgba(27,42,74,0.2) 60%, transparent 100%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 24px; opacity: 0; transition: opacity var(--transition);
+}
+.gallery__item:hover .gallery__item-overlay { opacity: 1; }
+.gallery__item-overlay h4 { color: var(--white); font-family: var(--font-sans); font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
+.gallery__item-overlay p { color: rgba(232,223,208,0.7); font-size: 0.82rem; margin: 0; }
+
+/* ============================================
+   STATS
+   ============================================ */
+.stats-bar {
+  padding: 60px 0; position: relative; overflow: hidden;
+  background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%);
+}
+.stats-bar::before {
+  content: ''; position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='30' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='1'/%3E%3C/svg%3E");
+}
+.stats-bar__grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+  position: relative; z-index: 1;
+}
+.stat { text-align: center; }
+.stat__number {
+  font-family: var(--font-serif); font-size: clamp(2.4rem, 4vw, 3.4rem);
+  color: var(--white); display: block; margin-bottom: 4px;
+}
+.stat__label { font-size: 0.88rem; color: rgba(232,223,208,0.7); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; }
+
+/* ============================================
+   TEAM
+   ============================================ */
+.team { padding: 90px 0; }
+.team__header { text-align: center; margin-bottom: 50px; }
+.team__header-label {
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 12px;
+}
+.team__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+.team-card {
+  background: var(--white); border-radius: var(--radius-lg); padding: 32px 24px;
+  text-align: center; box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(27,42,74,0.06); transition: all var(--transition);
+}
+.team-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
+.team-card__avatar {
+  width: 120px; height: 120px; border-radius: 50%;
+  margin: 0 auto 20px; overflow: hidden;
+  border: 4px solid var(--cream);
+}
+.team-card__avatar svg { width: 100%; height: 100%; }
+.team-card__name { font-family: var(--font-sans); font-weight: 700; color: var(--navy); font-size: 1.05rem; }
+.team-card__role { font-size: 0.82rem; color: var(--teal); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 12px; }
+.team-card__socials { display: flex; gap: 6px; justify-content: center; margin-bottom: 14px; }
+.team-card__social {
+  width: 32px; height: 32px; border-radius: 50%; background: var(--teal);
+  display: flex; align-items: center; justify-content: center; transition: all var(--transition);
+}
+.team-card__social:hover { background: var(--navy); transform: translateY(-2px); }
+.team-card__social svg { width: 14px; height: 14px; color: var(--white); }
+.team-card__bio { font-size: 0.88rem; color: var(--warm-grey); font-style: italic; }
+
+/* ============================================
+   TESTIMONIALS
+   ============================================ */
+.testimonials { padding: 90px 0; background: #f7f5f2; }
+.testimonials__header { text-align: center; margin-bottom: 50px; }
+.testimonials__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.testimonial-card {
+  background: var(--white); border-radius: var(--radius-lg); padding: 32px;
+  box-shadow: var(--shadow-sm); transition: all var(--transition);
+  position: relative;
+}
+.testimonial-card--active { background: var(--teal); }
+.testimonial-card--active .testimonial-card__quote,
+.testimonial-card--active .testimonial-card__name,
+.testimonial-card--active .testimonial-card__role { color: var(--white); }
+.testimonial-card__icon {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--teal); display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+}
+.testimonial-card--active .testimonial-card__icon { background: rgba(255,255,255,0.2); }
+.testimonial-card__icon svg { width: 18px; height: 18px; color: var(--white); }
+.testimonial-card__quote { font-size: 0.95rem; color: var(--warm-grey); line-height: 1.7; margin-bottom: 20px; }
+.testimonial-card__author { display: flex; align-items: center; gap: 12px; }
+.testimonial-card__avatar {
+  width: 48px; height: 48px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+}
+.testimonial-card__avatar svg { width: 100%; height: 100%; }
+.testimonial-card__name { font-weight: 700; color: var(--navy); font-size: 0.95rem; }
+.testimonial-card__role { font-size: 0.8rem; color: var(--teal); font-weight: 500; }
+.testimonial-card--active .testimonial-card__role { color: rgba(255,255,255,0.8); }
+
+/* ============================================
+   BLOG
+   ============================================ */
+.blog { padding: 90px 0; }
+.blog__header { text-align: center; margin-bottom: 50px; }
+.blog__header-label {
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 12px;
+}
+.blog__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.blog-card {
+  background: var(--white); border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: var(--shadow-sm); border: 1px solid rgba(27,42,74,0.05);
+  transition: all var(--transition);
+}
+.blog-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); }
+.blog-card__img { height: 200px; overflow: hidden; position: relative; }
+.blog-card__img svg { width: 100%; height: 100%; }
+.blog-card__body { padding: 24px; }
+.blog-card__meta { display: flex; gap: 16px; font-size: 0.78rem; color: var(--warm-grey); margin-bottom: 10px; }
+.blog-card__meta span { display: flex; align-items: center; gap: 4px; }
+.blog-card__meta svg { width: 12px; height: 12px; }
+.blog-card__title { font-family: var(--font-serif); font-size: 1.05rem; color: var(--navy); line-height: 1.35; margin-bottom: 8px; }
+.blog-card__excerpt { font-size: 0.85rem; color: var(--warm-grey); margin-bottom: 12px; }
+.blog-card__link {
+  display: inline-flex; align-items: center; width: 36px; height: 36px;
+  border-radius: 50%; background: var(--teal-10); justify-content: center;
+  transition: all var(--transition);
+}
+.blog-card__link:hover { background: var(--teal); }
+.blog-card__link svg { width: 16px; height: 16px; color: var(--teal); }
+.blog-card__link:hover svg { color: var(--white); }
+
+/* ============================================
+   CTA BANNER
+   ============================================ */
+.cta-banner {
+  position: relative; padding: 80px 24px; overflow: hidden;
+}
+.cta-banner__bg {
+  position: absolute; inset: 0; z-index: 0;
+}
+.cta-banner__bg svg { width: 100%; height: 100%; }
+.cta-banner__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(42,123,123,0.9) 0%, rgba(27,42,74,0.92) 100%);
+  z-index: 1;
+}
+.cta-banner__inner {
+  position: relative; z-index: 2;
+  max-width: var(--max-width); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.cta-banner__label {
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+}
+.cta-banner h2 { color: var(--white); font-size: clamp(1.5rem, 3vw, 2.2rem); }
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  position: relative; padding: 64px 0 0; overflow: hidden;
+  background: var(--navy-dark); color: rgba(232,223,208,0.7);
+}
+.footer__bg {
+  position: absolute; inset: 0; z-index: 0; opacity: 0.15;
+}
+.footer__bg svg { width: 100%; height: 100%; }
+.footer__grid {
+  display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px;
+  position: relative; z-index: 1;
+}
+.footer__col h4 {
+  font-family: var(--font-sans); font-weight: 700; font-size: 1rem;
+  color: var(--white); margin-bottom: 20px;
+}
+.footer__col p { font-size: 0.88rem; margin-bottom: 8px; }
+.footer__col a {
+  color: rgba(232,223,208,0.6); font-size: 0.88rem; display: flex;
+  align-items: center; gap: 8px; padding: 4px 0; text-decoration: none;
+}
+.footer__col a:hover { color: var(--stone); }
+.footer__col a::before { content: '\2192'; font-size: 0.7rem; color: var(--teal); }
+.footer__col--about a::before { content: ''; }
+.footer__tagline {
+  font-family: var(--font-serif); font-size: 0.95rem; color: rgba(232,223,208,0.4);
+  margin-top: 8px; font-style: italic;
+}
+.footer__socials { display: flex; gap: 8px; margin-top: 16px; }
+.footer__social {
+  width: 34px; height: 34px; border-radius: 50%; background: var(--teal);
+  display: flex; align-items: center; justify-content: center; transition: all var(--transition);
+}
+.footer__social:hover { background: var(--teal-light); transform: translateY(-2px); }
+.footer__social svg { width: 14px; height: 14px; color: var(--white); }
+
+.footer__post { display: flex; gap: 12px; margin-bottom: 16px; }
+.footer__post-img {
+  width: 64px; height: 48px; border-radius: 4px; overflow: hidden; flex-shrink: 0;
+}
+.footer__post-img svg { width: 100%; height: 100%; }
+.footer__post-title { font-size: 0.85rem; color: rgba(232,223,208,0.8); font-weight: 600; line-height: 1.3; }
+.footer__post-date { font-size: 0.75rem; color: rgba(232,223,208,0.4); margin-top: 2px; }
+
+.footer__contact-item { display: flex; gap: 12px; margin-bottom: 14px; align-items: flex-start; }
+.footer__contact-item svg { width: 16px; height: 16px; color: var(--teal); flex-shrink: 0; margin-top: 3px; }
+.footer__contact-item span { font-size: 0.88rem; }
+
+.footer__bottom {
+  margin-top: 48px; padding: 20px 0; border-top: 1px solid rgba(232,223,208,0.08);
+  text-align: center; font-size: 0.8rem; color: rgba(232,223,208,0.35);
+  position: relative; z-index: 1;
+}
+
+/* ============================================
+   COOKIE BANNER
+   ============================================ */
+.cookie-banner {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 1100;
+  background: var(--white); box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+  padding: 16px 24px; display: flex; align-items: center; justify-content: center;
+  gap: 24px; font-size: 0.88rem;
+}
+.cookie-banner.hidden { display: none; }
+
+/* ============================================
+   PAGE WRAPPER
+   ============================================ */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ============================================
+   SERVICE PAGE
+   ============================================ */
+.page-hero {
+  position: relative; padding: 60px 24px 50px; text-align: center;
+  background: linear-gradient(135deg, var(--navy) 0%, #243757 100%);
+  overflow: hidden;
+}
+.page-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='30' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3C/svg%3E");
+}
+.page-hero * { position: relative; z-index: 1; }
+.page-hero .breadcrumb {
+  display: flex; gap: 8px; align-items: center; justify-content: center;
+  font-size: 0.85rem; color: rgba(232,223,208,0.5); margin-bottom: 12px;
+}
+.page-hero .breadcrumb a { color: rgba(232,223,208,0.65); }
+.page-hero .breadcrumb a:hover { color: var(--stone); }
+.page-hero h1 { color: var(--white); font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 12px; }
+.page-hero p { color: rgba(232,223,208,0.75); max-width: 640px; margin: 0 auto; font-size: 1.05rem; }
+
+.service-layout { display: grid; grid-template-columns: 1fr 360px; gap: 48px; }
+.service-content h2 { margin-top: 48px; margin-bottom: 16px; font-size: 1.5rem; }
+.service-content h2:first-child { margin-top: 0; }
+.service-content ul { margin: 16px 0; }
+.service-content li { padding: 8px 0 8px 28px; position: relative; }
+.service-content li::before {
+  content: ''; position: absolute; left: 0; top: 16px;
+  width: 8px; height: 8px; border-radius: 50%; background: var(--teal);
+}
+.service-content ol { counter-reset: steps; margin: 16px 0; }
+.service-content ol li { counter-increment: steps; padding: 12px 0 12px 48px; }
+.service-content ol li::before {
+  content: counter(steps); position: absolute; left: 0; top: 8px;
+  width: 32px; height: 32px; border-radius: 50%; background: var(--teal);
+  color: var(--white); font-weight: 700; font-size: 0.85rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.sidebar-card {
+  background: var(--cream); border-radius: var(--radius-lg); padding: 28px;
+  margin-bottom: 24px;
+}
+.sidebar-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+.sidebar-card p { font-size: 0.92rem; color: var(--warm-grey); margin-bottom: 16px; }
+.guarantee-box {
+  background: linear-gradient(135deg, var(--navy) 0%, #243757 100%);
+  border-radius: var(--radius-lg); padding: 24px; margin-bottom: 24px;
+}
+.guarantee-box h3 { color: var(--gold); font-size: 1rem; margin-bottom: 6px; }
+.guarantee-box p { color: rgba(232,223,208,0.8); font-size: 0.85rem; margin: 0; }
+.related-card {
+  display: block; padding: 16px; border-radius: var(--radius);
+  border: 1px solid rgba(27,42,74,0.08); margin-bottom: 10px;
+  text-decoration: none; transition: all var(--transition);
+}
+.related-card:hover { border-color: var(--teal); box-shadow: var(--shadow-md); }
+.related-card h4 { color: var(--navy); font-family: var(--font-sans); font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
+.related-card p { color: var(--warm-grey); font-size: 0.82rem; margin: 0; }
+
+/* FAQ */
+.faq__item { border-bottom: 1px solid rgba(27,42,74,0.08); }
+.faq__q {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 0; cursor: pointer; font-weight: 600; color: var(--navy);
+  font-size: 0.95rem; background: none; border: none; width: 100%; text-align: left;
+  font-family: var(--font-sans);
+}
+.faq__q::after { content: '+'; font-size: 1.4rem; color: var(--teal); flex-shrink: 0; margin-left: 16px; }
+.faq__item.active .faq__q::after { content: '\2212'; }
+.faq__a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.faq__item.active .faq__a { max-height: 300px; padding-bottom: 16px; }
+.faq__a p { color: var(--warm-grey); font-size: 0.92rem; }
+
+/* Placeholder page */
+.placeholder-msg { text-align: center; padding: 60px 24px; }
+.placeholder-msg__icon {
+  width: 72px; height: 72px; border-radius: 50%; background: var(--teal-10);
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;
+}
+.placeholder-msg__icon svg { width: 32px; height: 32px; color: var(--teal); }
+
+/* Contact page */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; font-size: 0.88rem; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 12px 16px; border: 1px solid rgba(27,42,74,0.15);
+  border-radius: var(--radius); font-family: var(--font-sans); font-size: 0.95rem;
+  color: var(--charcoal); background: var(--white); outline: none; transition: border-color var(--transition);
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  border-color: var(--teal); box-shadow: 0 0 0 3px rgba(42,123,123,0.1);
+}
+.form-group textarea { min-height: 120px; resize: vertical; }
+.form-group .radio-group { display: flex; gap: 20px; }
+.form-group .radio-group label { display: flex; align-items: center; gap: 8px; font-weight: 400; cursor: pointer; }
+.form-group .radio-group input { width: auto; }
+.form-success { display: none; text-align: center; padding: 40px; }
+.form-success.active { display: block; }
+
+.contact-info-item { display: flex; gap: 14px; margin-bottom: 24px; }
+.contact-info-icon {
+  width: 42px; height: 42px; border-radius: var(--radius);
+  background: var(--teal-10); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.contact-info-icon svg { width: 20px; height: 20px; color: var(--teal); }
+.contact-info-text h4 { font-family: var(--font-sans); font-weight: 600; color: var(--navy); font-size: 0.95rem; margin-bottom: 2px; }
+.contact-info-text p { color: var(--warm-grey); font-size: 0.9rem; margin: 0; }
+.map-placeholder {
+  width: 100%; height: 250px; border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #ddd, #eee); display: flex;
+  align-items: center; justify-content: center; color: var(--warm-grey);
+  font-size: 0.85rem; margin-top: 24px; border: 1px solid rgba(27,42,74,0.08);
+}
+
+/* Blog index */
+.blog-filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; justify-content: center; }
+.blog-filter {
+  padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 500;
+  background: var(--cream); color: var(--navy); border: 1px solid transparent;
+  cursor: pointer; transition: all var(--transition);
+}
+.blog-filter:hover, .blog-filter.active { background: var(--teal); color: var(--white); }
+
+/* About values */
+.values-list { display: grid; gap: 20px; }
+.value-item {
+  display: flex; gap: 20px; align-items: flex-start;
+  padding: 24px; border-radius: var(--radius); background: var(--cream);
+}
+.value-item__num {
+  width: 40px; height: 40px; border-radius: 50%; background: var(--navy);
+  color: var(--stone); font-family: var(--font-serif); font-size: 1rem;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.value-item h4 { color: var(--navy); font-family: var(--font-sans); font-weight: 700; margin-bottom: 4px; }
+.value-item p { color: var(--warm-grey); font-size: 0.92rem; margin: 0; }
+
+.badge-row { display: flex; gap: 24px; align-items: center; justify-content: center; flex-wrap: wrap; margin: 32px 0; }
+.badge-placeholder {
+  width: 100px; height: 60px; border-radius: var(--radius);
+  background: var(--cream); border: 1px dashed rgba(27,42,74,0.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem; color: var(--warm-grey); font-weight: 600;
+}
+
+/* ============================================
+   SCROLL ANIMATIONS
+   ============================================ */
+.fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+.fade-up-d1 { transition-delay: 0.1s; }
+.fade-up-d2 { transition-delay: 0.2s; }
+.fade-up-d3 { transition-delay: 0.3s; }
+.fade-up-d4 { transition-delay: 0.4s; }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .services__grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery__grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-bar__grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .team__grid { grid-template-columns: repeat(2, 1fr); }
+  .blog__grid { grid-template-columns: repeat(2, 1fr); }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+  .service-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .topbar { display: none; }
+  .section { padding: 56px 0; }
+  .about__grid, .about-image__grid { grid-template-columns: 1fr; gap: 32px; }
+  .about__features { grid-template-columns: 1fr; }
+  .services__grid { grid-template-columns: 1fr; }
+  .gallery__grid { grid-template-columns: 1fr 1fr; }
+  .stats-bar__grid { grid-template-columns: 1fr 1fr; }
+  .team__grid { grid-template-columns: 1fr; }
+  .testimonials__grid { grid-template-columns: 1fr; }
+  .blog__grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .nav { display: none; }
+  .mobile-toggle { display: block; }
+  .footer__grid { grid-template-columns: 1fr; }
+  .cta-banner__inner { flex-direction: column; text-align: center; gap: 24px; }
+  .hero { min-height: 500px; padding: 80px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     TOP BAR
+     ============================================ -->
+<div class="topbar">
+  <div class="topbar__inner">
+    <div class="topbar__left">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call Us: 0141 248 0000
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Glasgow, Scotland
+      </span>
+    </div>
+    <div class="topbar__right">
+      <a href="#" class="topbar__social" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></a>
+      <a href="#" class="topbar__social" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="#" class="topbar__social" aria-label="Google"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     HEADER
+     ============================================ -->
+<header class="header">
+  <div class="header__inner">
+    <a href="#" class="logo" onclick="navigate('home'); return false;">
+      <div class="logo__mark">LA</div>
+      <div>
+        <span class="logo__text">Lancefield Advisory</span>
+        <span class="logo__sub">Insolvency &amp; Restructuring</span>
+      </div>
+    </a>
+    <nav class="nav">
+      <div class="nav__item">
+        <a href="#" class="nav__link nav__link--active" onclick="navigate('home'); return false;">Home</a>
+      </div>
+      <div class="nav__item">
+        <a href="#" class="nav__link" onclick="navigate('about'); return false;">About</a>
+      </div>
+      <div class="nav__item">
+        <a href="#" class="nav__link" onclick="return false;">Insolvency <span class="nav__arrow">&#9662;</span></a>
+        <div class="mega">
+          <a href="#" class="mega__link" onclick="navigate('administration'); return false;">Administration</a>
+          <a href="#" class="mega__link mega__link--sub" onclick="navigate('pre-pack'); return false;">Pre Pack Administration</a>
+          <a href="#" class="mega__link" onclick="navigate('cvl'); return false;">Creditors' Voluntary Liquidation</a>
+          <a href="#" class="mega__link" onclick="navigate('cva'); return false;">Company Voluntary Arrangement</a>
+          <a href="#" class="mega__link" onclick="navigate('compulsory-liquidation'); return false;">Compulsory Liquidation</a>
+          <a href="#" class="mega__link" onclick="navigate('lpa-receiverships'); return false;">LPA Receiverships</a>
+          <a href="#" class="mega__link" onclick="navigate('mvl'); return false;">Members' Voluntary Liquidation</a>
+          <a href="#" class="mega__link" onclick="navigate('partnership-liquidation'); return false;">Partnership Liquidation</a>
+          <a href="#" class="mega__link" onclick="navigate('personal-insolvency'); return false;">Personal Insolvency Options</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="#" class="nav__link" onclick="return false;">Restructuring <span class="nav__arrow">&#9662;</span></a>
+        <div class="mega">
+          <a href="#" class="mega__link" onclick="navigate('contingency-planning'); return false;">Contingency Planning</a>
+          <a href="#" class="mega__link" onclick="navigate('corporate-simplification'); return false;">Corporate Simplification</a>
+          <a href="#" class="mega__link" onclick="navigate('debt-restructuring'); return false;">Debt Restructuring</a>
+          <a href="#" class="mega__link" onclick="navigate('diagnostic-review'); return false;">Diagnostic Business Review</a>
+          <a href="#" class="mega__link" onclick="navigate('exit-planning'); return false;">Optimised Exit Planning</a>
+          <a href="#" class="mega__link" onclick="navigate('pre-lend-reviews'); return false;">Pre-lend Reviews</a>
+          <a href="#" class="mega__link" onclick="navigate('turnaround'); return false;">Turnaround</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="#" class="nav__link" onclick="navigate('blog'); return false;">Blog</a>
+      </div>
+      <div class="nav__item">
+        <a href="#" class="nav__link" onclick="navigate('contact'); return false;">Contact</a>
+      </div>
+      <div class="nav__item" style="margin-left:8px;">
+        <a href="#" class="btn btn--primary" style="padding:10px 22px; font-size:0.8rem;" onclick="navigate('contact'); return false;">Free Consultation</a>
+      </div>
+    </nav>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav__title">Menu</div>
+  <a href="#" class="mobile-nav__link" onclick="navigate('home'); return false;">Home</a>
+  <a href="#" class="mobile-nav__link" onclick="navigate('about'); return false;">About Us</a>
+  <div class="mobile-nav__title">Insolvency</div>
+  <a href="#" class="mobile-nav__link" onclick="navigate('administration'); return false;">Administration</a>
+  <a href="#" class="mobile-nav__link" onclick="navigate('pre-pack'); return false;">Pre Pack Administration</a>
+  <a href="#" class="mobile-nav__link" onclick="navigate('cvl'); return false;">Creditors' Voluntary Liquidation</a>
+  <a href="#" class="mobile-nav__link" onclick="navigate('cva'); return false;">Company Voluntary Arrangement</a>
+  <a href="#" class="mobile-nav__link" onclick="navigate('compulsory-liquidation'); return false;">Compulsory Liquidation</a>
+  <a href="#" class="mobile-nav__link" onclick="navigate('lpa-receiverships'); return false;">LPA Receiverships</a>
+  <a href="#" class="mobile-nav__link" onclick="navigate('mvl'); return false;">Members' Voluntary Liquidation</a>
+  <a href="#" class="mobile-nav__link" onclick="navigate('partnership-liquidation'); return false;">Partnership Liquidation</a>
+  <a href="#" class="mobile-nav__link" onclick="navigate('personal-insolvency'); return false;">Personal Insolvency Options</a>
+  <div class="mobile-nav__title">Restructuring</div>
+  <a href="#" class="mobile-nav__link" onclick="navigate('contingency-planning'); return false;">Contingency Planning</a>
+  <a href="#" class="mobile-nav__link" onclick="navigate('corporate-simplification'); return false;">Corporate Simplification</a>
+  <a href="#" class="mobile-nav__link" onclick="navigate('debt-restructuring'); return false;">Debt Restructuring</a>
+  <a href="#" class="mobile-nav__link" onclick="navigate('diagnostic-review'); return false;">Diagnostic Business Review</a>
+  <a href="#" class="mobile-nav__link" onclick="navigate('exit-planning'); return false;">Optimised Exit Planning</a>
+  <a href="#" class="mobile-nav__link" onclick="navigate('pre-lend-reviews'); return false;">Pre-lend Reviews</a>
+  <a href="#" class="mobile-nav__link" onclick="navigate('turnaround'); return false;">Turnaround</a>
+  <div class="mobile-nav__title">More</div>
+  <a href="#" class="mobile-nav__link" onclick="navigate('blog'); return false;">Blog</a>
+  <a href="#" class="mobile-nav__link" onclick="navigate('contact'); return false;">Contact</a>
+  <div style="padding:20px 0;">
+    <a href="#" class="btn btn--primary" style="width:100%;justify-content:center;" onclick="navigate('contact'); return false;">Free Confidential Consultation</a>
+  </div>
+</div>
+
+<!-- ============================================
+     PAGE: HOME
+     ============================================ -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg">
+      <!-- Glasgow skyline illustration -->
+      <svg viewBox="0 0 1440 650" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sky gradient -->
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#0d1b2a"/>
+            <stop offset="40%" stop-color="#1b2a4a"/>
+            <stop offset="100%" stop-color="#1a3a5c"/>
+          </linearGradient>
+          <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#162238"/>
+            <stop offset="100%" stop-color="#0d1520"/>
+          </linearGradient>
+          <linearGradient id="sunset" x1="0.2" y1="0" x2="0.8" y2="0">
+            <stop offset="0%" stop-color="transparent"/>
+            <stop offset="50%" stop-color="rgba(184,148,62,0.15)"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </linearGradient>
+        </defs>
+        <!-- Sky -->
+        <rect width="1440" height="650" fill="url(#sky)"/>
+        <!-- Sunset glow -->
+        <rect x="0" y="250" width="1440" height="200" fill="url(#sunset)"/>
+        <!-- Stars -->
+        <circle cx="200" cy="80" r="1.2" fill="rgba(255,255,255,0.4)"/>
+        <circle cx="500" cy="50" r="0.8" fill="rgba(255,255,255,0.3)"/>
+        <circle cx="800" cy="100" r="1" fill="rgba(255,255,255,0.35)"/>
+        <circle cx="1100" cy="60" r="1.2" fill="rgba(255,255,255,0.4)"/>
+        <circle cx="1300" cy="120" r="0.7" fill="rgba(255,255,255,0.3)"/>
+        <circle cx="350" cy="130" r="0.9" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="950" cy="40" r="1.1" fill="rgba(255,255,255,0.35)"/>
+        <!-- River Clyde -->
+        <rect x="0" y="430" width="1440" height="220" fill="url(#water)"/>
+        <!-- Clyde water reflections -->
+        <line x1="100" y1="470" x2="200" y2="470" stroke="rgba(42,123,123,0.15)" stroke-width="1"/>
+        <line x1="400" y1="490" x2="550" y2="490" stroke="rgba(184,148,62,0.1)" stroke-width="1"/>
+        <line x1="700" y1="475" x2="800" y2="475" stroke="rgba(42,123,123,0.12)" stroke-width="1"/>
+        <line x1="1000" y1="500" x2="1150" y2="500" stroke="rgba(184,148,62,0.08)" stroke-width="1"/>
+        <line x1="250" y1="510" x2="380" y2="510" stroke="rgba(42,123,123,0.1)" stroke-width="1"/>
+        <line x1="600" y1="520" x2="750" y2="520" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <!-- Glasgow buildings - left -->
+        <rect x="40" y="310" width="60" height="120" fill="#0f1a2e" rx="2"/>
+        <rect x="44" y="320" width="12" height="8" fill="rgba(184,148,62,0.3)" rx="1"/>
+        <rect x="60" y="320" width="12" height="8" fill="rgba(42,123,123,0.2)" rx="1"/>
+        <rect x="44" y="340" width="12" height="8" fill="rgba(42,123,123,0.15)" rx="1"/>
+        <rect x="60" y="340" width="12" height="8" fill="rgba(184,148,62,0.25)" rx="1"/>
+        <rect x="44" y="360" width="12" height="8" fill="rgba(184,148,62,0.2)" rx="1"/>
+        <rect x="110" y="280" width="45" height="150" fill="#111f35" rx="2"/>
+        <rect x="115" y="290" width="8" height="6" fill="rgba(184,148,62,0.25)" rx="1"/>
+        <rect x="128" y="290" width="8" height="6" fill="rgba(42,123,123,0.2)" rx="1"/>
+        <rect x="115" y="305" width="8" height="6" fill="rgba(42,123,123,0.15)" rx="1"/>
+        <rect x="128" y="305" width="8" height="6" fill="rgba(184,148,62,0.2)" rx="1"/>
+        <rect x="115" y="320" width="8" height="6" fill="rgba(184,148,62,0.15)" rx="1"/>
+        <rect x="170" y="340" width="70" height="90" fill="#0e1926" rx="2"/>
+        <rect x="176" y="350" width="10" height="7" fill="rgba(184,148,62,0.2)" rx="1"/>
+        <rect x="192" y="350" width="10" height="7" fill="rgba(42,123,123,0.15)" rx="1"/>
+        <rect x="208" y="350" width="10" height="7" fill="rgba(184,148,62,0.15)" rx="1"/>
+        <!-- SEC Armadillo shape -->
+        <path d="M300 430 Q340 340 380 370 Q420 330 460 370 Q500 340 540 430 Z" fill="#12213a" stroke="rgba(42,123,123,0.2)" stroke-width="0.5"/>
+        <!-- Finnieston Crane -->
+        <rect x="570" y="300" width="6" height="130" fill="#0f1a2e"/>
+        <rect x="545" y="298" width="60" height="6" fill="#0f1a2e"/>
+        <line x1="573" y1="304" x2="545" y2="380" stroke="#0f1a2e" stroke-width="2"/>
+        <line x1="573" y1="304" x2="605" y2="350" stroke="#0f1a2e" stroke-width="2"/>
+        <!-- Clyde Arc Bridge -->
+        <path d="M620 430 Q720 340 820 430" fill="none" stroke="#1a2e4a" stroke-width="4"/>
+        <path d="M620 430 Q720 350 820 430" fill="none" stroke="rgba(42,123,123,0.3)" stroke-width="1"/>
+        <line x1="660" y1="430" x2="680" y2="380" stroke="#1a2e4a" stroke-width="1.5"/>
+        <line x1="700" y1="430" x2="710" y2="360" stroke="#1a2e4a" stroke-width="1.5"/>
+        <line x1="740" y1="430" x2="735" y2="355" stroke="#1a2e4a" stroke-width="1.5"/>
+        <line x1="780" y1="430" x2="765" y2="375" stroke="#1a2e4a" stroke-width="1.5"/>
+        <!-- Central buildings -->
+        <rect x="850" y="260" width="50" height="170" fill="#111e33" rx="2"/>
+        <rect x="856" y="270" width="8" height="6" fill="rgba(184,148,62,0.3)" rx="1"/>
+        <rect x="870" y="270" width="8" height="6" fill="rgba(42,123,123,0.2)" rx="1"/>
+        <rect x="856" y="285" width="8" height="6" fill="rgba(42,123,123,0.2)" rx="1"/>
+        <rect x="870" y="285" width="8" height="6" fill="rgba(184,148,62,0.25)" rx="1"/>
+        <rect x="856" y="300" width="8" height="6" fill="rgba(184,148,62,0.2)" rx="1"/>
+        <rect x="870" y="300" width="8" height="6" fill="rgba(42,123,123,0.15)" rx="1"/>
+        <rect x="910" y="290" width="70" height="140" fill="#0e192a" rx="2"/>
+        <rect x="918" y="300" width="10" height="7" fill="rgba(184,148,62,0.2)" rx="1"/>
+        <rect x="934" y="300" width="10" height="7" fill="rgba(42,123,123,0.2)" rx="1"/>
+        <rect x="950" y="300" width="10" height="7" fill="rgba(184,148,62,0.15)" rx="1"/>
+        <rect x="918" y="315" width="10" height="7" fill="rgba(42,123,123,0.15)" rx="1"/>
+        <rect x="934" y="315" width="10" height="7" fill="rgba(184,148,62,0.2)" rx="1"/>
+        <!-- Tall tower -->
+        <rect x="1000" y="220" width="35" height="210" fill="#131f36" rx="2"/>
+        <rect x="1010" y="215" width="15" height="8" fill="#131f36"/>
+        <rect x="1014" y="207" width="7" height="10" fill="#131f36"/>
+        <rect x="1006" y="230" width="7" height="5" fill="rgba(184,148,62,0.3)" rx="1"/>
+        <rect x="1018" y="230" width="7" height="5" fill="rgba(42,123,123,0.2)" rx="1"/>
+        <rect x="1006" y="245" width="7" height="5" fill="rgba(42,123,123,0.15)" rx="1"/>
+        <rect x="1018" y="245" width="7" height="5" fill="rgba(184,148,62,0.2)" rx="1"/>
+        <!-- Right side buildings -->
+        <rect x="1060" y="310" width="55" height="120" fill="#10192d" rx="2"/>
+        <rect x="1130" y="340" width="80" height="90" fill="#0e1825" rx="2"/>
+        <rect x="1138" y="350" width="10" height="7" fill="rgba(184,148,62,0.2)" rx="1"/>
+        <rect x="1154" y="350" width="10" height="7" fill="rgba(42,123,123,0.15)" rx="1"/>
+        <rect x="1230" y="300" width="50" height="130" fill="#111d32" rx="2"/>
+        <rect x="1300" y="350" width="60" height="80" fill="#0d1626" rx="2"/>
+        <rect x="1380" y="320" width="60" height="110" fill="#101c30" rx="2"/>
+        <!-- Treeline in distance -->
+        <path d="M0 430 L40 425 L80 428 L120 422 L170 426 L240 420 L300 425 L350 418 L400 424 L1440 430 L1440 432 L0 432 Z" fill="#0c1520" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <span class="hero__label">Glasgow Insolvency &amp; Restructuring Specialists</span>
+      <h1>Clarity When It Matters Most</h1>
+      <p class="hero__sub">Independent insolvency and restructuring advice for Glasgow businesses and individuals. No judgment. No pressure. Just clear, honest options.</p>
+      <div class="hero__actions">
+        <a href="#" class="btn btn--primary" onclick="navigate('contact'); return false;">Get Started &rarr;</a>
+        <a href="#" class="btn btn--outline" onclick="navigate('about'); return false;">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUB HERO -->
+  <section class="sub-hero">
+    <h2>Build Your Financial Plan With Our Specialists</h2>
+    <a href="#" class="btn btn--outline" onclick="navigate('contact'); return false;">Book Free Consultation &rarr;</a>
+  </section>
+
+  <!-- ABOUT SECTION: Features + Text -->
+  <section class="about section">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__features">
+          <div class="feature-card fade-up">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h4>Advice First, Not Solution First</h4>
+            <p>We don't push products or earn commission. Our only interest is finding the right answer for you.</p>
+          </div>
+          <div class="feature-card feature-card--active fade-up fade-up-d1">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h4>Business + Personal, Together</h4>
+            <p>We see the full picture: business debts, personal guarantees, household exposure and crossover risks.</p>
+          </div>
+          <div class="feature-card fade-up fade-up-d2">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h4>Local, Discreet &amp; Human</h4>
+            <p>Glasgow-based, face-to-face. Every conversation is 100% confidential. No call centres.</p>
+          </div>
+          <div class="feature-card fade-up fade-up-d3">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            </div>
+            <h4>Industry Experience</h4>
+            <p>Licensed insolvency practitioners with decades of experience across Scotland's business landscape.</p>
+          </div>
+        </div>
+        <div class="about__text fade-up">
+          <div class="about__text-label">About Lancefield Advisory</div>
+          <h2>More Than 44% of People Wish They'd Sought Advice Sooner</h2>
+          <p>Financial pressure doesn't have to mean losing control. If you're lying awake worrying about creditor letters, HMRC demands, or personal guarantees &mdash; you're not alone. Most people wait 6&ndash;18 months before asking for help. By then, options have narrowed.</p>
+          <p>We exist to give you clarity before that happens. As Glasgow's independent insolvency and restructuring advisors, we combine technical expertise with genuine empathy to guide you through every available option.</p>
+          <a href="#" class="btn btn--navy" onclick="navigate('about'); return false;">Learn More &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT IMAGE SECTION -->
+  <section class="about-image">
+    <div class="container">
+      <div class="about-image__grid">
+        <div class="about-image__visual fade-up">
+          <!-- SVG illustration: consultation scene -->
+          <svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="officeBg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#f5f1eb"/>
+                <stop offset="100%" stop-color="#e8dfd0"/>
+              </linearGradient>
+              <linearGradient id="desk" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#8B7355"/>
+                <stop offset="100%" stop-color="#6B5840"/>
+              </linearGradient>
+            </defs>
+            <!-- Room -->
+            <rect width="600" height="420" fill="url(#officeBg)"/>
+            <!-- Wall detail -->
+            <rect x="0" y="0" width="600" height="200" fill="#eee7da"/>
+            <line x1="0" y1="200" x2="600" y2="200" stroke="#d4c9b8" stroke-width="1"/>
+            <!-- Window -->
+            <rect x="360" y="30" width="180" height="140" rx="4" fill="#c5d8e0" stroke="#b0a08c" stroke-width="2"/>
+            <line x1="450" y1="30" x2="450" y2="170" stroke="#b0a08c" stroke-width="1.5"/>
+            <line x1="360" y1="100" x2="540" y2="100" stroke="#b0a08c" stroke-width="1.5"/>
+            <!-- Glasgow skyline through window -->
+            <rect x="362" y="120" width="86" height="48" fill="#9ab8c4"/>
+            <rect x="452" y="120" width="86" height="48" fill="#9ab8c4"/>
+            <rect x="380" y="130" width="15" height="38" fill="#7a9aaa"/>
+            <rect x="400" y="138" width="20" height="30" fill="#7a9aaa"/>
+            <rect x="470" y="125" width="12" height="43" fill="#7a9aaa"/>
+            <rect x="490" y="132" width="25" height="36" fill="#7a9aaa"/>
+            <!-- Bookshelf -->
+            <rect x="40" y="40" width="120" height="150" rx="3" fill="#6B5840" stroke="#5a4a35" stroke-width="1"/>
+            <rect x="45" y="48" width="110" height="4" fill="#5a4a35"/>
+            <rect x="45" y="90" width="110" height="4" fill="#5a4a35"/>
+            <rect x="45" y="132" width="110" height="4" fill="#5a4a35"/>
+            <!-- Books -->
+            <rect x="50" y="55" width="8" height="33" rx="1" fill="#1B2A4A"/>
+            <rect x="60" y="58" width="7" height="30" rx="1" fill="#2A7B7B"/>
+            <rect x="69" y="55" width="9" height="33" rx="1" fill="#B8943E"/>
+            <rect x="80" y="60" width="6" height="28" rx="1" fill="#1B2A4A"/>
+            <rect x="88" y="56" width="8" height="32" rx="1" fill="#8B7355"/>
+            <rect x="50" y="97" width="10" height="33" rx="1" fill="#2A7B7B"/>
+            <rect x="62" y="100" width="7" height="30" rx="1" fill="#B8943E"/>
+            <rect x="71" y="97" width="8" height="33" rx="1" fill="#1B2A4A"/>
+            <!-- Certificate frames on wall -->
+            <rect x="200" y="50" width="50" height="40" rx="2" fill="#c5b8a5" stroke="#a89880" stroke-width="1"/>
+            <rect x="206" y="56" width="38" height="28" fill="#f5f1eb"/>
+            <rect x="270" y="55" width="45" height="35" rx="2" fill="#c5b8a5" stroke="#a89880" stroke-width="1"/>
+            <rect x="275" y="60" width="35" height="25" fill="#f5f1eb"/>
+            <!-- Desk -->
+            <rect x="80" y="260" width="440" height="20" rx="3" fill="url(#desk)"/>
+            <rect x="90" y="280" width="12" height="80" fill="#6B5840"/>
+            <rect x="498" y="280" width="12" height="80" fill="#6B5840"/>
+            <!-- Laptop -->
+            <rect x="300" y="230" width="80" height="30" rx="3" fill="#2D2D2D"/>
+            <rect x="305" y="234" width="70" height="22" rx="2" fill="#3a5a7a"/>
+            <rect x="280" y="258" width="120" height="4" rx="1" fill="#4a4a4a"/>
+            <!-- Papers/documents -->
+            <rect x="160" y="238" width="50" height="22" rx="2" fill="white" stroke="#d4c9b8" stroke-width="0.5"/>
+            <line x1="168" y1="245" x2="200" y2="245" stroke="#d4c9b8" stroke-width="1"/>
+            <line x1="168" y1="250" x2="195" y2="250" stroke="#d4c9b8" stroke-width="1"/>
+            <rect x="140" y="242" width="50" height="22" rx="2" fill="white" stroke="#d4c9b8" stroke-width="0.5" transform="rotate(-8 165 253)"/>
+            <!-- Coffee cup -->
+            <ellipse cx="440" cy="248" rx="14" ry="4" fill="#d4c9b8"/>
+            <rect x="426" y="240" width="28" height="18" rx="4" fill="#e8dfd0" stroke="#c5b8a5" stroke-width="1"/>
+            <path d="M454 244 Q464 248 454 254" fill="none" stroke="#c5b8a5" stroke-width="1"/>
+            <!-- Person 1 (advisor) - behind desk, right side -->
+            <ellipse cx="420" cy="200" rx="22" ry="24" fill="#d4a76a"/>
+            <rect x="395" y="218" width="50" height="50" rx="6" fill="#1B2A4A"/>
+            <path d="M405 218 L420 208 L435 218" fill="#1B2A4A"/>
+            <!-- Hair -->
+            <ellipse cx="420" cy="186" rx="20" ry="12" fill="#3a2a1a"/>
+            <!-- Face features -->
+            <circle cx="412" cy="198" r="2" fill="#3a2a1a"/>
+            <circle cx="428" cy="198" r="2" fill="#3a2a1a"/>
+            <path d="M415 208 Q420 212 425 208" fill="none" stroke="#3a2a1a" stroke-width="1.5"/>
+            <!-- Person 2 (client) - in front of desk, left side, back to viewer -->
+            <ellipse cx="200" cy="250" rx="28" ry="30" fill="#5a4a3a"/>
+            <rect x="168" y="274" width="64" height="80" rx="8" fill="#2A7B7B"/>
+            <ellipse cx="200" cy="240" rx="24" ry="15" fill="#3a2a1a"/>
+            <!-- Potted plant -->
+            <rect x="555" y="300" width="30" height="35" rx="3" fill="#8B7355"/>
+            <ellipse cx="570" cy="295" rx="25" ry="20" fill="#2a6b4a"/>
+            <ellipse cx="560" cy="285" rx="15" ry="14" fill="#357a55"/>
+            <ellipse cx="580" cy="288" rx="12" ry="11" fill="#2a6b4a"/>
+            <!-- Floor -->
+            <rect x="0" y="360" width="600" height="60" fill="#d4c4ad"/>
+          </svg>
+          <div class="about-image__play">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="about-image__text fade-up">
+          <div class="about-image__text-label">About Lancefield Advisory</div>
+          <h2>Putting People Before Process Since Day One</h2>
+          <p>The insolvency industry has a problem. Too many firms earn their fees from specific outcomes &mdash; pushing IVAs because they're profitable, recommending liquidation when restructuring is possible, or overlooking personal exposure because it's not their department.</p>
+          <p>We saw too many business owners receiving conflicting advice from multiple advisors, none of whom had the full picture. Lancefield Advisory was founded to be different: we are the safe, ethical first point of clarity for people under financial pressure.</p>
+          <a href="#" class="btn btn--ghost" onclick="navigate('about'); return false;">Watch Our Story</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <div class="container">
+      <div class="services__header fade-up">
+        <div class="services__header-label">Our Services</div>
+        <h2>What We Offer You</h2>
+      </div>
+      <div class="services__grid">
+        <div class="service-card fade-up" onclick="navigate('administration')">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h4>Administration</h4>
+          <p>Breathing space from creditors while rescue options are explored.</p>
+        </div>
+        <div class="service-card fade-up fade-up-d1" onclick="navigate('cvl')">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h4>CVL</h4>
+          <p>Director-led orderly closure when rescue is no longer viable.</p>
+        </div>
+        <div class="service-card fade-up fade-up-d2" onclick="navigate('cva')">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+          </div>
+          <h4>CVA</h4>
+          <p>Repay debts over time while continuing to trade.</p>
+        </div>
+        <div class="service-card fade-up fade-up-d3" onclick="navigate('debt-restructuring')">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <h4>Debt Restructuring</h4>
+          <p>Renegotiate debt terms without formal insolvency proceedings.</p>
+        </div>
+        <div class="service-card fade-up" onclick="navigate('personal-insolvency')">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h4>Personal Insolvency</h4>
+          <p>Trust Deeds, DAS and Sequestration options for individuals in Scotland.</p>
+        </div>
+        <div class="service-card fade-up fade-up-d1" onclick="navigate('turnaround')">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+          </div>
+          <h4>Turnaround</h4>
+          <p>Stabilise and recover a struggling but viable business.</p>
+        </div>
+        <div class="service-card fade-up fade-up-d2" onclick="navigate('mvl')">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h4>MVL</h4>
+          <p>Tax-efficient closure and distribution for solvent companies.</p>
+        </div>
+        <div class="service-card fade-up fade-up-d3" onclick="navigate('diagnostic-review')">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h4>Diagnostic Review</h4>
+          <p>Comprehensive assessment of financial health and all available options.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY / WHO WE HELP -->
+  <section class="gallery">
+    <div class="container">
+      <div class="gallery__header fade-up">
+        <div class="gallery__header-label">Who We Help</div>
+        <h2>We Take Every Situation Seriously</h2>
+      </div>
+    </div>
+    <div class="gallery__grid">
+      <!-- Gallery Item 1: Business Owner -->
+      <div class="gallery__item fade-up">
+        <div class="gallery__item-img">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1B2A4A"/><stop offset="100%" stop-color="#2A7B7B"/></linearGradient></defs>
+            <rect width="400" height="300" fill="url(#g1)"/>
+            <!-- Office scene -->
+            <rect x="30" y="180" width="340" height="8" rx="2" fill="rgba(139,115,85,0.4)"/>
+            <rect x="180" y="120" width="60" height="60" rx="4" fill="rgba(255,255,255,0.1)"/>
+            <rect x="188" y="128" width="44" height="30" rx="2" fill="rgba(42,123,123,0.3)"/>
+            <rect x="50" y="140" width="40" height="40" rx="2" fill="rgba(255,255,255,0.08)"/>
+            <rect x="280" y="130" width="50" height="50" rx="2" fill="rgba(255,255,255,0.06)"/>
+            <!-- Person silhouette -->
+            <ellipse cx="140" cy="100" rx="25" ry="28" fill="rgba(232,223,208,0.15)"/>
+            <rect x="115" y="122" width="50" height="60" rx="8" fill="rgba(232,223,208,0.12)"/>
+            <!-- Charts -->
+            <rect x="300" y="155" width="6" height="25" fill="rgba(184,148,62,0.4)"/>
+            <rect x="310" y="145" width="6" height="35" fill="rgba(42,123,123,0.5)"/>
+            <rect x="320" y="160" width="6" height="20" fill="rgba(184,148,62,0.3)"/>
+          </svg>
+        </div>
+        <div class="gallery__item-overlay">
+          <h4>Business Owners &amp; Directors</h4>
+          <p>Creditor pressure, HMRC arrears, potential insolvency</p>
+        </div>
+      </div>
+      <!-- Gallery Item 2: Individual -->
+      <div class="gallery__item fade-up fade-up-d1">
+        <div class="gallery__item-img">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2A7B7B"/><stop offset="100%" stop-color="#1B2A4A"/></linearGradient></defs>
+            <rect width="400" height="300" fill="url(#g2)"/>
+            <!-- Home scene -->
+            <path d="M120 180 L200 120 L280 180 Z" fill="rgba(232,223,208,0.1)" stroke="rgba(232,223,208,0.15)" stroke-width="1"/>
+            <rect x="140" y="180" width="120" height="80" fill="rgba(232,223,208,0.08)"/>
+            <rect x="170" y="200" width="20" height="25" fill="rgba(42,123,123,0.3)"/>
+            <rect x="210" y="195" width="30" height="20" fill="rgba(184,148,62,0.2)"/>
+            <!-- Documents scattered -->
+            <rect x="60" y="210" width="40" height="30" rx="2" fill="rgba(255,255,255,0.1)" transform="rotate(-15 80 225)"/>
+            <rect x="300" y="200" width="35" height="25" rx="2" fill="rgba(255,255,255,0.08)" transform="rotate(10 318 213)"/>
+            <rect x="310" y="230" width="30" height="22" rx="2" fill="rgba(255,255,255,0.06)" transform="rotate(-5 325 241)"/>
+          </svg>
+        </div>
+        <div class="gallery__item-overlay">
+          <h4>Individuals Under Pressure</h4>
+          <p>Personal debt, trust deeds, sequestration guidance</p>
+        </div>
+      </div>
+      <!-- Gallery Item 3: Professional Referrer -->
+      <div class="gallery__item fade-up fade-up-d2">
+        <div class="gallery__item-img">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1B2A4A"/><stop offset="100%" stop-color="#B8943E"/></linearGradient></defs>
+            <rect width="400" height="300" fill="url(#g3)"/>
+            <!-- Handshake abstract -->
+            <circle cx="150" cy="150" r="60" fill="none" stroke="rgba(232,223,208,0.1)" stroke-width="1"/>
+            <circle cx="250" cy="150" r="60" fill="none" stroke="rgba(232,223,208,0.1)" stroke-width="1"/>
+            <path d="M175 130 Q200 155 225 130" fill="none" stroke="rgba(232,223,208,0.2)" stroke-width="2"/>
+            <path d="M175 170 Q200 145 225 170" fill="none" stroke="rgba(232,223,208,0.2)" stroke-width="2"/>
+            <!-- Connection lines -->
+            <line x1="80" y1="100" x2="150" y2="150" stroke="rgba(42,123,123,0.2)" stroke-width="1"/>
+            <line x1="250" y1="150" x2="320" y2="100" stroke="rgba(184,148,62,0.2)" stroke-width="1"/>
+            <circle cx="80" cy="100" r="5" fill="rgba(42,123,123,0.3)"/>
+            <circle cx="320" cy="100" r="5" fill="rgba(184,148,62,0.3)"/>
+          </svg>
+        </div>
+        <div class="gallery__item-overlay">
+          <h4>Professional Referrers</h4>
+          <p>Accountants, solicitors and IFAs seeking a trusted partner</p>
+        </div>
+      </div>
+      <!-- Gallery Item 4: Restructuring -->
+      <div class="gallery__item fade-up fade-up-d3">
+        <div class="gallery__item-img">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#243757"/><stop offset="100%" stop-color="#2A7B7B"/></linearGradient></defs>
+            <rect width="400" height="300" fill="url(#g4)"/>
+            <!-- Rising chart -->
+            <polyline points="60,240 120,200 180,220 240,160 300,140 340,100" fill="none" stroke="rgba(184,148,62,0.5)" stroke-width="3"/>
+            <circle cx="60" cy="240" r="4" fill="rgba(184,148,62,0.6)"/>
+            <circle cx="120" cy="200" r="4" fill="rgba(184,148,62,0.6)"/>
+            <circle cx="180" cy="220" r="4" fill="rgba(184,148,62,0.6)"/>
+            <circle cx="240" cy="160" r="4" fill="rgba(184,148,62,0.6)"/>
+            <circle cx="300" cy="140" r="4" fill="rgba(184,148,62,0.6)"/>
+            <circle cx="340" cy="100" r="6" fill="rgba(184,148,62,0.8)"/>
+            <!-- Grid lines -->
+            <line x1="60" y1="260" x2="360" y2="260" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <line x1="60" y1="80" x2="60" y2="260" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <!-- Bars -->
+            <rect x="80" y="220" width="20" height="40" fill="rgba(42,123,123,0.3)"/>
+            <rect x="140" y="190" width="20" height="70" fill="rgba(42,123,123,0.35)"/>
+            <rect x="200" y="200" width="20" height="60" fill="rgba(42,123,123,0.3)"/>
+            <rect x="260" y="150" width="20" height="110" fill="rgba(42,123,123,0.4)"/>
+            <rect x="320" y="120" width="20" height="140" fill="rgba(42,123,123,0.45)"/>
+          </svg>
+        </div>
+        <div class="gallery__item-overlay">
+          <h4>Businesses Seeking Turnaround</h4>
+          <p>Viable operations needing restructuring to survive and grow</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-bar__grid">
+        <div class="stat fade-up">
+          <span class="stat__number">44%</span>
+          <span class="stat__label">Wish They'd Acted Sooner</span>
+        </div>
+        <div class="stat fade-up fade-up-d1">
+          <span class="stat__number">81.6%</span>
+          <span class="stat__label">Report Debt Harming Wellbeing</span>
+        </div>
+        <div class="stat fade-up fade-up-d2">
+          <span class="stat__number">36%</span>
+          <span class="stat__label">Debt Increase When Delayed</span>
+        </div>
+        <div class="stat fade-up fade-up-d3">
+          <span class="stat__number">1 in 6</span>
+          <span class="stat__label">UK Adults With Problem Debt</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team section">
+    <div class="container">
+      <div class="team__header fade-up">
+        <div class="team__header-label">Meet Our Team</div>
+        <h2>Our Leadership Team</h2>
+      </div>
+      <div class="team__grid">
+        <div class="team-card fade-up">
+          <div class="team-card__avatar">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <rect width="120" height="120" fill="#e8dfd0"/>
+              <circle cx="60" cy="45" r="22" fill="#1B2A4A"/>
+              <ellipse cx="60" cy="100" rx="35" ry="30" fill="#1B2A4A"/>
+              <circle cx="60" cy="45" r="18" fill="#c4a882"/>
+              <ellipse cx="60" cy="33" rx="16" ry="10" fill="#3a2a1a"/>
+              <circle cx="53" cy="43" r="2" fill="#2D2D2D"/>
+              <circle cx="67" cy="43" r="2" fill="#2D2D2D"/>
+              <path d="M55 52 Q60 56 65 52" fill="none" stroke="#2D2D2D" stroke-width="1.5"/>
+              <rect x="45" y="72" width="30" height="20" rx="2" fill="white"/>
+              <path d="M55 72 L60 82 L65 72" fill="none" stroke="#2A7B7B" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="team-card__name">Alexander Reid</div>
+          <div class="team-card__role">Director &amp; Licensed IP</div>
+          <div class="team-card__socials">
+            <a href="#" class="team-card__social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></a>
+            <a href="#" class="team-card__social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M22 6l-10 7L2 6"/></svg></a>
+          </div>
+          <p class="team-card__bio">Over 20 years of insolvency and restructuring experience across Scotland. ICAS member and R3 fellow.</p>
+        </div>
+        <div class="team-card fade-up fade-up-d1">
+          <div class="team-card__avatar">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <rect width="120" height="120" fill="#e8dfd0"/>
+              <circle cx="60" cy="45" r="22" fill="#2A7B7B"/>
+              <ellipse cx="60" cy="100" rx="35" ry="30" fill="#2A7B7B"/>
+              <circle cx="60" cy="45" r="18" fill="#c4a882"/>
+              <path d="M42 40 Q45 25 60 22 Q75 25 78 40 Q80 45 78 48 L75 42 Q72 35 60 32 Q48 35 45 42 L42 48 Q40 45 42 40Z" fill="#5a3a20"/>
+              <circle cx="53" cy="43" r="2" fill="#2D2D2D"/>
+              <circle cx="67" cy="43" r="2" fill="#2D2D2D"/>
+              <path d="M55 52 Q60 56 65 52" fill="none" stroke="#2D2D2D" stroke-width="1.5"/>
+              <rect x="45" y="72" width="30" height="20" rx="2" fill="white"/>
+            </svg>
+          </div>
+          <div class="team-card__name">Sarah Mitchell</div>
+          <div class="team-card__role">Senior Manager &mdash; Personal</div>
+          <div class="team-card__socials">
+            <a href="#" class="team-card__social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></a>
+            <a href="#" class="team-card__social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M22 6l-10 7L2 6"/></svg></a>
+          </div>
+          <p class="team-card__bio">Specialist in trust deeds, sequestration and DAS across Scotland. Compassionate, clear communication.</p>
+        </div>
+        <div class="team-card fade-up fade-up-d2">
+          <div class="team-card__avatar">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <rect width="120" height="120" fill="#e8dfd0"/>
+              <circle cx="60" cy="45" r="22" fill="#1B2A4A"/>
+              <ellipse cx="60" cy="100" rx="35" ry="30" fill="#1B2A4A"/>
+              <circle cx="60" cy="45" r="18" fill="#c4a882"/>
+              <ellipse cx="60" cy="33" rx="15" ry="9" fill="#2a1a0a"/>
+              <circle cx="53" cy="43" r="2" fill="#2D2D2D"/>
+              <circle cx="67" cy="43" r="2" fill="#2D2D2D"/>
+              <path d="M55 52 Q60 56 65 52" fill="none" stroke="#2D2D2D" stroke-width="1.5"/>
+              <rect x="45" y="72" width="30" height="20" rx="2" fill="white"/>
+              <path d="M55 72 L60 82 L65 72" fill="none" stroke="#1B2A4A" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="team-card__name">David Campbell</div>
+          <div class="team-card__role">Manager &mdash; Restructuring</div>
+          <div class="team-card__socials">
+            <a href="#" class="team-card__social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></a>
+            <a href="#" class="team-card__social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M22 6l-10 7L2 6"/></svg></a>
+          </div>
+          <p class="team-card__bio">Turnaround and contingency specialist for SMEs. Background in corporate finance and business advisory.</p>
+        </div>
+        <div class="team-card fade-up fade-up-d3">
+          <div class="team-card__avatar">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <rect width="120" height="120" fill="#e8dfd0"/>
+              <circle cx="60" cy="45" r="22" fill="#B8943E"/>
+              <ellipse cx="60" cy="100" rx="35" ry="30" fill="#B8943E"/>
+              <circle cx="60" cy="45" r="18" fill="#c4a882"/>
+              <path d="M40 38 Q45 22 60 20 Q75 22 80 38 Q82 42 80 46 L76 40 Q73 32 60 28 Q47 32 44 40 L40 46 Q38 42 40 38Z" fill="#4a3020"/>
+              <circle cx="53" cy="43" r="2" fill="#2D2D2D"/>
+              <circle cx="67" cy="43" r="2" fill="#2D2D2D"/>
+              <path d="M55 52 Q60 56 65 52" fill="none" stroke="#2D2D2D" stroke-width="1.5"/>
+              <rect x="45" y="72" width="30" height="20" rx="2" fill="white"/>
+            </svg>
+          </div>
+          <div class="team-card__name">Fiona Henderson</div>
+          <div class="team-card__role">Client Relations Manager</div>
+          <div class="team-card__socials">
+            <a href="#" class="team-card__social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></a>
+            <a href="#" class="team-card__social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M22 6l-10 7L2 6"/></svg></a>
+          </div>
+          <p class="team-card__bio">First point of contact for all enquiries. Ensures every person who reaches out feels heard and supported.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="testimonials__header fade-up">
+        <h2>What People Say About Us</h2>
+      </div>
+      <div class="testimonials__grid">
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-card__icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          </div>
+          <p class="testimonial-card__quote">I'd been losing sleep for months. Within one meeting, everything felt clearer. They explained every option in plain English and never once made me feel judged.</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" fill="#e8dfd0"/><circle cx="24" cy="18" r="9" fill="#1B2A4A"/><ellipse cx="24" cy="42" rx="16" ry="14" fill="#1B2A4A"/></svg>
+            </div>
+            <div>
+              <div class="testimonial-card__name">Robert M.</div>
+              <div class="testimonial-card__role">Company Director, Glasgow</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card testimonial-card--active fade-up fade-up-d1">
+          <div class="testimonial-card__icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          </div>
+          <p class="testimonial-card__quote">When one of my clients is in trouble, I need to know the person I refer them to will handle it with discretion and genuine care. Lancefield is the only firm I trust for that.</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" fill="rgba(255,255,255,0.15)"/><circle cx="24" cy="18" r="9" fill="rgba(255,255,255,0.25)"/><ellipse cx="24" cy="42" rx="16" ry="14" fill="rgba(255,255,255,0.2)"/></svg>
+            </div>
+            <div>
+              <div class="testimonial-card__name">J. MacPherson</div>
+              <div class="testimonial-card__role">Partner, Glasgow Accountancy</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-up fade-up-d2">
+          <div class="testimonial-card__icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          </div>
+          <p class="testimonial-card__quote">The personal guarantee side terrified me. They looked at everything together &mdash; the business and my own finances &mdash; and helped me find a way through that I didn't know existed.</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" fill="#e8dfd0"/><circle cx="24" cy="18" r="9" fill="#2A7B7B"/><ellipse cx="24" cy="42" rx="16" ry="14" fill="#2A7B7B"/></svg>
+            </div>
+            <div>
+              <div class="testimonial-card__name">Karen S.</div>
+              <div class="testimonial-card__role">Former Business Owner, Paisley</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="blog section">
+    <div class="container">
+      <div class="blog__header fade-up">
+        <div class="blog__header-label">Our Blog</div>
+        <h2>Recent Insights</h2>
+      </div>
+      <div class="blog__grid">
+        <div class="blog-card fade-up">
+          <div class="blog-card__img">
+            <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="200" fill="#1B2A4A"/>
+              <rect x="50" y="60" width="120" height="80" rx="4" fill="rgba(42,123,123,0.2)"/>
+              <rect x="60" y="70" width="100" height="8" rx="2" fill="rgba(232,223,208,0.15)"/>
+              <rect x="60" y="85" width="80" height="6" rx="2" fill="rgba(232,223,208,0.1)"/>
+              <rect x="60" y="100" width="90" height="6" rx="2" fill="rgba(232,223,208,0.08)"/>
+              <text x="280" y="110" font-family="serif" font-size="60" fill="rgba(184,148,62,0.15)">?</text>
+            </svg>
+          </div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta">
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Admin</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Mar 25, 2026</span>
+            </div>
+            <h3 class="blog-card__title">What Happens When You Receive a Winding-Up Petition</h3>
+            <p class="blog-card__excerpt">A step-by-step guide to the process, your rights, and what to do immediately.</p>
+            <a href="#" class="blog-card__link" onclick="navigate('blog'); return false;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          </div>
+        </div>
+        <div class="blog-card fade-up fade-up-d1">
+          <div class="blog-card__img">
+            <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="200" fill="#2A7B7B"/>
+              <circle cx="200" cy="100" r="50" fill="none" stroke="rgba(232,223,208,0.15)" stroke-width="2"/>
+              <circle cx="200" cy="100" r="30" fill="none" stroke="rgba(232,223,208,0.1)" stroke-width="1"/>
+              <path d="M200 70 L200 100 L220 110" fill="none" stroke="rgba(232,223,208,0.3)" stroke-width="2"/>
+              <text x="80" y="160" font-family="sans-serif" font-size="12" fill="rgba(232,223,208,0.15)">PERSONAL GUARANTEES</text>
+            </svg>
+          </div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta">
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Admin</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Mar 18, 2026</span>
+            </div>
+            <h3 class="blog-card__title">Personal Guarantees: What Every Director Needs to Know</h3>
+            <p class="blog-card__excerpt">Understanding your personal exposure when your business faces difficulty.</p>
+            <a href="#" class="blog-card__link" onclick="navigate('blog'); return false;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          </div>
+        </div>
+        <div class="blog-card fade-up fade-up-d2">
+          <div class="blog-card__img">
+            <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="200" fill="#1B2A4A"/>
+              <rect x="80" y="50" width="100" height="100" rx="6" fill="rgba(42,123,123,0.25)" stroke="rgba(42,123,123,0.3)" stroke-width="1"/>
+              <rect x="220" y="50" width="100" height="100" rx="6" fill="rgba(184,148,62,0.2)" stroke="rgba(184,148,62,0.3)" stroke-width="1"/>
+              <text x="105" y="108" font-family="sans-serif" font-size="14" font-weight="bold" fill="rgba(232,223,208,0.4)">CVL</text>
+              <text x="248" y="108" font-family="sans-serif" font-size="14" font-weight="bold" fill="rgba(232,223,208,0.4)">CVA</text>
+              <text x="185" y="105" font-family="sans-serif" font-size="16" fill="rgba(232,223,208,0.3)">vs</text>
+            </svg>
+          </div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta">
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Admin</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Mar 10, 2026</span>
+            </div>
+            <h3 class="blog-card__title">CVL vs CVA &mdash; Which Is Right for Your Business?</h3>
+            <p class="blog-card__excerpt">Two very different outcomes. Here's how to choose the right path.</p>
+            <a href="#" class="blog-card__link" onclick="navigate('blog'); return false;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          </div>
+        </div>
+        <div class="blog-card fade-up fade-up-d3">
+          <div class="blog-card__img">
+            <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="200" fill="#243757"/>
+              <path d="M60 160 L120 100 L180 130 L240 80 L300 110 L360 50" fill="none" stroke="rgba(184,148,62,0.4)" stroke-width="3"/>
+              <path d="M60 160 L120 140 L180 150 L240 130 L300 140 L360 120" fill="none" stroke="rgba(42,123,123,0.3)" stroke-width="2" stroke-dasharray="6 4"/>
+              <text x="100" y="180" font-family="sans-serif" font-size="11" fill="rgba(232,223,208,0.15)">5 WARNING SIGNS</text>
+            </svg>
+          </div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta">
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Admin</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Mar 3, 2026</span>
+            </div>
+            <h3 class="blog-card__title">5 Warning Signs Your Business Needs Restructuring</h3>
+            <p class="blog-card__excerpt">Recognise when financial difficulty is becoming a crisis.</p>
+            <a href="#" class="blog-card__link" onclick="navigate('blog'); return false;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-banner__bg">
+      <svg viewBox="0 0 1440 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1440" height="300" fill="#1B2A4A"/>
+        <!-- Glasgow skyline silhouette -->
+        <rect x="40" y="160" width="50" height="100" fill="#162238"/>
+        <rect x="100" y="130" width="35" height="130" fill="#141e32"/>
+        <rect x="150" y="170" width="60" height="90" fill="#111b2e"/>
+        <path d="M250 260 Q290 180 330 220 Q370 170 410 260 Z" fill="#13203a"/>
+        <rect x="430" y="140" width="40" height="120" fill="#152036"/>
+        <rect x="490" y="160" width="55" height="100" fill="#111b2e"/>
+        <path d="M580 260 Q640 190 700 260" fill="none" stroke="#1a2e4a" stroke-width="3"/>
+        <rect x="720" y="120" width="45" height="140" fill="#141e32"/>
+        <rect x="780" y="150" width="65" height="110" fill="#111b2e"/>
+        <rect x="860" y="100" width="30" height="160" fill="#152036"/>
+        <rect x="910" y="140" width="55" height="120" fill="#131d30"/>
+        <rect x="980" y="170" width="70" height="90" fill="#111b2e"/>
+        <rect x="1070" y="130" width="40" height="130" fill="#141e32"/>
+        <rect x="1130" y="160" width="60" height="100" fill="#111b2e"/>
+        <rect x="1210" y="140" width="50" height="120" fill="#152036"/>
+        <rect x="1280" y="170" width="80" height="90" fill="#131d30"/>
+        <rect x="1380" y="150" width="60" height="110" fill="#141e32"/>
+      </svg>
+    </div>
+    <div class="cta-banner__overlay"></div>
+    <div class="cta-banner__inner">
+      <div>
+        <div class="cta-banner__label">Take the First Step</div>
+        <h2>The first step is the hardest. We make it easy.</h2>
+      </div>
+      <a href="#" class="btn btn--outline" onclick="navigate('contact'); return false;">Book Free Consultation &rarr;</a>
+    </div>
+  </section>
+
+</div><!-- end page-home -->
+
+<!-- ============================================
+     PLACEHOLDER PAGES (generated by JS)
+     ============================================ -->
+<div class="page" id="page-about"></div>
+<div class="page" id="page-contact"></div>
+<div class="page" id="page-blog"></div>
+<div class="page" id="page-administration"></div>
+<div class="page" id="page-pre-pack"></div>
+<div class="page" id="page-cvl"></div>
+<div class="page" id="page-cva"></div>
+<div class="page" id="page-compulsory-liquidation"></div>
+<div class="page" id="page-lpa-receiverships"></div>
+<div class="page" id="page-mvl"></div>
+<div class="page" id="page-partnership-liquidation"></div>
+<div class="page" id="page-personal-insolvency"></div>
+<div class="page" id="page-contingency-planning"></div>
+<div class="page" id="page-corporate-simplification"></div>
+<div class="page" id="page-debt-restructuring"></div>
+<div class="page" id="page-diagnostic-review"></div>
+<div class="page" id="page-exit-planning"></div>
+<div class="page" id="page-pre-lend-reviews"></div>
+<div class="page" id="page-turnaround"></div>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="footer">
+  <div class="footer__bg">
+    <svg viewBox="0 0 1440 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1440" height="400" fill="transparent"/>
+      <!-- Faint Glasgow skyline -->
+      <rect x="50" y="200" width="60" height="160" fill="rgba(255,255,255,0.04)"/>
+      <rect x="130" y="170" width="40" height="190" fill="rgba(255,255,255,0.03)"/>
+      <rect x="190" y="220" width="70" height="140" fill="rgba(255,255,255,0.025)"/>
+      <path d="M300 360 Q350 270 400 320 Q450 260 500 360Z" fill="rgba(255,255,255,0.03)"/>
+      <rect x="520" y="190" width="45" height="170" fill="rgba(255,255,255,0.025)"/>
+      <path d="M620 360 Q700 280 780 360" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="3"/>
+      <rect x="820" y="160" width="35" height="200" fill="rgba(255,255,255,0.03)"/>
+      <rect x="880" y="200" width="65" height="160" fill="rgba(255,255,255,0.025)"/>
+      <rect x="970" y="180" width="50" height="180" fill="rgba(255,255,255,0.03)"/>
+      <rect x="1050" y="220" width="80" height="140" fill="rgba(255,255,255,0.025)"/>
+      <rect x="1160" y="190" width="45" height="170" fill="rgba(255,255,255,0.03)"/>
+      <rect x="1230" y="210" width="60" height="150" fill="rgba(255,255,255,0.025)"/>
+      <rect x="1320" y="180" width="120" height="180" fill="rgba(255,255,255,0.02)"/>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__col footer__col--about">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <div class="logo__mark" style="width:36px;height:36px;font-size:14px;">LA</div>
+          <span style="font-family:var(--font-serif);color:var(--stone);font-size:1rem;">Lancefield Advisory</span>
+        </div>
+        <p>Independent insolvency and restructuring advice for Glasgow businesses and individuals. We exist to be your safe, ethical first point of clarity.</p>
+        <p class="footer__tagline">Practical help. Principled approach.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></a>
+          <a href="#" class="footer__social" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="#" class="footer__social" aria-label="Google"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Services</h4>
+        <a href="#" onclick="navigate('administration'); return false;">Administration</a>
+        <a href="#" onclick="navigate('cvl'); return false;">CVL</a>
+        <a href="#" onclick="navigate('cva'); return false;">CVA</a>
+        <a href="#" onclick="navigate('personal-insolvency'); return false;">Personal Insolvency</a>
+        <a href="#" onclick="navigate('debt-restructuring'); return false;">Debt Restructuring</a>
+        <a href="#" onclick="navigate('turnaround'); return false;">Turnaround</a>
+        <a href="#" onclick="navigate('mvl'); return false;">MVL</a>
+        <a href="#" onclick="navigate('diagnostic-review'); return false;">Diagnostic Review</a>
+      </div>
+      <div class="footer__col">
+        <h4>Recent Posts</h4>
+        <div class="footer__post">
+          <div class="footer__post-img">
+            <svg viewBox="0 0 64 48" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="48" fill="#1B2A4A"/><rect x="8" y="12" width="20" height="24" rx="2" fill="rgba(42,123,123,0.3)"/></svg>
+          </div>
+          <div>
+            <div class="footer__post-title">What Happens When You Receive a Winding-Up Petition</div>
+            <div class="footer__post-date">Mar 25, 2026</div>
+          </div>
+        </div>
+        <div class="footer__post">
+          <div class="footer__post-img">
+            <svg viewBox="0 0 64 48" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="48" fill="#2A7B7B"/><circle cx="32" cy="24" r="12" fill="none" stroke="rgba(232,223,208,0.2)" stroke-width="1"/></svg>
+          </div>
+          <div>
+            <div class="footer__post-title">Personal Guarantees: What Directors Need to Know</div>
+            <div class="footer__post-date">Mar 18, 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Have a Question?</h4>
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Lancefield House, 123 St Vincent Street, Glasgow, G2 5EA</span>
+        </div>
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>0141 248 0000</span>
+        </div>
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          <span>info@lancefieldadvisory.co.uk</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      &copy; 2026 Lancefield Advisory. All rights reserved. | Authorised &amp; regulated by ICAS | Members of R3
+    </div>
+  </div>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <p>We use cookies to improve your experience. By continuing to browse, you agree to our <a href="#">Privacy Policy</a>.</p>
+  <button class="btn btn--primary" style="padding:8px 20px;font-size:0.82rem;" onclick="document.getElementById('cookieBanner').classList.add('hidden')">Accept</button>
+  <button class="btn btn--navy" style="padding:8px 20px;font-size:0.82rem;" onclick="document.getElementById('cookieBanner').classList.add('hidden')">Decline</button>
+</div>
+
+<script>
+// ============================================
+// PAGE DATA
+// ============================================
+const pageData = {
+  about: {
+    title: 'About Us',
+    content: `
+      <div class="page-hero"><div class="container">
+        <div class="breadcrumb"><a href="#" onclick="navigate('home');return false;">Home</a><span>&rsaquo;</span><span>About</span></div>
+        <h1>Practical Help. Principled Approach.</h1>
+        <p>We started Lancefield Advisory because too many people in financial difficulty were getting advice that served the advisor, not them.</p>
+      </div></div>
+      <div class="section"><div class="container" style="max-width:800px;">
+        <h2>Our Story</h2>
+        <p>The insolvency industry has a problem. Too many firms earn their fees from specific outcomes &mdash; pushing IVAs because they're profitable, recommending liquidation when restructuring is possible, or overlooking personal exposure because it's not their department.</p>
+        <p>We saw too many business owners receiving conflicting advice from multiple advisors, none of whom had the full picture. Accountants who didn't understand insolvency law. Insolvency practitioners who ignored personal guarantees. Debt charities stretched too thin to give the time needed.</p>
+        <p>Lancefield Advisory was founded to be different. We are the safe, ethical first point of clarity for people under financial pressure &mdash; giving them time, understanding, and control before options disappear.</p>
+      </div></div>
+      <div class="section section--light"><div class="container" style="max-width:800px;">
+        <h2 style="margin-bottom:24px;">Our Values</h2>
+        <div class="values-list">
+          <div class="value-item"><div class="value-item__num">1</div><div><h4>Integrity First</h4><p>We do the right thing &mdash; even when it's hard, even when no one is watching.</p></div></div>
+          <div class="value-item"><div class="value-item__num">2</div><div><h4>Clarity Over Complexity</h4><p>We communicate clearly and make the complicated simple. Jargon helps no one.</p></div></div>
+          <div class="value-item"><div class="value-item__num">3</div><div><h4>People Before Profit</h4><p>We act in the best interests of those we serve, especially when they're most vulnerable.</p></div></div>
+          <div class="value-item"><div class="value-item__num">4</div><div><h4>Results Through Realism</h4><p>We offer practical advice rooted in experience &mdash; no fluff, no false promises.</p></div></div>
+          <div class="value-item"><div class="value-item__num">5</div><div><h4>Follow Through, Every Time</h4><p>We own the process and see things through, no matter how complex or uncomfortable.</p></div></div>
+        </div>
+      </div></div>
+      <div class="section"><div class="container text-center">
+        <h2>Professional Accreditations</h2>
+        <p style="max-width:500px;margin:0 auto 24px;color:var(--warm-grey);">Regulated and accredited by the leading professional bodies.</p>
+        <div class="badge-row">
+          <div class="badge-placeholder">R3</div>
+          <div class="badge-placeholder">ICAS</div>
+          <div class="badge-placeholder">IPA</div>
+          <div class="badge-placeholder">FCA</div>
+        </div>
+      </div></div>
+      <div class="section section--light text-center"><div class="container" style="max-width:550px;">
+        <h2>Talk to Us in Confidence</h2>
+        <p style="margin-bottom:24px;color:var(--warm-grey);">No obligation. No judgment. Just experienced, independent advice.</p>
+        <a href="#" class="btn btn--primary" onclick="navigate('contact');return false;">Get in Touch &rarr;</a>
+      </div></div>`
+  },
+  contact: {
+    title: 'Contact Us',
+    content: `
+      <div class="page-hero"><div class="container">
+        <div class="breadcrumb"><a href="#" onclick="navigate('home');return false;">Home</a><span>&rsaquo;</span><span>Contact</span></div>
+        <h1>Get in Touch &mdash; in Confidence</h1>
+        <p>Everything you share with us is completely confidential. There's no obligation and no judgment.</p>
+      </div></div>
+      <div class="section"><div class="container"><div class="contact-grid">
+        <div id="contactFormWrap">
+          <form onsubmit="handleFormSubmit(event)">
+            <div class="form-group"><label>Name</label><input type="text" placeholder="Your full name" required></div>
+            <div class="form-group"><label>Email</label><input type="email" placeholder="you@example.com" required></div>
+            <div class="form-group"><label>Phone <span style="font-weight:400;color:var(--warm-grey);">(optional)</span></label><input type="tel" placeholder="Your phone number"></div>
+            <div class="form-group"><label>I am a...</label><select required><option value="">Please select</option><option>Business Owner / Director</option><option>Individual</option><option>Professional Referrer</option><option>Other</option></select></div>
+            <div class="form-group"><label>Message</label><textarea placeholder="Tell us briefly about your situation." required></textarea></div>
+            <div class="form-group"><label>Preferred contact method</label><div class="radio-group"><label><input type="radio" name="pref" checked> Phone</label><label><input type="radio" name="pref"> Email</label></div></div>
+            <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;">Send Your Message</button>
+          </form>
+          <p style="margin-top:16px;font-size:0.88rem;color:var(--warm-grey);">Or call us directly: <strong style="color:var(--navy);">0141 248 0000</strong></p>
+        </div>
+        <div>
+          <div class="contact-info-item"><div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="contact-info-text"><h4>Address</h4><p>Lancefield House, 123 St Vincent Street, Glasgow, G2 5EA</p></div></div>
+          <div class="contact-info-item"><div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div class="contact-info-text"><h4>Phone</h4><p>0141 248 0000</p></div></div>
+          <div class="contact-info-item"><div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></div><div class="contact-info-text"><h4>Email</h4><p>info@lancefieldadvisory.co.uk</p></div></div>
+          <div class="contact-info-item"><div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div class="contact-info-text"><h4>Hours</h4><p>Mon&ndash;Fri 9:00am &ndash; 5:30pm<br><small>Evenings by appointment</small></p></div></div>
+          <div class="map-placeholder">Google Maps &mdash; Glasgow City Centre</div>
+          <p style="margin-top:20px;font-size:0.92rem;color:var(--warm-grey);padding:16px;background:var(--cream);border-radius:var(--radius);"><strong style="color:var(--navy);">Prefer to talk first?</strong> Call us for an informal conversation. No forms, no commitment.</p>
+        </div>
+      </div></div></div>`
+  },
+  blog: {
+    title: 'Blog',
+    content: `
+      <div class="page-hero"><div class="container">
+        <div class="breadcrumb"><a href="#" onclick="navigate('home');return false;">Home</a><span>&rsaquo;</span><span>Blog</span></div>
+        <h1>Insights &amp; Guides</h1>
+        <p>Plain-language articles to help you understand your options and make informed decisions.</p>
+      </div></div>
+      <div class="section"><div class="container">
+        <div class="blog-filters">
+          <span class="blog-filter active">All</span><span class="blog-filter">Insolvency</span><span class="blog-filter">Restructuring</span><span class="blog-filter">Personal Debt</span><span class="blog-filter">Directors' Guide</span><span class="blog-filter">HMRC</span>
+        </div>
+        <div class="blog__grid">
+          <div class="blog-card"><div class="blog-card__img"><svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice"><rect width="400" height="200" fill="#1B2A4A"/><text x="200" y="110" text-anchor="middle" font-family="serif" font-size="48" fill="rgba(184,148,62,0.15)">?</text></svg></div><div class="blog-card__body"><div class="blog-card__meta"><span>Mar 25, 2026</span></div><h3 class="blog-card__title">What Happens When You Receive a Winding-Up Petition</h3><p class="blog-card__excerpt">A step-by-step guide to the process and what to do immediately.</p></div></div>
+          <div class="blog-card"><div class="blog-card__img"><svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice"><rect width="400" height="200" fill="#2A7B7B"/></svg></div><div class="blog-card__body"><div class="blog-card__meta"><span>Mar 18, 2026</span></div><h3 class="blog-card__title">Personal Guarantees: What Every Director Needs to Know</h3><p class="blog-card__excerpt">Understanding personal exposure when your business faces difficulty.</p></div></div>
+          <div class="blog-card"><div class="blog-card__img"><svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice"><rect width="400" height="200" fill="#1B2A4A"/></svg></div><div class="blog-card__body"><div class="blog-card__meta"><span>Mar 10, 2026</span></div><h3 class="blog-card__title">CVL vs CVA &mdash; Which Is Right for Your Business?</h3><p class="blog-card__excerpt">Two very different outcomes. How to choose the right path.</p></div></div>
+          <div class="blog-card"><div class="blog-card__img"><svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice"><rect width="400" height="200" fill="#243757"/></svg></div><div class="blog-card__body"><div class="blog-card__meta"><span>Mar 3, 2026</span></div><h3 class="blog-card__title">5 Warning Signs Your Business Needs Restructuring</h3><p class="blog-card__excerpt">Recognise when difficulty is becoming a crisis.</p></div></div>
+          <div class="blog-card"><div class="blog-card__img"><svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice"><rect width="400" height="200" fill="#2A7B7B"/></svg></div><div class="blog-card__body"><div class="blog-card__meta"><span>Feb 24, 2026</span></div><h3 class="blog-card__title">Sequestration in Scotland: How It Works</h3><p class="blog-card__excerpt">A clear guide to the Scottish equivalent of bankruptcy.</p></div></div>
+          <div class="blog-card"><div class="blog-card__img"><svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice"><rect width="400" height="200" fill="#1B2A4A"/></svg></div><div class="blog-card__body"><div class="blog-card__meta"><span>Feb 15, 2026</span></div><h3 class="blog-card__title">Why Your Accountant Can't Give You Insolvency Advice</h3><p class="blog-card__excerpt">The gap between accountancy and insolvency advice.</p></div></div>
+        </div>
+      </div></div>`
+  }
+};
+
+// Service pages data
+const servicePagesData = {
+  'administration': { title: 'Administration', parent: 'Insolvency', desc: 'A formal insolvency procedure that provides breathing space from creditors while options are explored to rescue, restructure, or achieve the best outcome.', related: [{id:'pre-pack',t:'Pre Pack Administration'},{id:'cvl',t:'CVL'},{id:'turnaround',t:'Turnaround'}] },
+  'pre-pack': { title: 'Pre Pack Administration', parent: 'Insolvency', desc: 'A form of administration where the sale of business assets is arranged before formal appointment, often allowing the business to continue trading.', related: [{id:'administration',t:'Administration'},{id:'cvl',t:'CVL'}] },
+  'cvl': { title: 'Creditors\' Voluntary Liquidation (CVL)', parent: 'Insolvency', desc: 'A director-led process to formally close an insolvent company in an orderly, responsible way.', related: [{id:'cva',t:'CVA'},{id:'administration',t:'Administration'},{id:'personal-insolvency',t:'Personal Insolvency'}] },
+  'cva': { title: 'Company Voluntary Arrangement (CVA)', parent: 'Insolvency', desc: 'A legally binding agreement between a company and its creditors to repay debts over 3\u20135 years while continuing to trade.', related: [{id:'debt-restructuring',t:'Debt Restructuring'},{id:'cvl',t:'CVL'}] },
+  'compulsory-liquidation': { title: 'Compulsory Liquidation', parent: 'Insolvency', desc: 'A court-ordered process to wind up a company, usually initiated by a creditor through a winding-up petition.', related: [{id:'cvl',t:'CVL'},{id:'administration',t:'Administration'}] },
+  'lpa-receiverships': { title: 'LPA Receiverships', parent: 'Insolvency', desc: 'A Receiver appointed by a secured creditor to take control of a specific asset to recover the debt owed.', related: [{id:'administration',t:'Administration'},{id:'debt-restructuring',t:'Debt Restructuring'}] },
+  'mvl': { title: 'Members\' Voluntary Liquidation (MVL)', parent: 'Insolvency', desc: 'A tax-efficient way to close a solvent company and distribute its assets to shareholders.', related: [{id:'exit-planning',t:'Optimised Exit Planning'},{id:'corporate-simplification',t:'Corporate Simplification'}] },
+  'partnership-liquidation': { title: 'Partnership Liquidation', parent: 'Insolvency', desc: 'The formal process of dissolving a partnership, with unique challenges around personal liability for partnership debts.', related: [{id:'personal-insolvency',t:'Personal Insolvency'},{id:'cvl',t:'CVL'}] },
+  'personal-insolvency': { title: 'Personal Insolvency Options', parent: 'Insolvency', desc: 'Options for individuals in Scotland including Trust Deeds, the Debt Arrangement Scheme (DAS), and Sequestration.', related: [{id:'cvl',t:'CVL'},{id:'debt-restructuring',t:'Debt Restructuring'}] },
+  'contingency-planning': { title: 'Contingency Planning', parent: 'Restructuring', desc: 'Proactive planning for businesses to prepare for financial challenges before they become crises.', related: [{id:'diagnostic-review',t:'Diagnostic Review'},{id:'turnaround',t:'Turnaround'}] },
+  'corporate-simplification': { title: 'Corporate Simplification', parent: 'Restructuring', desc: 'Streamlining complex group structures by removing dormant companies and simplifying ownership chains.', related: [{id:'mvl',t:'MVL'},{id:'exit-planning',t:'Exit Planning'}] },
+  'debt-restructuring': { title: 'Debt Restructuring', parent: 'Restructuring', desc: 'Renegotiating the terms of existing debts to create a more manageable repayment structure.', related: [{id:'cva',t:'CVA'},{id:'turnaround',t:'Turnaround'},{id:'diagnostic-review',t:'Diagnostic Review'}] },
+  'diagnostic-review': { title: 'Diagnostic Business Review', parent: 'Restructuring', desc: 'A comprehensive assessment of financial health, operations, and viability with all available options evaluated.', related: [{id:'turnaround',t:'Turnaround'},{id:'contingency-planning',t:'Contingency Planning'}] },
+  'exit-planning': { title: 'Optimised Exit Planning', parent: 'Restructuring', desc: 'Structured planning for business owners who want to exit in the most efficient and advantageous way.', related: [{id:'mvl',t:'MVL'},{id:'corporate-simplification',t:'Corporate Simplification'}] },
+  'pre-lend-reviews': { title: 'Pre-lend Reviews', parent: 'Restructuring', desc: 'Independent assessment of a borrower\'s financial position and viability before lending decisions.', related: [{id:'diagnostic-review',t:'Diagnostic Review'},{id:'debt-restructuring',t:'Debt Restructuring'}] },
+  'turnaround': { title: 'Turnaround', parent: 'Restructuring', desc: 'A structured programme to stabilise and recover a business in financial difficulty.', related: [{id:'debt-restructuring',t:'Debt Restructuring'},{id:'diagnostic-review',t:'Diagnostic Review'}] }
+};
+
+// ============================================
+// GENERATE PAGES
+// ============================================
+function generateServicePage(id, data) {
+  return `
+    <div class="page-hero"><div class="container">
+      <div class="breadcrumb"><a href="#" onclick="navigate('home');return false;">Home</a><span>&rsaquo;</span><a href="#" onclick="return false;">${data.parent}</a><span>&rsaquo;</span><span>${data.title}</span></div>
+      <h1>${data.title}</h1>
+      <p>${data.desc}</p>
+    </div></div>
+    <div class="section"><div class="container"><div class="service-layout">
+      <div>
+        <div class="placeholder-msg">
+          <div class="placeholder-msg__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="M9 15h6"/></svg></div>
+          <h2 style="font-size:1.4rem;margin-bottom:12px;">Full Content in Development</h2>
+          <p style="color:var(--warm-grey);max-width:500px;margin:0 auto;">Detailed content for this page is being prepared. If you'd like to discuss ${data.title.toLowerCase()}, please get in touch for a free, confidential consultation.</p>
+          <a href="#" class="btn btn--primary" style="margin-top:24px;" onclick="navigate('contact');return false;">Book a Free Consultation</a>
+        </div>
+      </div>
+      <div>
+        <div class="sidebar-card">
+          <h3>Need Advice Now?</h3>
+          <p>Don't wait. Every conversation is confidential and free of obligation.</p>
+          <a href="#" class="btn btn--primary" style="width:100%;justify-content:center;" onclick="navigate('contact');return false;">Get in Touch</a>
+          <p style="text-align:center;margin-top:12px;font-size:0.85rem;color:var(--warm-grey);">Or call: <strong>0141 248 0000</strong></p>
+        </div>
+        <div class="guarantee-box">
+          <h3>100% Confidential</h3>
+          <p>Seeking advice does not trigger any formal process. You remain in control.</p>
+        </div>
+        <h4 style="font-size:0.8rem;color:var(--warm-grey);margin:20px 0 10px;font-family:var(--font-sans);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;">Related Services</h4>
+        ${data.related.map(r => `<a href="#" class="related-card" onclick="navigate('${r.id}');return false;"><h4>${r.t}</h4></a>`).join('')}
+      </div>
+    </div></div></div>`;
+}
+
+// Build pages on load
+Object.entries(pageData).forEach(([id, data]) => {
+  const el = document.getElementById('page-' + id);
+  if (el && !el.innerHTML.trim()) el.innerHTML = data.content;
+});
+Object.entries(servicePagesData).forEach(([id, data]) => {
+  const el = document.getElementById('page-' + id);
+  if (el && !el.innerHTML.trim()) el.innerHTML = generateServicePage(id, data);
+});
+
+// ============================================
+// NAVIGATION
+// ============================================
+function navigate(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const target = document.getElementById('page-' + pageId) || document.getElementById('page-home');
+  target.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  // Close mobile menu
+  document.getElementById('mobileNav').classList.remove('active');
+  document.getElementById('mobileToggle').classList.remove('active');
+  // Re-init animations
+  requestAnimationFrame(() => initScrollAnimations());
+  // Blog filter listeners
+  document.querySelectorAll('.blog-filter').forEach(f => {
+    f.addEventListener('click', () => {
+      f.parentElement.querySelectorAll('.blog-filter').forEach(ff => ff.classList.remove('active'));
+      f.classList.add('active');
+    });
+  });
+}
+
+// ============================================
+// MOBILE MENU
+// ============================================
+document.getElementById('mobileToggle').addEventListener('click', () => {
+  document.getElementById('mobileToggle').classList.toggle('active');
+  document.getElementById('mobileNav').classList.toggle('active');
+});
+
+// ============================================
+// FORM
+// ============================================
+function handleFormSubmit(e) {
+  e.preventDefault();
+  const wrap = document.getElementById('contactFormWrap');
+  if (wrap) {
+    wrap.innerHTML = '<div class="form-success active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:56px;height:56px;color:var(--teal);margin:0 auto 16px;display:block;"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg><h3>Message Sent</h3><p style="color:var(--warm-grey);">Thank you. We\'ll respond within one working day. Everything you shared is completely confidential.</p></div>';
+  }
+}
+
+// ============================================
+// FAQ TOGGLE
+// ============================================
+function toggleFaq(btn) { btn.parentElement.classList.toggle('active'); }
+
+// ============================================
+// SCROLL ANIMATIONS
+// ============================================
+function initScrollAnimations() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.page.active .fade-up').forEach(el => {
+    el.classList.remove('visible');
+    observer.observe(el);
+  });
+}
+initScrollAnimations();
+</script>
+
+</body>
+</html>
