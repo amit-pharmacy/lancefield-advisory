@@ -211,11 +211,13 @@ p:last-child { margin-bottom: 0; }
 }
 .hero__bg {
   position: absolute; inset: 0; z-index: 0;
+  background-size: cover; background-position: center;
 }
 .hero__bg svg { width: 100%; height: 100%; }
+.hero__bg--photo { background-image: url('https://images.pexels.com/photos/19881644/pexels-photo-19881644.jpeg?auto=compress&cs=tinysrgb&w=1600'); }
 .hero__overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(27,42,74,0.88) 0%, rgba(27,42,74,0.75) 40%, rgba(42,123,123,0.7) 100%);
+  background: linear-gradient(135deg, rgba(27,42,74,0.82) 0%, rgba(27,42,74,0.7) 40%, rgba(42,123,123,0.65) 100%);
   z-index: 1;
 }
 .hero__content { position: relative; z-index: 2; max-width: 800px; }
@@ -294,6 +296,10 @@ p:last-child { margin-bottom: 0; }
   min-height: 420px;
 }
 .about-image__visual svg { width: 100%; height: 100%; }
+.about-image__visual--photo {
+  background: url('https://images.pexels.com/photos/7648470/pexels-photo-7648470.jpeg?auto=compress&cs=tinysrgb&w=800') center/cover no-repeat;
+}
+.about-image__visual--photo svg { display: none; }
 .about-image__play {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
   width: 64px; height: 64px; border-radius: 50%; background: var(--teal);
@@ -356,9 +362,10 @@ p:last-child { margin-bottom: 0; }
   position: relative; overflow: hidden; aspect-ratio: 1/0.75; cursor: pointer;
 }
 .gallery__item-img {
-  position: absolute; inset: 0;
+  position: absolute; inset: 0; background-size: cover; background-position: center;
 }
 .gallery__item-img svg { width: 100%; height: 100%; }
+.gallery__item-img--photo svg { display: none; }
 .gallery__item-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(to top, rgba(27,42,74,0.85) 0%, rgba(27,42,74,0.2) 60%, transparent 100%);
@@ -472,8 +479,9 @@ p:last-child { margin-bottom: 0; }
   transition: all var(--transition);
 }
 .blog-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); }
-.blog-card__img { height: 200px; overflow: hidden; position: relative; }
+.blog-card__img { height: 200px; overflow: hidden; position: relative; background-size: cover; background-position: center; }
 .blog-card__img svg { width: 100%; height: 100%; }
+.blog-card__img--photo svg { display: none; }
 .blog-card__body { padding: 24px; }
 .blog-card__meta { display: flex; gap: 16px; font-size: 0.78rem; color: var(--warm-grey); margin-bottom: 10px; }
 .blog-card__meta span { display: flex; align-items: center; gap: 4px; }
@@ -496,9 +504,11 @@ p:last-child { margin-bottom: 0; }
   position: relative; padding: 80px 24px; overflow: hidden;
 }
 .cta-banner__bg {
-  position: absolute; inset: 0; z-index: 0;
+  position: absolute; inset: 0; z-index: 0; background-size: cover; background-position: center;
 }
 .cta-banner__bg svg { width: 100%; height: 100%; }
+.cta-banner__bg--photo { background-image: url('https://images.pexels.com/photos/11291031/pexels-photo-11291031.jpeg?auto=compress&cs=tinysrgb&w=1600'); }
+.cta-banner__bg--photo svg { display: none; }
 .cta-banner__overlay {
   position: absolute; inset: 0;
   background: linear-gradient(135deg, rgba(42,123,123,0.9) 0%, rgba(27,42,74,0.92) 100%);
@@ -523,9 +533,12 @@ p:last-child { margin-bottom: 0; }
   background: var(--navy-dark); color: rgba(232,223,208,0.7);
 }
 .footer__bg {
-  position: absolute; inset: 0; z-index: 0; opacity: 0.15;
+  position: absolute; inset: 0; z-index: 0; opacity: 0.12;
+  background-size: cover; background-position: center top;
 }
 .footer__bg svg { width: 100%; height: 100%; }
+.footer__bg--photo { background-image: url('https://images.pexels.com/photos/18193696/pexels-photo-18193696.jpeg?auto=compress&cs=tinysrgb&w=1400'); opacity: 0.1; }
+.footer__bg--photo svg { display: none; }
 .footer__grid {
   display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px;
   position: relative; z-index: 1;
@@ -902,8 +915,8 @@ p:last-child { margin-bottom: 0; }
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero__bg">
-      <!-- Glasgow skyline illustration -->
+    <div class="hero__bg hero__bg--photo">
+      <!-- Glasgow skyline illustration (photo fallback) -->
       <svg viewBox="0 0 1440 650" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <!-- Sky gradient -->
         <defs>
@@ -1075,8 +1088,8 @@ p:last-child { margin-bottom: 0; }
   <section class="about-image">
     <div class="container">
       <div class="about-image__grid">
-        <div class="about-image__visual fade-up">
-          <!-- SVG illustration: consultation scene -->
+        <div class="about-image__visual about-image__visual--photo fade-up">
+          <!-- SVG illustration: consultation scene (photo overrides) -->
           <svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
             <defs>
               <linearGradient id="officeBg" x1="0" y1="0" x2="1" y2="1">
@@ -1256,7 +1269,7 @@ p:last-child { margin-bottom: 0; }
     <div class="gallery__grid">
       <!-- Gallery Item 1: Business Owner -->
       <div class="gallery__item fade-up">
-        <div class="gallery__item-img">
+        <div class="gallery__item-img gallery__item-img--photo" style="background-image:url('https://images.pexels.com/photos/4344114/pexels-photo-4344114.jpeg?auto=compress&cs=tinysrgb&w=600')">
           <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
             <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1B2A4A"/><stop offset="100%" stop-color="#2A7B7B"/></linearGradient></defs>
             <rect width="400" height="300" fill="url(#g1)"/>
@@ -1282,7 +1295,7 @@ p:last-child { margin-bottom: 0; }
       </div>
       <!-- Gallery Item 2: Individual -->
       <div class="gallery__item fade-up fade-up-d1">
-        <div class="gallery__item-img">
+        <div class="gallery__item-img gallery__item-img--photo" style="background-image:url('https://images.pexels.com/photos/34482318/pexels-photo-34482318.jpeg?auto=compress&cs=tinysrgb&w=600')">
           <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
             <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2A7B7B"/><stop offset="100%" stop-color="#1B2A4A"/></linearGradient></defs>
             <rect width="400" height="300" fill="url(#g2)"/>
@@ -1304,7 +1317,7 @@ p:last-child { margin-bottom: 0; }
       </div>
       <!-- Gallery Item 3: Professional Referrer -->
       <div class="gallery__item fade-up fade-up-d2">
-        <div class="gallery__item-img">
+        <div class="gallery__item-img gallery__item-img--photo" style="background-image:url('https://images.pexels.com/photos/30488395/pexels-photo-30488395.jpeg?auto=compress&cs=tinysrgb&w=600')">
           <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
             <defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1B2A4A"/><stop offset="100%" stop-color="#B8943E"/></linearGradient></defs>
             <rect width="400" height="300" fill="url(#g3)"/>
@@ -1327,7 +1340,7 @@ p:last-child { margin-bottom: 0; }
       </div>
       <!-- Gallery Item 4: Restructuring -->
       <div class="gallery__item fade-up fade-up-d3">
-        <div class="gallery__item-img">
+        <div class="gallery__item-img gallery__item-img--photo" style="background-image:url('https://images.pexels.com/photos/11926203/pexels-photo-11926203.jpeg?auto=compress&cs=tinysrgb&w=600')">
           <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
             <defs><linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#243757"/><stop offset="100%" stop-color="#2A7B7B"/></linearGradient></defs>
             <rect width="400" height="300" fill="url(#g4)"/>
@@ -1549,14 +1562,9 @@ p:last-child { margin-bottom: 0; }
       </div>
       <div class="blog__grid">
         <div class="blog-card fade-up">
-          <div class="blog-card__img">
+          <div class="blog-card__img blog-card__img--photo" style="background-image:url('https://images.pexels.com/photos/17268663/pexels-photo-17268663.jpeg?auto=compress&cs=tinysrgb&w=600')">
             <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
               <rect width="400" height="200" fill="#1B2A4A"/>
-              <rect x="50" y="60" width="120" height="80" rx="4" fill="rgba(42,123,123,0.2)"/>
-              <rect x="60" y="70" width="100" height="8" rx="2" fill="rgba(232,223,208,0.15)"/>
-              <rect x="60" y="85" width="80" height="6" rx="2" fill="rgba(232,223,208,0.1)"/>
-              <rect x="60" y="100" width="90" height="6" rx="2" fill="rgba(232,223,208,0.08)"/>
-              <text x="280" y="110" font-family="serif" font-size="60" fill="rgba(184,148,62,0.15)">?</text>
             </svg>
           </div>
           <div class="blog-card__body">
@@ -1570,14 +1578,8 @@ p:last-child { margin-bottom: 0; }
           </div>
         </div>
         <div class="blog-card fade-up fade-up-d1">
-          <div class="blog-card__img">
-            <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="200" fill="#2A7B7B"/>
-              <circle cx="200" cy="100" r="50" fill="none" stroke="rgba(232,223,208,0.15)" stroke-width="2"/>
-              <circle cx="200" cy="100" r="30" fill="none" stroke="rgba(232,223,208,0.1)" stroke-width="1"/>
-              <path d="M200 70 L200 100 L220 110" fill="none" stroke="rgba(232,223,208,0.3)" stroke-width="2"/>
-              <text x="80" y="160" font-family="sans-serif" font-size="12" fill="rgba(232,223,208,0.15)">PERSONAL GUARANTEES</text>
-            </svg>
+          <div class="blog-card__img blog-card__img--photo" style="background-image:url('https://images.pexels.com/photos/34155534/pexels-photo-34155534.jpeg?auto=compress&cs=tinysrgb&w=600')">
+            <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="200" fill="#2A7B7B"/></svg>
           </div>
           <div class="blog-card__body">
             <div class="blog-card__meta">
@@ -1590,15 +1592,8 @@ p:last-child { margin-bottom: 0; }
           </div>
         </div>
         <div class="blog-card fade-up fade-up-d2">
-          <div class="blog-card__img">
-            <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="200" fill="#1B2A4A"/>
-              <rect x="80" y="50" width="100" height="100" rx="6" fill="rgba(42,123,123,0.25)" stroke="rgba(42,123,123,0.3)" stroke-width="1"/>
-              <rect x="220" y="50" width="100" height="100" rx="6" fill="rgba(184,148,62,0.2)" stroke="rgba(184,148,62,0.3)" stroke-width="1"/>
-              <text x="105" y="108" font-family="sans-serif" font-size="14" font-weight="bold" fill="rgba(232,223,208,0.4)">CVL</text>
-              <text x="248" y="108" font-family="sans-serif" font-size="14" font-weight="bold" fill="rgba(232,223,208,0.4)">CVA</text>
-              <text x="185" y="105" font-family="sans-serif" font-size="16" fill="rgba(232,223,208,0.3)">vs</text>
-            </svg>
+          <div class="blog-card__img blog-card__img--photo" style="background-image:url('https://images.pexels.com/photos/30585191/pexels-photo-30585191.jpeg?auto=compress&cs=tinysrgb&w=600')">
+            <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="200" fill="#1B2A4A"/></svg>
           </div>
           <div class="blog-card__body">
             <div class="blog-card__meta">
@@ -1611,13 +1606,8 @@ p:last-child { margin-bottom: 0; }
           </div>
         </div>
         <div class="blog-card fade-up fade-up-d3">
-          <div class="blog-card__img">
-            <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="200" fill="#243757"/>
-              <path d="M60 160 L120 100 L180 130 L240 80 L300 110 L360 50" fill="none" stroke="rgba(184,148,62,0.4)" stroke-width="3"/>
-              <path d="M60 160 L120 140 L180 150 L240 130 L300 140 L360 120" fill="none" stroke="rgba(42,123,123,0.3)" stroke-width="2" stroke-dasharray="6 4"/>
-              <text x="100" y="180" font-family="sans-serif" font-size="11" fill="rgba(232,223,208,0.15)">5 WARNING SIGNS</text>
-            </svg>
+          <div class="blog-card__img blog-card__img--photo" style="background-image:url('https://images.pexels.com/photos/18193696/pexels-photo-18193696.jpeg?auto=compress&cs=tinysrgb&w=600')">
+            <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="200" fill="#243757"/></svg>
           </div>
           <div class="blog-card__body">
             <div class="blog-card__meta">
@@ -1635,7 +1625,7 @@ p:last-child { margin-bottom: 0; }
 
   <!-- CTA BANNER -->
   <section class="cta-banner">
-    <div class="cta-banner__bg">
+    <div class="cta-banner__bg cta-banner__bg--photo">
       <svg viewBox="0 0 1440 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <rect width="1440" height="300" fill="#1B2A4A"/>
         <!-- Glasgow skyline silhouette -->
@@ -1697,7 +1687,7 @@ p:last-child { margin-bottom: 0; }
      FOOTER
      ============================================ -->
 <footer class="footer">
-  <div class="footer__bg">
+  <div class="footer__bg footer__bg--photo">
     <svg viewBox="0 0 1440 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
       <rect width="1440" height="400" fill="transparent"/>
       <!-- Faint Glasgow skyline -->
