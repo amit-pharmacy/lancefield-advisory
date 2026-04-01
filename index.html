@@ -297,7 +297,7 @@ p:last-child { margin-bottom: 0; }
 }
 .about-image__visual svg { width: 100%; height: 100%; }
 .about-image__visual--photo {
-  background: url('https://images.pexels.com/photos/7648470/pexels-photo-7648470.jpeg?auto=compress&cs=tinysrgb&w=800') center/cover no-repeat;
+  background: url('https://images.unsplash.com/photo-1705354154956-2332a48a8490?w=800&q=80&fit=crop') center/cover no-repeat;
 }
 .about-image__visual--photo svg { display: none; }
 .about-image__play {
@@ -507,7 +507,7 @@ p:last-child { margin-bottom: 0; }
   position: absolute; inset: 0; z-index: 0; background-size: cover; background-position: center;
 }
 .cta-banner__bg svg { width: 100%; height: 100%; }
-.cta-banner__bg--photo { background-image: url('https://images.unsplash.com/photo-1571494146906-86de15d3817b?w=1600&q=80&fit=crop'); }
+.cta-banner__bg--photo { background-image: url('https://images.unsplash.com/photo-1704322624412-84ca3103ecfa?w=1600&q=80&fit=crop'); }
 .cta-banner__bg--photo svg { display: none; }
 .cta-banner__overlay {
   position: absolute; inset: 0;
@@ -537,7 +537,7 @@ p:last-child { margin-bottom: 0; }
   background-size: cover; background-position: center top;
 }
 .footer__bg svg { width: 100%; height: 100%; }
-.footer__bg--photo { background-image: url('https://images.pexels.com/photos/18193696/pexels-photo-18193696.jpeg?auto=compress&cs=tinysrgb&w=1400'); opacity: 0.1; }
+.footer__bg--photo { background-image: url('https://images.unsplash.com/photo-1571494146906-86de15d3817b?w=1400&q=80'); opacity: 0.1; }
 .footer__bg--photo svg { display: none; }
 .footer__grid {
   display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px;
@@ -748,6 +748,23 @@ p:last-child { margin-bottom: 0; }
   display: flex; align-items: center; justify-content: center;
   font-size: 0.75rem; color: var(--warm-grey); font-weight: 600;
 }
+
+/* ============================================
+   GLASGOW STRIP
+   ============================================ */
+.glasgow-strip {
+  padding: 32px 0; background: var(--cream); border-top: 1px solid rgba(27,42,74,0.06);
+  border-bottom: 1px solid rgba(27,42,74,0.06);
+}
+.glasgow-strip__inner {
+  display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap;
+}
+.glasgow-strip__badge {
+  display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: var(--warm-grey);
+}
+.glasgow-strip__badge svg { width: 20px; height: 20px; color: var(--teal); flex-shrink: 0; }
+.glasgow-strip__badge strong { color: var(--navy); }
+.glasgow-strip__divider { width: 1px; height: 24px; background: rgba(27,42,74,0.12); }
 
 /* ============================================
    SCROLL ANIMATIONS
@@ -1039,6 +1056,33 @@ p:last-child { margin-bottom: 0; }
     <a href="#" class="btn btn--outline" onclick="navigate('contact'); return false;">Book Free Consultation &rarr;</a>
   </section>
 
+  <!-- GLASGOW TRUST STRIP -->
+  <section class="glasgow-strip">
+    <div class="container">
+      <div class="glasgow-strip__inner">
+        <div class="glasgow-strip__badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span><strong>Based in Glasgow</strong> City Centre</span>
+        </div>
+        <div class="glasgow-strip__divider"></div>
+        <div class="glasgow-strip__badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span><strong>Licensed</strong> Insolvency Practitioners</span>
+        </div>
+        <div class="glasgow-strip__divider"></div>
+        <div class="glasgow-strip__badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+          <span><strong>R3 &amp; ICAS</strong> Accredited</span>
+        </div>
+        <div class="glasgow-strip__divider"></div>
+        <div class="glasgow-strip__badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+          <span><strong>Free</strong> Confidential Consultation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ABOUT SECTION: Features + Text -->
   <section class="about section">
     <div class="container">
@@ -1317,7 +1361,7 @@ p:last-child { margin-bottom: 0; }
       </div>
       <!-- Gallery Item 3: Professional Referrer -->
       <div class="gallery__item fade-up fade-up-d2">
-        <div class="gallery__item-img gallery__item-img--photo" style="background-image:url('https://images.pexels.com/photos/30488395/pexels-photo-30488395.jpeg?auto=compress&cs=tinysrgb&w=600')">
+        <div class="gallery__item-img gallery__item-img--photo" style="background-image:url('https://images.unsplash.com/photo-1704322624412-84ca3103ecfa?w=600&q=80&fit=crop')">
           <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
             <defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1B2A4A"/><stop offset="100%" stop-color="#B8943E"/></linearGradient></defs>
             <rect width="400" height="300" fill="url(#g3)"/>
@@ -1340,7 +1384,7 @@ p:last-child { margin-bottom: 0; }
       </div>
       <!-- Gallery Item 4: Restructuring -->
       <div class="gallery__item fade-up fade-up-d3">
-        <div class="gallery__item-img gallery__item-img--photo" style="background-image:url('https://images.pexels.com/photos/11926203/pexels-photo-11926203.jpeg?auto=compress&cs=tinysrgb&w=600')">
+        <div class="gallery__item-img gallery__item-img--photo" style="background-image:url('https://images.unsplash.com/photo-1571494146906-86de15d3817b?w=600&q=80&fit=crop')">
           <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
             <defs><linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#243757"/><stop offset="100%" stop-color="#2A7B7B"/></linearGradient></defs>
             <rect width="400" height="300" fill="url(#g4)"/>
@@ -1515,7 +1559,7 @@ p:last-child { margin-bottom: 0; }
             </div>
             <div>
               <div class="testimonial-card__name">Robert M.</div>
-              <div class="testimonial-card__role">Company Director, Glasgow</div>
+              <div class="testimonial-card__role">Company Director, Merchant City</div>
             </div>
           </div>
         </div>
@@ -1530,7 +1574,7 @@ p:last-child { margin-bottom: 0; }
             </div>
             <div>
               <div class="testimonial-card__name">J. MacPherson</div>
-              <div class="testimonial-card__role">Partner, Glasgow Accountancy</div>
+              <div class="testimonial-card__role">Partner, West End Accountancy Practice</div>
             </div>
           </div>
         </div>
@@ -1545,7 +1589,7 @@ p:last-child { margin-bottom: 0; }
             </div>
             <div>
               <div class="testimonial-card__name">Karen S.</div>
-              <div class="testimonial-card__role">Former Business Owner, Paisley</div>
+              <div class="testimonial-card__role">Former Business Owner, Finnieston</div>
             </div>
           </div>
         </div>
@@ -1606,7 +1650,7 @@ p:last-child { margin-bottom: 0; }
           </div>
         </div>
         <div class="blog-card fade-up fade-up-d3">
-          <div class="blog-card__img blog-card__img--photo" style="background-image:url('https://images.pexels.com/photos/18193696/pexels-photo-18193696.jpeg?auto=compress&cs=tinysrgb&w=600')">
+          <div class="blog-card__img blog-card__img--photo" style="background-image:url('https://images.unsplash.com/photo-1531152127291-ea24c3b2a1da?w=600&q=80&fit=crop')">
             <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="200" fill="#243757"/></svg>
           </div>
           <div class="blog-card__body">
