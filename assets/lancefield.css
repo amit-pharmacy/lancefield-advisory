@@ -988,3 +988,28 @@ ul.keypoints li strong{display:block;color:var(--navy);font-family:var(--font-sa
 .nav__link{white-space:nowrap;font-size:0.9rem;padding-left:12px;padding-right:12px;}
 @media(max-width:1180px){.nav__link{font-size:0.84rem;padding-left:9px;padding-right:9px;}}
 .mega{min-width:270px;}
+
+/* ---- wider subpage layout (fix squashed content) ---- */
+.container--wide{max-width:1260px;}
+.service-layout{grid-template-columns:minmax(0,1fr) 300px;gap:52px;}
+@media(max-width:900px){.service-layout{grid-template-columns:1fr;gap:0;}}
+
+/* ---- numbered flowchart (process / priority lists) ---- */
+ol.steps{list-style:none;counter-reset:step;margin:14px 0 12px;padding:0;}
+ol.steps li{counter-increment:step;position:relative;padding:2px 0 28px 66px;}
+ol.steps li::before{content:counter(step);position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;
+  background:var(--navy);color:#fff;font-family:var(--font-serif);font-size:1.15rem;display:flex;align-items:center;justify-content:center;z-index:1;}
+ol.steps li::after{content:'';position:absolute;left:21px;top:44px;bottom:0;width:2px;background:linear-gradient(var(--teal),rgba(42,123,123,.2));}
+ol.steps li:last-child{padding-bottom:0;}
+ol.steps li:last-child::after{display:none;}
+.steps .step-t{display:block;color:var(--navy);font-family:var(--font-sans);font-weight:700;margin-bottom:4px;font-size:1.02rem;}
+ol.steps li{color:var(--ink);}
+
+/* ---- 2-col boxed key-points (patterns / signs) ---- */
+.kp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0 12px;}
+.kp-box{display:flex;gap:14px;background:#fff;border:1px solid rgba(27,42,74,.09);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow-sm);}
+.kp-box__i{flex-shrink:0;width:26px;height:26px;color:var(--teal);margin-top:2px;}
+.kp-box .kp-t{display:block;color:var(--navy);font-family:var(--font-sans);font-weight:700;margin-bottom:4px;}
+.kp-box span{font-size:.92rem;color:var(--warm-grey);line-height:1.6;}
+.hub-band--stone .kp-box,.hub-band--stone ol.steps li::before{}
+@media(max-width:760px){.kp-grid{grid-template-columns:1fr;}}
