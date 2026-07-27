@@ -807,6 +807,21 @@ p:last-child { margin-bottom: 0; }
   .hero { min-height: 500px; padding: 80px 24px; }
 }
 </style>
+<style id="la-supplement">
+.logo{display:flex;align-items:center;gap:0;}
+.logo__img{height:46px;width:auto;display:block;}
+.btn--brass{background:#C18F4B;color:#fff;border-color:#C18F4B;}
+.btn--brass:hover{background:#a97a3c;border-color:#a97a3c;color:#fff;transform:translateY(-2px);}
+.mega__head{font-family:inherit;font-weight:700;color:#1B2A4A;border-bottom:1px solid rgba(27,42,74,.1);margin-bottom:6px;padding-bottom:8px;display:block;}
+.mega__group{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:#6B6B6B;margin:12px 0 2px;font-weight:700;}
+.mega{min-width:270px;}
+.nav__link{white-space:nowrap;}
+.topbar__right{display:flex;gap:20px;}
+.topbar__link{color:rgba(232,223,208,.85);font-size:.82rem;}
+.topbar__link:hover{color:#fff;}
+.topbar__reg{opacity:.75;}
+@media(max-width:600px){.logo__img{height:38px;}}
+</style>
 </head>
 <body>
 
@@ -836,94 +851,72 @@ p:last-child { margin-bottom: 0; }
 <!-- ============================================
      HEADER
      ============================================ -->
+<!-- LA:HEADER:START -->
 <header class="header">
   <div class="header__inner">
-    <a href="#" class="logo" onclick="navigate('home'); return false;">
-      <div class="logo__mark">LA</div>
-      <div>
-        <span class="logo__text">Lancefield Advisory</span>
-        <span class="logo__sub">Insolvency &amp; Restructuring</span>
-      </div>
-    </a>
+    <a href="/lancefield-advisory/" class="logo" aria-label="Lancefield Advisory"><img class="logo__img" src="/lancefield-advisory/assets/img/lancefield-logo-horizontal.svg" alt="Lancefield Advisory" width="210" height="46"></a>
     <nav class="nav">
-      <div class="nav__item">
-        <a href="#" class="nav__link nav__link--active" onclick="navigate('home'); return false;">Home</a>
-      </div>
-      <div class="nav__item">
-        <a href="#" class="nav__link" onclick="navigate('about'); return false;">About</a>
-      </div>
-      <div class="nav__item">
-        <a href="#" class="nav__link" onclick="return false;">Insolvency <span class="nav__arrow">&#9662;</span></a>
-        <div class="mega">
-          <a href="#" class="mega__link" onclick="navigate('administration'); return false;">Administration</a>
-          <a href="#" class="mega__link mega__link--sub" onclick="navigate('pre-pack'); return false;">Pre Pack Administration</a>
-          <a href="#" class="mega__link" onclick="navigate('cvl'); return false;">Creditors' Voluntary Liquidation</a>
-          <a href="#" class="mega__link" onclick="navigate('cva'); return false;">Company Voluntary Arrangement</a>
-          <a href="#" class="mega__link" onclick="navigate('compulsory-liquidation'); return false;">Compulsory Liquidation</a>
-          <a href="#" class="mega__link" onclick="navigate('lpa-receiverships'); return false;">LPA Receiverships</a>
-          <a href="#" class="mega__link" onclick="navigate('mvl'); return false;">Members' Voluntary Liquidation</a>
-          <a href="#" class="mega__link" onclick="navigate('partnership-liquidation'); return false;">Partnership Liquidation</a>
-          <a href="#" class="mega__link" onclick="navigate('personal-insolvency'); return false;">Personal Insolvency Options</a>
-        </div>
-      </div>
-      <div class="nav__item">
-        <a href="#" class="nav__link" onclick="return false;">Restructuring <span class="nav__arrow">&#9662;</span></a>
-        <div class="mega">
-          <a href="#" class="mega__link" onclick="navigate('contingency-planning'); return false;">Contingency Planning</a>
-          <a href="#" class="mega__link" onclick="navigate('corporate-simplification'); return false;">Corporate Simplification</a>
-          <a href="#" class="mega__link" onclick="navigate('debt-restructuring'); return false;">Debt Restructuring</a>
-          <a href="#" class="mega__link" onclick="navigate('diagnostic-review'); return false;">Diagnostic Business Review</a>
-          <a href="#" class="mega__link" onclick="navigate('exit-planning'); return false;">Optimised Exit Planning</a>
-          <a href="#" class="mega__link" onclick="navigate('pre-lend-reviews'); return false;">Pre-lend Reviews</a>
-          <a href="#" class="mega__link" onclick="navigate('turnaround'); return false;">Turnaround</a>
-        </div>
-      </div>
-      <div class="nav__item">
-        <a href="#" class="nav__link" onclick="navigate('blog'); return false;">Blog</a>
-      </div>
-      <div class="nav__item">
-        <a href="#" class="nav__link" onclick="navigate('contact'); return false;">Contact</a>
-      </div>
-      <div class="nav__item" style="margin-left:8px;">
-        <a href="#" class="btn btn--primary" style="padding:10px 22px; font-size:0.8rem;" onclick="navigate('contact'); return false;">Free Consultation</a>
-      </div>
+      <div class="nav__item"><a href="/lancefield-advisory/" class="nav__link">Home</a></div>
+      <div class="nav__item"><a href="/lancefield-advisory/insolvency/" class="nav__link">Insolvency <span class="nav__arrow">&#9662;</span></a><div class="mega"><a href="/lancefield-advisory/insolvency/" class="mega__link mega__head">All Insolvency &rarr;</a><a href="/lancefield-advisory/insolvency/liquidation/" class="mega__link">Liquidation</a><a href="/lancefield-advisory/insolvency/company-voluntary-arrangement-cva/" class="mega__link">Company Voluntary Arrangement (CVA)</a><a href="/lancefield-advisory/insolvency/winding-up-petition/" class="mega__link">Winding-Up Petition</a><a href="/lancefield-advisory/insolvency/creditors-voluntary-liquidation-cvl/" class="mega__link">Creditors&#x27; Voluntary Liquidation (CVL)</a><a href="/lancefield-advisory/insolvency/members-voluntary-liquidation-mvl/" class="mega__link">Members&#x27; Voluntary Liquidation (MVL)</a><a href="/lancefield-advisory/insolvency/pre-pack-administration/" class="mega__link">Pre-Pack Administration</a><a href="/lancefield-advisory/insolvency/lpa-receivership/" class="mega__link">LPA Receivership</a><a href="/lancefield-advisory/insolvency/administration/" class="mega__link">Administration</a><a href="/lancefield-advisory/insolvency/partnership-liquidation/" class="mega__link">Partnership Liquidation</a></div></div><div class="nav__item"><a href="/lancefield-advisory/debt-help-scotland/" class="nav__link">Debt Help Scotland <span class="nav__arrow">&#9662;</span></a><div class="mega"><a href="/lancefield-advisory/debt-help-scotland/" class="mega__link mega__head">All Debt Help Scotland &rarr;</a><a href="/lancefield-advisory/debt-help-scotland/sequestration/" class="mega__link">Sequestration</a><a href="/lancefield-advisory/debt-help-scotland/trust-deeds/" class="mega__link">Trust Deeds</a><a href="/lancefield-advisory/debt-help-scotland/debt-arrangement-scheme/" class="mega__link">Debt Arrangement Scheme</a><a href="/lancefield-advisory/debt-help-scotland/accountant-in-bankruptcy/" class="mega__link">Accountant in Bankruptcy</a></div></div><div class="nav__item"><a href="/lancefield-advisory/restructuring/" class="nav__link">Restructuring <span class="nav__arrow">&#9662;</span></a><div class="mega"><a href="/lancefield-advisory/restructuring/" class="mega__link mega__head">All Restructuring &rarr;</a><a href="/lancefield-advisory/restructuring/exit-planning/" class="mega__link">Exit Planning</a><a href="/lancefield-advisory/restructuring/debt-restructuring/" class="mega__link">Debt Restructuring</a><a href="/lancefield-advisory/restructuring/turnaround/" class="mega__link">Turnaround</a><a href="/lancefield-advisory/restructuring/independent-business-review/" class="mega__link">Independent Business Review</a><a href="/lancefield-advisory/restructuring/corporate-simplification/" class="mega__link">Corporate Simplification</a><a href="/lancefield-advisory/restructuring/contingency-planning/" class="mega__link">Contingency Planning</a></div></div><div class="nav__item"><a href="/lancefield-advisory/financial-advisory/" class="nav__link">Financial Advisory <span class="nav__arrow">&#9662;</span></a><div class="mega"><a href="/lancefield-advisory/financial-advisory/" class="mega__link mega__head">All Financial Advisory &rarr;</a><a href="/lancefield-advisory/financial-advisory/corporate-finance/" class="mega__link">Corporate Finance</a><a href="/lancefield-advisory/financial-advisory/forensic-accounting/" class="mega__link">Forensic Services</a><a href="/lancefield-advisory/financial-advisory/pension-advisory/" class="mega__link">Pension Advisory</a><a href="/lancefield-advisory/financial-advisory/capital-management/" class="mega__link">Capital Management</a><a href="/lancefield-advisory/financial-advisory/due-diligence/" class="mega__link">Transaction Support</a><a href="/lancefield-advisory/financial-advisory/commercial-arbitration/" class="mega__link">Commercial Arbitration</a></div></div><div class="nav__item"><a href="/lancefield-advisory/finance-and-funding/" class="nav__link">Finance &amp; Funding <span class="nav__arrow">&#9662;</span></a><div class="mega"><a href="/lancefield-advisory/finance-and-funding/" class="mega__link mega__head">All Finance &amp; Funding &rarr;</a><span class="mega__group">By type</span><a href="/lancefield-advisory/finance-and-funding/invoice-finance/" class="mega__link mega__link--sub">Invoice Finance</a><a href="/lancefield-advisory/finance-and-funding/asset-finance/" class="mega__link mega__link--sub">Asset Finance</a><a href="/lancefield-advisory/finance-and-funding/commercial-mortgages/" class="mega__link mega__link--sub">Commercial Mortgages</a><a href="/lancefield-advisory/finance-and-funding/bridging-finance/" class="mega__link mega__link--sub">Bridging Finance</a><a href="/lancefield-advisory/finance-and-funding/vat-loans/" class="mega__link mega__link--sub">VAT Loans</a><a href="/lancefield-advisory/finance-and-funding/unsecured-business-loans/" class="mega__link mega__link--sub">Unsecured Business Loans</a><span class="mega__group">By sector</span><a href="/lancefield-advisory/finance-and-funding/property-finance/" class="mega__link mega__link--sub">Property Finance</a><a href="/lancefield-advisory/finance-and-funding/engineering-finance/" class="mega__link mega__link--sub">Engineering Finance</a><a href="/lancefield-advisory/finance-and-funding/hospitality-finance/" class="mega__link mega__link--sub">Hospitality Finance</a><a href="/lancefield-advisory/finance-and-funding/contractor-finance/" class="mega__link mega__link--sub">Contractor Finance</a><a href="/lancefield-advisory/finance-and-funding/sports-entertainment-finance/" class="mega__link mega__link--sub">Sports &amp; Entertainment Finance</a><a href="/lancefield-advisory/finance-and-funding/care-home-finance/" class="mega__link mega__link--sub">Care Home Finance</a></div></div><div class="nav__item"><a href="/lancefield-advisory/accountancy/" class="nav__link">Accountancy</a></div>
+      <div class="nav__item" style="margin-left:8px;"><a href="/lancefield-advisory/contact/" class="btn btn--brass" style="padding:10px 22px;font-size:0.8rem;">Free Consultation</a></div>
     </nav>
-    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
+<!-- LA:HEADER:END -->
 
 <!-- Mobile Nav -->
+<!-- LA:MOBILE-NAV:START -->
 <div class="mobile-nav" id="mobileNav">
-  <div class="mobile-nav__title">Menu</div>
-  <a href="#" class="mobile-nav__link" onclick="navigate('home'); return false;">Home</a>
-  <a href="#" class="mobile-nav__link" onclick="navigate('about'); return false;">About Us</a>
-  <div class="mobile-nav__title">Insolvency</div>
-  <a href="#" class="mobile-nav__link" onclick="navigate('administration'); return false;">Administration</a>
-  <a href="#" class="mobile-nav__link" onclick="navigate('pre-pack'); return false;">Pre Pack Administration</a>
-  <a href="#" class="mobile-nav__link" onclick="navigate('cvl'); return false;">Creditors' Voluntary Liquidation</a>
-  <a href="#" class="mobile-nav__link" onclick="navigate('cva'); return false;">Company Voluntary Arrangement</a>
-  <a href="#" class="mobile-nav__link" onclick="navigate('compulsory-liquidation'); return false;">Compulsory Liquidation</a>
-  <a href="#" class="mobile-nav__link" onclick="navigate('lpa-receiverships'); return false;">LPA Receiverships</a>
-  <a href="#" class="mobile-nav__link" onclick="navigate('mvl'); return false;">Members' Voluntary Liquidation</a>
-  <a href="#" class="mobile-nav__link" onclick="navigate('partnership-liquidation'); return false;">Partnership Liquidation</a>
-  <a href="#" class="mobile-nav__link" onclick="navigate('personal-insolvency'); return false;">Personal Insolvency Options</a>
-  <div class="mobile-nav__title">Restructuring</div>
-  <a href="#" class="mobile-nav__link" onclick="navigate('contingency-planning'); return false;">Contingency Planning</a>
-  <a href="#" class="mobile-nav__link" onclick="navigate('corporate-simplification'); return false;">Corporate Simplification</a>
-  <a href="#" class="mobile-nav__link" onclick="navigate('debt-restructuring'); return false;">Debt Restructuring</a>
-  <a href="#" class="mobile-nav__link" onclick="navigate('diagnostic-review'); return false;">Diagnostic Business Review</a>
-  <a href="#" class="mobile-nav__link" onclick="navigate('exit-planning'); return false;">Optimised Exit Planning</a>
-  <a href="#" class="mobile-nav__link" onclick="navigate('pre-lend-reviews'); return false;">Pre-lend Reviews</a>
-  <a href="#" class="mobile-nav__link" onclick="navigate('turnaround'); return false;">Turnaround</a>
-  <div class="mobile-nav__title">More</div>
-  <a href="#" class="mobile-nav__link" onclick="navigate('blog'); return false;">Blog</a>
-  <a href="#" class="mobile-nav__link" onclick="navigate('contact'); return false;">Contact</a>
-  <div style="padding:20px 0;">
-    <a href="#" class="btn btn--primary" style="width:100%;justify-content:center;" onclick="navigate('contact'); return false;">Free Confidential Consultation</a>
-  </div>
+<a href="/lancefield-advisory/" class="mobile-nav__link">Home</a>
+<div class="mobile-nav__title"><a href="/lancefield-advisory/insolvency/">Insolvency</a></div>
+<a href="/lancefield-advisory/insolvency/liquidation/" class="mobile-nav__link">Liquidation</a>
+<a href="/lancefield-advisory/insolvency/company-voluntary-arrangement-cva/" class="mobile-nav__link">Company Voluntary Arrangement (CVA)</a>
+<a href="/lancefield-advisory/insolvency/winding-up-petition/" class="mobile-nav__link">Winding-Up Petition</a>
+<a href="/lancefield-advisory/insolvency/creditors-voluntary-liquidation-cvl/" class="mobile-nav__link">Creditors&#x27; Voluntary Liquidation (CVL)</a>
+<a href="/lancefield-advisory/insolvency/members-voluntary-liquidation-mvl/" class="mobile-nav__link">Members&#x27; Voluntary Liquidation (MVL)</a>
+<a href="/lancefield-advisory/insolvency/pre-pack-administration/" class="mobile-nav__link">Pre-Pack Administration</a>
+<a href="/lancefield-advisory/insolvency/lpa-receivership/" class="mobile-nav__link">LPA Receivership</a>
+<a href="/lancefield-advisory/insolvency/administration/" class="mobile-nav__link">Administration</a>
+<a href="/lancefield-advisory/insolvency/partnership-liquidation/" class="mobile-nav__link">Partnership Liquidation</a>
+<div class="mobile-nav__title"><a href="/lancefield-advisory/debt-help-scotland/">Debt Help Scotland</a></div>
+<a href="/lancefield-advisory/debt-help-scotland/sequestration/" class="mobile-nav__link">Sequestration</a>
+<a href="/lancefield-advisory/debt-help-scotland/trust-deeds/" class="mobile-nav__link">Trust Deeds</a>
+<a href="/lancefield-advisory/debt-help-scotland/debt-arrangement-scheme/" class="mobile-nav__link">Debt Arrangement Scheme</a>
+<a href="/lancefield-advisory/debt-help-scotland/accountant-in-bankruptcy/" class="mobile-nav__link">Accountant in Bankruptcy</a>
+<div class="mobile-nav__title"><a href="/lancefield-advisory/restructuring/">Restructuring</a></div>
+<a href="/lancefield-advisory/restructuring/exit-planning/" class="mobile-nav__link">Exit Planning</a>
+<a href="/lancefield-advisory/restructuring/debt-restructuring/" class="mobile-nav__link">Debt Restructuring</a>
+<a href="/lancefield-advisory/restructuring/turnaround/" class="mobile-nav__link">Turnaround</a>
+<a href="/lancefield-advisory/restructuring/independent-business-review/" class="mobile-nav__link">Independent Business Review</a>
+<a href="/lancefield-advisory/restructuring/corporate-simplification/" class="mobile-nav__link">Corporate Simplification</a>
+<a href="/lancefield-advisory/restructuring/contingency-planning/" class="mobile-nav__link">Contingency Planning</a>
+<div class="mobile-nav__title"><a href="/lancefield-advisory/financial-advisory/">Financial Advisory</a></div>
+<a href="/lancefield-advisory/financial-advisory/corporate-finance/" class="mobile-nav__link">Corporate Finance</a>
+<a href="/lancefield-advisory/financial-advisory/forensic-accounting/" class="mobile-nav__link">Forensic Services</a>
+<a href="/lancefield-advisory/financial-advisory/pension-advisory/" class="mobile-nav__link">Pension Advisory</a>
+<a href="/lancefield-advisory/financial-advisory/capital-management/" class="mobile-nav__link">Capital Management</a>
+<a href="/lancefield-advisory/financial-advisory/due-diligence/" class="mobile-nav__link">Transaction Support</a>
+<a href="/lancefield-advisory/financial-advisory/commercial-arbitration/" class="mobile-nav__link">Commercial Arbitration</a>
+<div class="mobile-nav__title"><a href="/lancefield-advisory/finance-and-funding/">Finance &amp; Funding</a></div>
+<a href="/lancefield-advisory/finance-and-funding/invoice-finance/" class="mobile-nav__link">Invoice Finance</a>
+<a href="/lancefield-advisory/finance-and-funding/asset-finance/" class="mobile-nav__link">Asset Finance</a>
+<a href="/lancefield-advisory/finance-and-funding/commercial-mortgages/" class="mobile-nav__link">Commercial Mortgages</a>
+<a href="/lancefield-advisory/finance-and-funding/bridging-finance/" class="mobile-nav__link">Bridging Finance</a>
+<a href="/lancefield-advisory/finance-and-funding/vat-loans/" class="mobile-nav__link">VAT Loans</a>
+<a href="/lancefield-advisory/finance-and-funding/unsecured-business-loans/" class="mobile-nav__link">Unsecured Business Loans</a>
+<a href="/lancefield-advisory/finance-and-funding/property-finance/" class="mobile-nav__link">Property Finance</a>
+<a href="/lancefield-advisory/finance-and-funding/engineering-finance/" class="mobile-nav__link">Engineering Finance</a>
+<a href="/lancefield-advisory/finance-and-funding/hospitality-finance/" class="mobile-nav__link">Hospitality Finance</a>
+<a href="/lancefield-advisory/finance-and-funding/contractor-finance/" class="mobile-nav__link">Contractor Finance</a>
+<a href="/lancefield-advisory/finance-and-funding/sports-entertainment-finance/" class="mobile-nav__link">Sports &amp; Entertainment Finance</a>
+<a href="/lancefield-advisory/finance-and-funding/care-home-finance/" class="mobile-nav__link">Care Home Finance</a>
+<div class="mobile-nav__title"><a href="/lancefield-advisory/accountancy/">Accountancy</a></div>
+<a href="/lancefield-advisory/about/" class="mobile-nav__link">About</a>
+<a href="/lancefield-advisory/contact/" class="mobile-nav__link">Contact</a>
+<a href="/lancefield-advisory/insights/" class="mobile-nav__link">Insights</a>
 </div>
+<!-- LA:MOBILE-NAV:END -->
 
 <!-- ============================================
      PAGE: HOME
