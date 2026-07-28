@@ -1077,3 +1077,19 @@ ol.steps li{color:var(--ink);}
 .related-card__go{color:var(--teal-dark);font-size:.82rem;font-weight:600;}
 @media(max-width:760px){.related-row .related-card{flex-basis:calc(50% - 8px);}}
 @media(max-width:520px){.related-row .related-card{flex-basis:100%;}}
+
+/* v2.1 — banded subpages (fill viewport); balance media-row width */
+.hub-band .media-row{max-width:1060px;margin-left:auto;margin-right:auto;}
+
+/* v2.2 — lighter, airier reading (reduce perceived text density) */
+.prose{font-size:1.06rem;}
+.prose p{margin-bottom:1.35em;line-height:1.85;}
+.hub-band .prose{max-width:720px;}
+.prose .lead{font-size:1.3rem;line-height:1.6;color:var(--navy);font-weight:400;margin-bottom:1.05em;}
+.media-row__text .prose{max-width:none;}
+.media-row__text .prose .lead{font-size:1.16rem;}
+.media-below{max-width:1060px;margin:22px auto 0;}
+.media-below p{max-width:680px;}
+.pull-quote{font-family:var(--font-serif);font-size:clamp(1.45rem,2.5vw,2rem);line-height:1.34;color:var(--navy);
+  border:none;border-left:4px solid var(--brass);background:none;padding:4px 0 4px 28px;margin:34px auto;max-width:760px;font-style:normal;}
+.hub-band .pull-quote{margin-left:0;}
