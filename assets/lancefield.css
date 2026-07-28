@@ -1105,3 +1105,33 @@ ol.steps li{color:var(--ink);}
 .kp-def{color:var(--warm-grey);line-height:1.75;}
 .kp-def p{margin-bottom:.6em;}
 @media(max-width:640px){.kp-row{grid-template-columns:1fr;gap:5px;padding:15px 0;}}
+
+/* v2.4 — definition lists (and flowcharts) break out of the narrow reading column and use the width */
+.hub-band .kp-list,
+.hub-band ol.steps{width:min(1080px,calc(100vw - 48px));position:relative;left:50%;transform:translateX(-50%);}
+.kp-row{grid-template-columns:minmax(190px,290px) 1fr;gap:46px;padding:20px 0;}
+.kp-term{font-size:1.1rem;}
+@media(max-width:720px){
+  .hub-band .kp-list,.hub-band ol.steps{width:auto;left:auto;transform:none;}
+  .kp-row{grid-template-columns:1fr;gap:5px;padding:15px 0;}
+}
+
+/* ======================================================================
+   v2.5 — ONE width system. Every band uses the same wide container and a
+   single shared left edge. Text stays a readable measure but is never a
+   centred strip; structured content (lists, steps, FAQ, cards) gets width.
+   ====================================================================== */
+.container--band{max-width:1140px;}
+/* text: readable measure, left-aligned on the shared edge */
+.hub-band .prose{max-width:none;margin:0;}
+.hub-band .prose>p,.hub-band .prose>h3,.hub-band .prose>ul,.hub-band .media-below>p{max-width:760px;}
+.hub-band .pull-quote{margin-left:0;max-width:820px;}
+/* structured content: full band width (undo the v2.4 centring breakout) */
+.hub-band .kp-list,.hub-band ol.steps{width:auto;position:static;left:auto;transform:none;}
+.hub-band ol.steps{max-width:none;}
+.media-below{max-width:none;margin-top:22px;}
+/* FAQ: same container as everything else */
+.faq{max-width:none;}
+.hub-band .faq__item{max-width:960px;}
+/* steps: give the text room on wide screens */
+ol.steps li{max-width:900px;}
