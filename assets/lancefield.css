@@ -1135,3 +1135,6 @@ ol.steps li{color:var(--ink);}
 .hub-band .faq__item{max-width:960px;}
 /* steps: give the text room on wide screens */
 ol.steps li{max-width:900px;}
+
+/* v2.6 — hub-page link inside menus reads "<Service> overview", never "All <Service>" (hubs are service pages, not indexes) */
+.mobile-nav__link--overview{font-weight:600;color:var(--navy);}
