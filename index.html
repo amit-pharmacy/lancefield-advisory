@@ -5,9 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lancefield Advisory — Practical help. Principled approach.</title>
 <meta name="description" content="Independent insolvency and restructuring advice in Glasgow and across Scotland. We take no appointments, so the advice has no outcome attached. Free first conversation.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<!-- Fonts self-hosted. Do not reintroduce the Google Fonts CDN: it is a third-party
+     request on every page load and the other 49 pages already serve these locally
+     from assets/fonts/. Weights below match what the rendered pages use. -->
+<style>
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300 700;font-display:swap;
+  src:url('/lancefield-advisory/assets/fonts/dmsans-40fe3c.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-style:italic;font-weight:300 700;font-display:swap;
+  src:url('/lancefield-advisory/assets/fonts/dmsans-e5bab1.woff2') format('woff2');}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;
+  src:url('/lancefield-advisory/assets/fonts/dmserif-363cbf.woff2') format('woff2');}
+@font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:swap;
+  src:url('/lancefield-advisory/assets/fonts/dmserif-8c7199.woff2') format('woff2');}
+</style>
+<!-- DEV: set these to the production origin at launch. -->
+<link rel="canonical" href="/lancefield-advisory/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lancefield Advisory &mdash; Practical help. Principled approach.">
+<meta property="og:description" content="Independent insolvency and restructuring advice in Glasgow and across Scotland. We take no appointments, so the advice has no outcome attached.">
+<meta property="og:url" content="/lancefield-advisory/">
+<meta property="og:site_name" content="Lancefield Advisory">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231B2A4A'/><text x='16' y='22' font-family='serif' font-size='18' fill='%23E8DFD0' text-anchor='middle'>LA</text></svg>">
 <style>
 /* ============================================
@@ -822,6 +841,28 @@ p:last-child { margin-bottom: 0; }
 .topbar__reg{opacity:.75;}
 @media(max-width:600px){.logo__img{height:38px;}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Lancefield Advisory",
+  "description": "Independent insolvency and restructuring advice in Glasgow and across Scotland. Lancefield takes no insolvency appointments and refers formal work to licensed practitioners.",
+  "url": "/lancefield-advisory/",
+  "areaServed": {"@type": "AdministrativeArea", "name": "Scotland"},
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "48 W George St",
+    "addressLocality": "Glasgow",
+    "postalCode": "G2 1BP",
+    "addressCountry": "GB"
+  },
+  "knowsAbout": ["Insolvency", "Corporate restructuring", "Sequestration", "Protected trust deeds", "Debt Arrangement Scheme"],
+  "slogan": "Practical help. Principled approach."
+}
+</script>
+<!-- DEV: add "telephone", "email" and "sameAs" (LinkedIn) once confirmed, plus
+     "legalName" and the company number. Do NOT add any regulatory, membership or
+     accreditation property: none is held. See compliance-questions-for-phil.md. -->
 </head>
 <body>
 
