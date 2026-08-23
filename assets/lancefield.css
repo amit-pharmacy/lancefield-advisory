@@ -373,7 +373,7 @@ p:last-child { margin-bottom: 0; }
 .feature-card__icon svg { width: 26px; height: 26px; color: var(--teal); }
 .feature-card--active .feature-card__icon svg { color: var(--white); }
 .feature-card h4 { font-family: var(--font-sans); font-weight: 700; margin-bottom: 8px; color: var(--navy); font-size: 1rem; }
-.feature-card p { font-size: 0.88rem; color: var(--warm-grey); margin: 0; }
+.feature-card p { font-size: 0.95rem; line-height: 1.65; color: var(--warm-grey); margin: 0; }
 
 .about__text-label {
   font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
@@ -442,7 +442,7 @@ p:last-child { margin-bottom: 0; }
 .service-card:hover .service-card__icon { background: var(--teal); }
 .service-card:hover .service-card__icon svg { color: var(--white); }
 .service-card h4 { font-family: var(--font-sans); font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-.service-card p { font-size: 0.85rem; color: var(--warm-grey); margin: 0; }
+.service-card p { font-size: 0.95rem; line-height: 1.65; color: var(--warm-grey); margin: 0; }
 
 /* ============================================
    CASE STUDIES / GALLERY
@@ -771,8 +771,8 @@ p:last-child { margin-bottom: 0; }
 .faq__q::after { content: '+'; font-size: 1.4rem; color: var(--teal); flex-shrink: 0; margin-left: 16px; }
 .faq__item.active .faq__q::after { content: '\2212'; }
 .faq__a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-.faq__item.active .faq__a { max-height: 300px; padding-bottom: 16px; }
-.faq__a p { color: var(--warm-grey); font-size: 0.92rem; }
+.faq__item.active .faq__a { max-height: 1200px; padding-bottom: 16px; }
+.faq__a p { color: var(--warm-grey); font-size: 1rem; line-height: 1.7; }
 
 /* Placeholder page */
 .placeholder-msg { text-align: center; padding: 60px 24px; }
