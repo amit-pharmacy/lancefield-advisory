@@ -363,7 +363,7 @@ p:last-child { margin-bottom: 0; }
 }
 .feature-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
 .feature-card--active { background: var(--teal); border-color: var(--teal); }
-.feature-card--active h4, .feature-card--active p { color: var(--white); }
+.feature-card--active h3, .feature-card--active h4, .feature-card--active p { color: var(--white); }
 .feature-card--active .feature-card__icon { background: rgba(255,255,255,0.2); }
 .feature-card__icon {
   width: 52px; height: 52px; border-radius: var(--radius);
@@ -372,7 +372,7 @@ p:last-child { margin-bottom: 0; }
 }
 .feature-card__icon svg { width: 26px; height: 26px; color: var(--teal); }
 .feature-card--active .feature-card__icon svg { color: var(--white); }
-.feature-card h4 { font-family: var(--font-sans); font-weight: 700; margin-bottom: 8px; color: var(--navy); font-size: 1rem; }
+.feature-card h3, .feature-card h4 { font-family: var(--font-sans); font-weight: 700; margin-bottom: 8px; color: var(--navy); font-size: 1rem; }
 .feature-card p { font-size: 0.95rem; line-height: 1.65; color: var(--warm-grey); margin: 0; }
 
 .about__text-label {
@@ -441,7 +441,7 @@ p:last-child { margin-bottom: 0; }
 .service-card__icon svg { width: 28px; height: 28px; color: var(--teal); }
 .service-card:hover .service-card__icon { background: var(--teal); }
 .service-card:hover .service-card__icon svg { color: var(--white); }
-.service-card h4 { font-family: var(--font-sans); font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.service-card h3, .service-card h4 { font-family: var(--font-sans); font-weight: 700; color: var(--navy); margin-bottom: 8px; }
 .service-card p { font-size: 0.95rem; line-height: 1.65; color: var(--warm-grey); margin: 0; }
 
 /* ============================================
@@ -471,7 +471,7 @@ p:last-child { margin-bottom: 0; }
   padding: 24px; opacity: 0; transition: opacity var(--transition);
 }
 .gallery__item:hover .gallery__item-overlay { opacity: 1; }
-.gallery__item-overlay h4 { color: var(--white); font-family: var(--font-sans); font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
+.gallery__item-overlay h3, .gallery__item-overlay h4 { color: var(--white); font-family: var(--font-sans); font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
 .gallery__item-overlay p { color: rgba(232,223,208,0.7); font-size: 0.82rem; margin: 0; }
 
 /* ============================================
@@ -641,7 +641,7 @@ p:last-child { margin-bottom: 0; }
   display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px;
   position: relative; z-index: 1;
 }
-.footer__col h4 {
+.footer__col h2.footer__h, .footer__col h4 {
   font-family: var(--font-sans); font-weight: 700; font-size: 1rem;
   color: var(--white); margin-bottom: 20px;
 }
@@ -757,7 +757,7 @@ p:last-child { margin-bottom: 0; }
   text-decoration: none; transition: all var(--transition);
 }
 .related-card:hover { border-color: var(--teal); box-shadow: var(--shadow-md); }
-.related-card h4 { color: var(--navy); font-family: var(--font-sans); font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
+.related-card h3, .related-card h4 { color: var(--navy); font-family: var(--font-sans); font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
 .related-card p { color: var(--warm-grey); font-size: 0.82rem; margin: 0; }
 
 /* FAQ */
