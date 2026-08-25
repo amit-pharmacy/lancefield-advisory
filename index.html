@@ -843,6 +843,10 @@ p:last-child { margin-bottom: 0; }
 .topbar__link{color:rgba(232,223,208,.85)!important;font-size:.82rem;letter-spacing:.02em;}
 .topbar__link:hover{color:#fff!important;}
 .topbar__reg{opacity:.75;}
+.sticky-cta{position:fixed;right:20px;bottom:20px;z-index:200;opacity:0;visibility:hidden;transform:translateY(12px);transition:all .3s ease;}
+.sticky-cta.show{opacity:1;visibility:visible;transform:translateY(0);}
+.sticky-cta a{box-shadow:0 10px 26px rgba(27,42,74,.30);}
+@media(max-width:600px){.sticky-cta{left:16px;right:16px;bottom:16px;}.sticky-cta a{width:100%;justify-content:center;}}
 @media(max-width:600px){.logo__img{height:38px;}}
 </style>
 <script type="application/ld+json">
@@ -1866,5 +1870,16 @@ function initScrollAnimations() {
 initScrollAnimations();
 </script>
 
-</body>
+<!-- LA:STICKY:START -->
+
+<div class="sticky-cta" id="stickyCta"><a href="/lancefield-advisory/contact/" class="btn btn--brass">Book a free, confidential call</a></div>
+<script id="la-sticky-js">
+(function(){var s=document.getElementById("stickyCta");if(!s)return;
+var h=document.querySelector(".page-hero")||document.querySelector("section");
+var t=h?h.offsetHeight-80:480;
+var f=function(){if(window.scrollY>t)s.classList.add("show");else s.classList.remove("show");};
+window.addEventListener("scroll",f,{passive:true});f();})();
+</script>
+
+<!-- LA:STICKY:END --></body>
 </html>
