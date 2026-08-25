@@ -980,8 +980,8 @@ ul.keypoints li strong{display:block;color:var(--navy);font-family:var(--font-sa
 /* section eyebrow spacing already handled; give hub H2 breathing room */
 .hub-band h2{margin-bottom:18px;}
 /* ---- header logo lockup ---- */
-.logo{display:flex;align-items:center;}
-.logo__img{height:46px;width:auto;display:block;}
+.logo{display:flex;align-items:center;flex-shrink:0;}/* flex-shrink:0 matters: .header__inner is a flex row with justify-content:space-between, so without it the nav squeezes the logo to an illegible sliver. It was ~80px wide instead of 275px on every page. */
+.logo__img{height:46px;width:auto;display:block;flex-shrink:0;}
 @media(max-width:600px){.logo__img{height:38px;}}
 /* ---- nav fit: keep category labels on one line ---- */
 .nav{gap:2px;}
