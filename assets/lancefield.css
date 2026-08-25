@@ -1138,3 +1138,18 @@ ol.steps li{max-width:900px;}
 
 /* v2.6 — hub-page link inside menus reads "<Service> overview", never "All <Service>" (hubs are service pages, not indexes) */
 .mobile-nav__link--overview{font-weight:600;color:var(--navy);}
+
+/* ---- header fit -------------------------------------------------------
+   The header carries a 239px wordmark, seven top-level sections and a CTA:
+   about 1700px of content in a 1200px row. It never fitted. The logo was
+   absorbing the overflow because it was the only flex item that could shrink,
+   which is why it rendered as an illegible 80px smudge on every page.
+   The nav takes its own row now, so nothing is dropped, and the desktop nav
+   gives way to the existing hamburger at 1080px rather than 768px, below which
+   seven sections do not fit on one row at any readable size. */
+.header__inner{flex-wrap:wrap;row-gap:0;}
+.logo__img{height:40px;}
+.nav{order:3;flex-basis:100%;justify-content:center;gap:0;}
+.nav__link{font-size:.85rem;padding-left:10px;padding-right:10px;}
+@media(max-width:1100px){.nav__link{font-size:.8rem;padding-left:7px;padding-right:7px;}}
+@media(max-width:1080px){.nav{display:none;}.mobile-toggle{display:block;}}

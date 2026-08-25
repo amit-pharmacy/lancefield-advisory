@@ -847,6 +847,13 @@ p:last-child { margin-bottom: 0; }
 .sticky-cta.show{opacity:1;visibility:visible;transform:translateY(0);}
 .sticky-cta a{box-shadow:0 10px 26px rgba(27,42,74,.30);}
 @media(max-width:600px){.sticky-cta{left:16px;right:16px;bottom:16px;}.sticky-cta a{width:100%;justify-content:center;}}
+
+.header__inner{flex-wrap:wrap;row-gap:0;}
+.logo__img{height:40px;}
+.nav{order:3;flex-basis:100%;justify-content:center;gap:0;}
+.nav__link{white-space:nowrap;font-size:.85rem;padding-left:10px;padding-right:10px;}
+@media(max-width:1100px){.nav__link{font-size:.8rem;padding-left:7px;padding-right:7px;}}
+@media(max-width:1080px){.nav{display:none;}.mobile-toggle{display:block;}}
 @media(max-width:600px){.logo__img{height:38px;}}
 </style>
 <script type="application/ld+json">
