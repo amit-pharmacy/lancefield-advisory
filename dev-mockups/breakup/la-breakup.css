@@ -1,4 +1,4 @@
-/* Lancefield: break up long hub and subpages. Paste once, site-wide. */
+/* Lancefield: break up long hub and subpages, sticky header, card icons. Paste once, site-wide. */
 
 /* MOVE 1 - decorative panels: keep on tablet and desktop, hide on phones */
 @media (max-width: 767px) {
@@ -42,4 +42,24 @@
   /* one 20px gap between paragraphs, headings and text in every section */
   [data-elementor-type="wp-page"] .e-con:has(> .elementor-widget-text-editor),
   [data-elementor-type="wp-page"] .e-con-inner:has(> .elementor-widget-text-editor) { row-gap: 20px !important; }
+}
+
+/* MOVE 4 - header stays at the top while you scroll, every screen size */
+#masthead { position: sticky; top: 0; z-index: 999; background: #fff; box-shadow: 0 2px 10px rgba(27, 42, 74, .08); }
+/* contents links land below the header (la-breakup.js measures its height) */
+html { scroll-padding-top: var(--la-head, 0px); }
+/* an open phone menu taller than the screen still scrolls */
+.ast-mobile-header-content { max-height: calc(100vh - 72px); max-height: calc(100dvh - var(--la-head, 72px)); overflow-y: auto; }
+/* when logged in, sit under the WordPress admin bar */
+@media (min-width: 601px) { .admin-bar #masthead { top: 46px; } }
+@media (min-width: 783px) { .admin-bar #masthead { top: 32px; } }
+
+/* MOVE 5 - phones: card heading beside its icon, card text full width below */
+@media (max-width: 767px) {
+  .elementor-widget-icon-box:has(.elementor-icon-box-icon) .elementor-icon-box-wrapper { display: grid !important; grid-template-columns: auto minmax(0, 1fr); align-items: center !important; gap: 0 14px !important; }
+  .elementor-widget-icon-box:has(.elementor-icon-box-icon) .elementor-icon-box-content { display: contents; }
+  .elementor-widget-icon-box:has(.elementor-icon-box-icon) .elementor-icon-box-icon,
+  .elementor-widget-icon-box:has(.elementor-icon-box-icon) .elementor-icon-box-title { margin: 0 !important; }
+  .elementor-widget-icon-box:has(.elementor-icon-box-icon) .elementor-icon-box-content > :not(.elementor-icon-box-title) { grid-column: 1 / -1; }
+  .elementor-widget-icon-box:has(.elementor-icon-box-icon) .elementor-icon-box-description { margin-top: 14px !important; }
 }

@@ -1,4 +1,4 @@
-/* Lancefield: break up long hub and subpages. Paste once, site-wide, before </body>. */
+/* Lancefield: break up long hub and subpages, sticky header. Paste once, site-wide, before </body>. */
 (function () {
   function lum(c) { var m = c.match(/[\d.]+/g); return m ? 0.299 * m[0] + 0.587 * m[1] + 0.114 * m[2] : 255; }
   function clear(c) { var m = c.match(/[\d.]+/g); return !m || (m.length > 3 && +m[3] === 0); }
@@ -6,7 +6,16 @@
   function esc(t) { return t.replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
   function bgOf(el) { while (el) { var c = getComputedStyle(el).backgroundColor; if (!clear(c)) return c; el = el.parentElement; } return 'rgb(255, 255, 255)'; }
 
+  // MOVE 4: pass the sticky header's height to the CSS so contents links land below it
+  function headH() {
+    var h = 0;
+    document.querySelectorAll('#masthead .main-header-bar').forEach(function (b) { h = Math.max(h, b.offsetHeight); });
+    document.documentElement.style.setProperty('--la-head', h + 'px');
+  }
+
   function run() {
+    headH();
+    window.addEventListener('resize', headH);
     var page = document.querySelector('[data-elementor-type="wp-page"]');
     if (!page) return;
 

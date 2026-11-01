@@ -63,7 +63,7 @@
   <div class="wrap">
     <p class="k">Lancefield &middot; mobile mockup for the dev</p>
     <h1>Breaking up the long pages</h1>
-    <p>Three changes from one CSS + JS snippet. They work on every category (hub) and subcategory page, so you set them up once, then add one class to the section headings on each page. Below are exact copies of two live pages with the changes applied and tagged in pink.</p>
+    <p>Five changes from one CSS + JS snippet. 1 to 3 break up the long pages; 4 and 5 are the sticky header and the card icons from Amit's list. They work on every category (hub) and subcategory page, so you set them up once, then add one class to the section headings on each page. Below are exact copies of two live pages with the changes applied and tagged in pink.</p>
   </div>
 </header>
 
@@ -92,12 +92,12 @@
         </div>
       </div>
     </div>
-    <p class="small" style="margin-top:14px">Scroll inside each phone, or tap 1, 2 or 3 (top of the page, or the pink bar at the bottom) to jump to each change. Where a panel image has been hidden there is a striped bar: tap Show it to see what was there. Hide tags shows the page exactly as a visitor would see it. Changes 1 and 3 only apply on phones, so open the full-page links on your phone rather than a laptop.</p>
+    <p class="small" style="margin-top:14px">Scroll inside each phone, or tap a number from 1 to 5 (top of the page, or the dark bar at the bottom) to jump to each change. Where a panel image has been hidden there is a striped bar: tap Show it to see what was there. Hide tags shows the page exactly as a visitor would see it. Changes 1, 3 and 5 only apply on phones, so open the full-page links on your phone rather than a laptop.</p>
   </section>
 
   <section>
-    <h2>The three changes</h2>
-    <p>All three come from the same paste. If you only do one, do number 2.</p>
+    <h2>The five changes</h2>
+    <p>All five come from the same paste. Of the three that break up the pages, number 2 does the most.</p>
     <div class="moves">
       <div class="move">
         <span class="n">1</span>
@@ -117,6 +117,18 @@
         <p>Right now body text on these pages comes in 10 size and colour combinations and starts anywhere from 20px to 50px from the screen edge. Proposed: 16px dark body text, the first paragraph under each heading as an 18px navy lead, and one 24px edge. Cards keep their inner padding.</p>
         <p class="meta"><b>Effort:</b> none beyond pasting the CSS. It overrides the per-section padding and text settings on phones only.</p>
       </div>
+      <div class="move">
+        <span class="n">4</span>
+        <h3>Keep the header at the top</h3>
+        <p>The logo and menu (and the Free Consultation button on desktop) stay on screen as you scroll, so moving to another page or booking a call is always one tap away. The header gets a white background and a soft shadow so text does not show through it, and the "On this page" links land just below it.</p>
+        <p class="meta"><b>Effort:</b> none beyond pasting the CSS and JS. It works on Astra's own header (<code>#masthead</code>), so it covers every page. If you would rather use Astra Pro's Sticky Header setting, use that instead and leave this part out.</p>
+      </div>
+      <div class="move">
+        <span class="n">5</span>
+        <h3>Card headings beside their icons on phones</h3>
+        <p>On phones each card's icon sits on its own line with the heading underneath, so the two look misaligned. Proposed: icon on the left, heading beside it, card text full width underneath. Tablet and desktop stay as they are.</p>
+        <p class="meta"><b>Effort:</b> none beyond pasting the CSS. It covers every Icon Box widget. Setting Icon Position to Left on mobile in Elementor is not the same: it squeezes the card text into a narrow column beside the icon.</p>
+      </div>
     </div>
   </section>
 
@@ -125,8 +137,8 @@
     <div class="tablewrap">
       <table>
         <tr><th>Page</th><th>Phone screens</th><th>Body text styles</th><th>Left edges for text</th></tr>
-        <tr><td>Debt help in Scotland (category)</td><td>15.8 &rarr; 15.2</td><td>10 &rarr; 2</td><td>5 &rarr; 1</td></tr>
-        <tr><td>Trust deeds (subcategory)</td><td>21.9 &rarr; 21.0</td><td>10 &rarr; 2</td><td>8 &rarr; 1</td></tr>
+        <tr><td>Debt help in Scotland (category)</td><td>15.8 &rarr; 15.1</td><td>10 &rarr; 2</td><td>5 &rarr; 1</td></tr>
+        <tr><td>Trust deeds (subcategory)</td><td>21.9 &rarr; 20.8</td><td>10 &rarr; 2</td><td>8 &rarr; 1</td></tr>
       </table>
     </div>
     <p class="small" style="margin-top:10px">Both pages get slightly shorter even with the contents box added. Most of the length is the copy itself, so that part is ours to fix.</p>
@@ -138,7 +150,7 @@
       <li>Paste <b>la-breakup.css</b> into Elementor &gt; Site Settings &gt; Custom CSS (or Appearance &gt; Customise &gt; Additional CSS).</li>
       <li>Paste <b>la-breakup.js</b> into Elementor &gt; Custom Code, location <i>&lt;/body&gt; - End</i>, entire site. A footer snippet in WPCode works too. Elementor Custom Code needs it wrapped in <code>&lt;script&gt;</code> ... <code>&lt;/script&gt;</code>.</li>
       <li>On each hub and subpage, click each section heading &gt; Advanced &gt; CSS Classes &gt; add <code>la-chapter</code>. Do it while you change those headings from H1 to H2. Skip the hero title, the dark CTA bands, the pull quote and "Related pages".</li>
-      <li>Check on a phone: numbers above each section, the contents box after the intro, no panel images, text lined up on one edge.</li>
+      <li>Check on a phone: numbers above each section, the contents box after the intro, no panel images, text lined up on one edge, the header staying at the top as you scroll, and card headings beside their icons.</li>
     </ol>
   </section>
 
@@ -146,7 +158,7 @@
     <h2>The code</h2>
     <div class="codebox">
       <div class="codebar"><span>la-breakup.css</span><span><button type="button" data-copy="css">Copy</button><a href="la-breakup.css" download>Download</a></span></div>
-      <pre id="css">/* Lancefield: break up long hub and subpages. Paste once, site-wide. */
+      <pre id="css">/* Lancefield: break up long hub and subpages, sticky header, card icons. Paste once, site-wide. */
 
 /* MOVE 1 - decorative panels: keep on tablet and desktop, hide on phones */
 @media (max-width: 767px) {
@@ -191,11 +203,31 @@
   [data-elementor-type=&quot;wp-page&quot;] .e-con:has(&gt; .elementor-widget-text-editor),
   [data-elementor-type=&quot;wp-page&quot;] .e-con-inner:has(&gt; .elementor-widget-text-editor) { row-gap: 20px !important; }
 }
+
+/* MOVE 4 - header stays at the top while you scroll, every screen size */
+#masthead { position: sticky; top: 0; z-index: 999; background: #fff; box-shadow: 0 2px 10px rgba(27, 42, 74, .08); }
+/* contents links land below the header (la-breakup.js measures its height) */
+html { scroll-padding-top: var(--la-head, 0px); }
+/* an open phone menu taller than the screen still scrolls */
+.ast-mobile-header-content { max-height: calc(100vh - 72px); max-height: calc(100dvh - var(--la-head, 72px)); overflow-y: auto; }
+/* when logged in, sit under the WordPress admin bar */
+@media (min-width: 601px) { .admin-bar #masthead { top: 46px; } }
+@media (min-width: 783px) { .admin-bar #masthead { top: 32px; } }
+
+/* MOVE 5 - phones: card heading beside its icon, card text full width below */
+@media (max-width: 767px) {
+  .elementor-widget-icon-box:has(.elementor-icon-box-icon) .elementor-icon-box-wrapper { display: grid !important; grid-template-columns: auto minmax(0, 1fr); align-items: center !important; gap: 0 14px !important; }
+  .elementor-widget-icon-box:has(.elementor-icon-box-icon) .elementor-icon-box-content { display: contents; }
+  .elementor-widget-icon-box:has(.elementor-icon-box-icon) .elementor-icon-box-icon,
+  .elementor-widget-icon-box:has(.elementor-icon-box-icon) .elementor-icon-box-title { margin: 0 !important; }
+  .elementor-widget-icon-box:has(.elementor-icon-box-icon) .elementor-icon-box-content &gt; :not(.elementor-icon-box-title) { grid-column: 1 / -1; }
+  .elementor-widget-icon-box:has(.elementor-icon-box-icon) .elementor-icon-box-description { margin-top: 14px !important; }
+}
 </pre>
     </div>
     <div class="codebox">
       <div class="codebar"><span>la-breakup.js</span><span><button type="button" data-copy="js">Copy</button><a href="la-breakup.js" download>Download</a></span></div>
-      <pre id="js">/* Lancefield: break up long hub and subpages. Paste once, site-wide, before &lt;/body&gt;. */
+      <pre id="js">/* Lancefield: break up long hub and subpages, sticky header. Paste once, site-wide, before &lt;/body&gt;. */
 (function () {
   function lum(c) { var m = c.match(/[\d.]+/g); return m ? 0.299 * m[0] + 0.587 * m[1] + 0.114 * m[2] : 255; }
   function clear(c) { var m = c.match(/[\d.]+/g); return !m || (m.length &gt; 3 &amp;&amp; +m[3] === 0); }
@@ -203,7 +235,16 @@
   function esc(t) { return t.replace(/&amp;/g, &#x27;&amp;amp;&#x27;).replace(/&lt;/g, &#x27;&amp;lt;&#x27;); }
   function bgOf(el) { while (el) { var c = getComputedStyle(el).backgroundColor; if (!clear(c)) return c; el = el.parentElement; } return &#x27;rgb(255, 255, 255)&#x27;; }
 
+  // MOVE 4: pass the sticky header&#x27;s height to the CSS so contents links land below it
+  function headH() {
+    var h = 0;
+    document.querySelectorAll(&#x27;#masthead .main-header-bar&#x27;).forEach(function (b) { h = Math.max(h, b.offsetHeight); });
+    document.documentElement.style.setProperty(&#x27;--la-head&#x27;, h + &#x27;px&#x27;);
+  }
+
   function run() {
+    headH();
+    window.addEventListener(&#x27;resize&#x27;, headH);
     var page = document.querySelector(&#x27;[data-elementor-type=&quot;wp-page&quot;]&#x27;);
     if (!page) return;
 
@@ -256,6 +297,8 @@
       <li>Debt help in Scotland, "What debt help does not do": the paragraph starting "What it does do is stop the position getting worse" appears twice in a row.</li>
       <li>Debt help in Scotland, "How to tell which one fits": a stray <code>&lt;</code> after "cheaper than the alternatives".</li>
       <li>Debt help in Scotland, closing CTA: the heading and the text under it both say "One conversation will tell you where you stand."</li>
+      <li>Debt help in Scotland, "Debt Arrangement Scheme" card: the text and the "Read more about CVL" button belong to the company liquidation (CVL) card. It needs the DAS card text from the copy doc and a link to the Debt Arrangement Scheme page.</li>
+      <li>Desktop header: at 1280px wide (a common laptop size) the menu wraps onto two rows and the header is 140px tall, which matters more now it stays on screen. The menu needs about 970px and has about 830px. Dropping "Home" (the logo already links home) and shortening one or two labels would get it onto one row.</li>
     </ul>
   </section>
 </main>

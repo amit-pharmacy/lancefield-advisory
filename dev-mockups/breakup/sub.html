@@ -263,7 +263,7 @@ height: 37px !important;
 
 <!-- MOCKUP: proposed CSS = la-breakup.css -->
 <style id="la-breakup">
-/* Lancefield: break up long hub and subpages. Paste once, site-wide. */
+/* Lancefield: break up long hub and subpages, sticky header, card icons. Paste once, site-wide. */
 
 /* MOVE 1 - decorative panels: keep on tablet and desktop, hide on phones */
 @media (max-width: 767px) {
@@ -308,6 +308,26 @@ height: 37px !important;
   [data-elementor-type="wp-page"] .e-con:has(> .elementor-widget-text-editor),
   [data-elementor-type="wp-page"] .e-con-inner:has(> .elementor-widget-text-editor) { row-gap: 20px !important; }
 }
+
+/* MOVE 4 - header stays at the top while you scroll, every screen size */
+#masthead { position: sticky; top: 0; z-index: 999; background: #fff; box-shadow: 0 2px 10px rgba(27, 42, 74, .08); }
+/* contents links land below the header (la-breakup.js measures its height) */
+html { scroll-padding-top: var(--la-head, 0px); }
+/* an open phone menu taller than the screen still scrolls */
+.ast-mobile-header-content { max-height: calc(100vh - 72px); max-height: calc(100dvh - var(--la-head, 72px)); overflow-y: auto; }
+/* when logged in, sit under the WordPress admin bar */
+@media (min-width: 601px) { .admin-bar #masthead { top: 46px; } }
+@media (min-width: 783px) { .admin-bar #masthead { top: 32px; } }
+
+/* MOVE 5 - phones: card heading beside its icon, card text full width below */
+@media (max-width: 767px) {
+  .elementor-widget-icon-box:has(.elementor-icon-box-icon) .elementor-icon-box-wrapper { display: grid !important; grid-template-columns: auto minmax(0, 1fr); align-items: center !important; gap: 0 14px !important; }
+  .elementor-widget-icon-box:has(.elementor-icon-box-icon) .elementor-icon-box-content { display: contents; }
+  .elementor-widget-icon-box:has(.elementor-icon-box-icon) .elementor-icon-box-icon,
+  .elementor-widget-icon-box:has(.elementor-icon-box-icon) .elementor-icon-box-title { margin: 0 !important; }
+  .elementor-widget-icon-box:has(.elementor-icon-box-icon) .elementor-icon-box-content > :not(.elementor-icon-box-title) { grid-column: 1 / -1; }
+  .elementor-widget-icon-box:has(.elementor-icon-box-icon) .elementor-icon-box-description { margin-top: 14px !important; }
+}
 </style>
 <script>if (/view=current/.test(location.search)) document.getElementById("la-breakup").sheet.disabled = true;</script>
 <!-- MOCKUP: tag layer, not for the live site -->
@@ -332,6 +352,8 @@ height: 37px !important;
 .mk-target { position: relative; }
 .mk-tag { position: absolute; top: -21px; right: 4px; z-index: 50; max-width: 85%; padding: 4px 9px 4px 4px; border-radius: 999px; background: #E0218A; color: #fff; font: 600 11px/1.25 "DM Sans", system-ui, sans-serif; letter-spacing: 0; text-transform: none; text-align: left; pointer-events: none; box-shadow: 0 1px 3px rgba(0,0,0,.25); }
 .mk-tag b { background: #fff; color: #E0218A; margin-right: 6px; }
+.mk-tag.mk-under { top: auto; bottom: -12px; right: 16px; transition: opacity .3s; }
+.mk-scrolled .mk-tag.mk-under { opacity: 0; }
 .mk-on .la-toc, .mk-on .la-mark, .mk-on .la-lead { outline: 2px dashed #E0218A; outline-offset: 4px; }
 .mk-gap { display: none; }
 @media (max-width: 767px) {
@@ -342,7 +364,7 @@ height: 37px !important;
   .mk-gap.mk-showing { background: #fff; }
 }
 .mk-dock { position: fixed; left: 50%; bottom: 14px; transform: translateX(-50%); z-index: 10000; display: flex; align-items: center; gap: 6px; padding: 6px 8px 6px 14px; border-radius: 999px; background: #2B0A1E; box-shadow: 0 4px 14px rgba(0,0,0,.3); font: 600 12px/1 "DM Sans", system-ui, sans-serif; color: #F3D9E7; white-space: nowrap; }
-.mk-dock button { width: 36px; height: 36px; border: 0; border-radius: 50%; background: #E0218A; color: #fff; font: 700 15px/1 "DM Sans", system-ui, sans-serif; cursor: pointer; }
+.mk-dock button { width: 34px; height: 34px; border: 0; border-radius: 50%; background: #E0218A; color: #fff; font: 700 15px/1 "DM Sans", system-ui, sans-serif; cursor: pointer; }
 @keyframes mkflash { 0%, 100% { box-shadow: 0 0 0 0 rgba(224, 33, 138, 0); } 35% { box-shadow: 0 0 0 8px rgba(224, 33, 138, .45); } }
 .mk-flash { animation: mkflash 1.2s ease 2; }
 .mk-off .mk-tag, .mk-off .mk-dock { display: none !important; }
@@ -2110,7 +2132,7 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 	
 <!-- MOCKUP: proposed JS = la-breakup.js -->
 <script>if (!/view=current/.test(location.search)) {
-/* Lancefield: break up long hub and subpages. Paste once, site-wide, before </body>. */
+/* Lancefield: break up long hub and subpages, sticky header. Paste once, site-wide, before </body>. */
 (function () {
   function lum(c) { var m = c.match(/[\d.]+/g); return m ? 0.299 * m[0] + 0.587 * m[1] + 0.114 * m[2] : 255; }
   function clear(c) { var m = c.match(/[\d.]+/g); return !m || (m.length > 3 && +m[3] === 0); }
@@ -2118,7 +2140,16 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
   function esc(t) { return t.replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
   function bgOf(el) { while (el) { var c = getComputedStyle(el).backgroundColor; if (!clear(c)) return c; el = el.parentElement; } return 'rgb(255, 255, 255)'; }
 
+  // MOVE 4: pass the sticky header's height to the CSS so contents links land below it
+  function headH() {
+    var h = 0;
+    document.querySelectorAll('#masthead .main-header-bar').forEach(function (b) { h = Math.max(h, b.offsetHeight); });
+    document.documentElement.style.setProperty('--la-head', h + 'px');
+  }
+
   function run() {
+    headH();
+    window.addEventListener('resize', headH);
     var page = document.querySelector('[data-elementor-type="wp-page"]');
     if (!page) return;
 
@@ -2170,8 +2201,8 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
   var framed = window.self !== window.top;
   var root = document.documentElement;
   var TEXT = '.elementor-widget-text-editor, .elementor-widget-heading, .elementor-widget-icon-box, .elementor-widget-button';
-  var lists = { 1: [], 2: [], 3: [] };
-  var names = { 1: 'Decorative panels hidden on phones', 2: 'Numbered sections + "On this page" box', 3: 'Lead paragraph, 16px body, one 24px edge' };
+  var lists = { 1: [], 2: [], 3: [], 4: [], 5: [] };
+  var names = { 1: 'Decorative panels hidden on phones', 2: 'Numbered sections + "On this page" box', 3: 'Lead paragraph, 16px body, one 24px edge', 4: 'Header stays at the top as you scroll', 5: 'Card headings beside their icons on phones' };
 
   function mark(el, n) { if (el && lists[n].indexOf(el) < 0) lists[n].push(el); }
 
@@ -2197,7 +2228,9 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
     var i = (+(btn.dataset.i || 0)) % items.length;
     document.querySelectorAll('[data-n="' + n + '"]').forEach(function (b) { b.dataset.i = i + 1; });
     var el = items[i];
-    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // 4 is the header itself: scroll down instead, so you can see it stay put
+    if (n == 4) window.scrollBy({ top: innerHeight * 1.5, behavior: 'smooth' });
+    else el.scrollIntoView({ behavior: 'smooth', block: 'center' });
     el.classList.remove('mk-flash'); void el.offsetWidth; el.classList.add('mk-flash');
     document.querySelectorAll('[data-n="' + n + '"] em').forEach(function (e) { e.textContent = (i + 1) + ' of ' + items.length + ' ›'; });
   }
@@ -2213,11 +2246,11 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
       h += '<p class="mk-k">Mockup for the dev &middot; current page, unchanged</p>' +
         '<p class="mk-src">Copy of <a href="' + MK.src + '">' + MK.label + '</a> &middot; <a href="?view=proposed">See the proposed version</a></p>';
     } else {
-      if (!framed) h += '<p class="mk-k">Mockup for the dev &middot; 3 proposed changes, tagged in pink</p>' +
+      if (!framed) h += '<p class="mk-k">Mockup for the dev &middot; 5 proposed changes, tagged in pink</p>' +
         '<p class="mk-src">Copy of <a href="' + MK.src + '">' + MK.label + '</a></p>';
       h += '<p class="mk-hint">Tap a change to jump to it. Tap again for the next one.</p>' +
-        '<div class="mk-legend">' + chip(1) + chip(2) + chip(3) + '</div>' +
-        '<p class="mk-wide">You are on a wide screen, so changes 1 and 3 (phone-only) are not showing. Open this link on your phone, or use the phone frames on the <a href="./">notes page</a>.</p>' +
+        '<div class="mk-legend">' + chip(1) + chip(2) + chip(3) + chip(4) + chip(5) + '</div>' +
+        '<p class="mk-wide">You are on a wide screen, so changes 1, 3 and 5 (phone-only) are not showing. Open this link on your phone, or use the phone frames on the <a href="./">notes page</a>.</p>' +
         '<div class="mk-btns"><button type="button" class="mk-toggle">Hide tags</button>' + (framed ? '' : '<a href="./" target="_top">Notes + code</a>') + '</div>';
     }
     b.innerHTML = h + '</div>';
@@ -2227,7 +2260,7 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
   function dock() {
     var d = document.createElement('div');
     d.className = 'mk-dock';
-    d.innerHTML = '<span>Jump to</span><button type="button" data-n="1">1</button><button type="button" data-n="2">2</button><button type="button" data-n="3">3</button>';
+    d.innerHTML = '<span>Jump to</span>' + [1, 2, 3, 4, 5].map(function (n) { return '<button type="button" data-n="' + n + '">' + n + '</button>'; }).join('');
     document.body.appendChild(d);
   }
 
@@ -2269,6 +2302,15 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
     tag(document.querySelector('.elementor-icon-box-description.la-body'), 3, 'Card text: same body style');
     tag(document.querySelector('.e-n-accordion-item[open] > .e-con'), 3, 'FAQ answers: same body style');
     document.querySelectorAll('.la-lead').forEach(function (l) { mark(l, 3); });
+    // 4: the header (tag sits under it and fades once you scroll)
+    var head = document.getElementById('masthead');
+    tag(head, 4, 'Stays at the top as you scroll');
+    if (head) head.lastChild.classList.add('mk-under');
+    addEventListener('scroll', function () { root.classList.toggle('mk-scrolled', scrollY > 400); }, { passive: true });
+    // 5: every card that has an icon
+    var boxes = document.querySelectorAll('.elementor-widget-icon-box');
+    tag([].filter.call(boxes, function (b) { return b.querySelector('.elementor-icon-box-icon') && b.getClientRects().length; })[0], 5, 'Heading beside the icon on phones');
+    boxes.forEach(function (b) { if (b.querySelector('.elementor-icon-box-icon')) mark(b, 5); });
 
     dock();
     document.querySelectorAll('.mk-chip em').forEach(function (e) {
