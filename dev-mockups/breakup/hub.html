@@ -316,25 +316,36 @@ height: 37px !important;
 .mk-banner { position: relative; z-index: 9999; background: #2B0A1E; color: #fff; border-bottom: 4px solid #E0218A; font: 14px/1.45 "DM Sans", system-ui, sans-serif; }
 .mk-banner .mk-in { max-width: 1140px; margin: 0 auto; padding: 14px 16px 16px; }
 .mk-banner p { margin: 0; color: #fff; font-size: 14px; }
-.mk-banner .mk-k { font-weight: 700; letter-spacing: .06em; text-transform: uppercase; font-size: 12px; color: #FF8CC6; }
-.mk-banner .mk-src { margin-top: 4px; color: #F3D9E7; font-size: 13px; }
+.mk-banner .mk-k { margin-bottom: 4px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; font-size: 12px; color: #FF8CC6; }
+.mk-banner .mk-src { color: #F3D9E7; font-size: 13px; }
+.mk-banner .mk-hint { margin-top: 10px; color: #F3D9E7; font-size: 13px; }
 .mk-banner a { color: #fff; }
+.mk-legend { display: grid; gap: 6px; margin-top: 8px; }
+.mk-chip { display: flex; align-items: center; gap: 10px; width: 100%; padding: 9px 12px; border: 1px solid #7A2A55; border-radius: 10px; background: #3D1029; color: #fff; font: 600 13px/1.3 "DM Sans", system-ui, sans-serif; text-align: left; cursor: pointer; }
+.mk-chip span { flex: 1; }
+.mk-chip em { font-style: normal; font-weight: 500; font-size: 12px; color: #FF8CC6; white-space: nowrap; }
+.mk-chip b, .mk-tag b, .mk-gap b { display: inline-grid; place-items: center; flex: 0 0 auto; min-width: 20px; height: 20px; border-radius: 999px; background: #E0218A; color: #fff; font-size: 11px; }
+.mk-wide { display: none; margin-top: 10px !important; padding: 8px 12px; border-radius: 8px; background: #4A1533; color: #FFD3E8 !important; font-size: 13px !important; }
+@media (min-width: 768px) { .mk-wide { display: block; } }
 .mk-btns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 .mk-btns a, .mk-btns button { display: inline-block; padding: 8px 14px; border-radius: 999px; border: 1px solid #FF8CC6; background: transparent; color: #fff; font: 600 13px/1 "DM Sans", system-ui, sans-serif; text-decoration: none; cursor: pointer; }
-.mk-btns .on { background: #E0218A; border-color: #E0218A; }
-.mk-legend { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 6px; }
-.mk-legend li { display: flex; gap: 8px; align-items: baseline; font-size: 13px; color: #fff; }
-.mk-legend b, .mk-tag b { display: inline-block; min-width: 18px; padding: 1px 0; border-radius: 999px; background: #fff; color: #E0218A; text-align: center; font-size: 11px; }
 .mk-target { position: relative; }
 .mk-tag { position: absolute; top: -21px; right: 4px; z-index: 50; max-width: 85%; padding: 4px 9px 4px 4px; border-radius: 999px; background: #E0218A; color: #fff; font: 600 11px/1.25 "DM Sans", system-ui, sans-serif; letter-spacing: 0; text-transform: none; text-align: left; pointer-events: none; box-shadow: 0 1px 3px rgba(0,0,0,.25); }
-.mk-tag b { margin-right: 6px; }
+.mk-tag b { background: #fff; color: #E0218A; margin-right: 6px; }
 .mk-on .la-toc, .mk-on .la-mark, .mk-on .la-lead { outline: 2px dashed #E0218A; outline-offset: 4px; }
 .mk-gap { display: none; }
 @media (max-width: 767px) {
-  .mk-on .mk-gap { display: block; margin: 0; padding: 9px 12px; border: 2px dashed #E0218A; border-radius: 6px; background: repeating-linear-gradient(45deg, #FFF0F7, #FFF0F7 8px, #FFE1EF 8px, #FFE1EF 16px); color: #9C1560; font: 600 12px/1.35 "DM Sans", system-ui, sans-serif; }
-  .mk-gap b { display: inline-block; min-width: 18px; margin-right: 6px; border-radius: 999px; background: #E0218A; color: #fff; text-align: center; font-size: 11px; }
+  .mk-on .mk-gap { display: flex; align-items: center; gap: 10px; width: 100%; margin: 0; padding: 10px 12px; border: 2px dashed #E0218A; border-radius: 8px; background: repeating-linear-gradient(45deg, #FFF0F7, #FFF0F7 8px, #FFE1EF 8px, #FFE1EF 16px); color: #9C1560; font: 600 13px/1.3 "DM Sans", system-ui, sans-serif; text-align: left; cursor: pointer; }
+  .mk-gap span { flex: 1; }
+  .mk-gap small { font-weight: 500; font-size: 11px; color: #B4467F; }
+  .mk-gap u { text-decoration: none; padding: 6px 10px; border-radius: 999px; background: #E0218A; color: #fff; font-size: 12px; white-space: nowrap; }
+  .mk-gap.mk-showing { background: #fff; }
 }
-.mk-off .mk-tag { display: none !important; }
+.mk-dock { position: fixed; left: 50%; bottom: 14px; transform: translateX(-50%); z-index: 10000; display: flex; align-items: center; gap: 6px; padding: 6px 8px 6px 14px; border-radius: 999px; background: #2B0A1E; box-shadow: 0 4px 14px rgba(0,0,0,.3); font: 600 12px/1 "DM Sans", system-ui, sans-serif; color: #F3D9E7; white-space: nowrap; }
+.mk-dock button { width: 36px; height: 36px; border: 0; border-radius: 50%; background: #E0218A; color: #fff; font: 700 15px/1 "DM Sans", system-ui, sans-serif; cursor: pointer; }
+@keyframes mkflash { 0%, 100% { box-shadow: 0 0 0 0 rgba(224, 33, 138, 0); } 35% { box-shadow: 0 0 0 8px rgba(224, 33, 138, .45); } }
+.mk-flash { animation: mkflash 1.2s ease 2; }
+.mk-off .mk-tag, .mk-off .mk-dock { display: none !important; }
 </style>
 </head>
 
@@ -1907,10 +1918,17 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 /* Mockup-only annotation layer. NOT part of the dev snippet. Needs window.MK = {src, label}. */
 (function () {
   var current = /view=current/.test(location.search);
+  var framed = window.self !== window.top;
   var root = document.documentElement;
+  var TEXT = '.elementor-widget-text-editor, .elementor-widget-heading, .elementor-widget-icon-box, .elementor-widget-button';
+  var lists = { 1: [], 2: [], 3: [] };
+  var names = { 1: 'Decorative panels hidden on phones', 2: 'Numbered sections + "On this page" box', 3: 'Lead paragraph, 16px body, one 24px edge' };
+
+  function mark(el, n) { if (el && lists[n].indexOf(el) < 0) lists[n].push(el); }
 
   function tag(el, n, text) {
     if (!el) return;
+    mark(el, n);
     el.classList.add('mk-target');
     var t = document.createElement('span');
     t.className = 'mk-tag';
@@ -1918,49 +1936,106 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
     el.appendChild(t);
   }
 
+  function visible(n) {
+    return lists[n].filter(function (e) { return e.getClientRects().length > 0; })
+      .sort(function (a, b) { return a.compareDocumentPosition(b) & 4 ? -1 : 1; });
+  }
+
+  // Tap 1, 2 or 3 to step through every place that change shows up
+  function jump(n, btn) {
+    var items = visible(n);
+    if (!items.length) return;
+    var i = (+(btn.dataset.i || 0)) % items.length;
+    document.querySelectorAll('[data-n="' + n + '"]').forEach(function (b) { b.dataset.i = i + 1; });
+    var el = items[i];
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    el.classList.remove('mk-flash'); void el.offsetWidth; el.classList.add('mk-flash');
+    document.querySelectorAll('[data-n="' + n + '"] em').forEach(function (e) { e.textContent = (i + 1) + ' of ' + items.length + ' ›'; });
+  }
+
+  function chip(n) { return '<button type="button" class="mk-chip" data-n="' + n + '"><b>' + n + '</b><span>' + names[n] + '</span><em></em></button>'; }
+
   function banner() {
+    if (current && framed) return;
     var b = document.createElement('div');
     b.className = 'mk-banner';
-    b.innerHTML = '<div class="mk-in">' +
-      '<p class="mk-k">Mockup for the dev &middot; ' + (current ? 'Current page, unchanged' : 'Proposed: 3 changes, tagged in pink') + '</p>' +
-      '<p class="mk-src">Exact copy of <a href="' + MK.src + '">' + MK.label + '</a></p>' +
-      '<div class="mk-btns"><a href="?view=proposed"' + (current ? '' : ' class="on"') + '>Proposed</a>' +
-      '<a href="?view=current"' + (current ? ' class="on"' : '') + '>Current</a>' +
-      (current ? '' : '<button type="button" id="mk-toggle">Hide tags</button>') +
-      '<a href="./" target="_top">Notes + code</a></div>' +
-      (current ? '' : '<ol class="mk-legend"><li><b>1</b>Decorative panels hidden on phones</li><li><b>2</b>Numbered sections + "On this page" box</li><li><b>3</b>One text style: lead paragraph, 16px body, one 24px edge</li></ol>') +
-      '</div>';
+    var h = '<div class="mk-in">';
+    if (current) {
+      h += '<p class="mk-k">Mockup for the dev &middot; current page, unchanged</p>' +
+        '<p class="mk-src">Copy of <a href="' + MK.src + '">' + MK.label + '</a> &middot; <a href="?view=proposed">See the proposed version</a></p>';
+    } else {
+      if (!framed) h += '<p class="mk-k">Mockup for the dev &middot; 3 proposed changes, tagged in pink</p>' +
+        '<p class="mk-src">Copy of <a href="' + MK.src + '">' + MK.label + '</a></p>';
+      h += '<p class="mk-hint">Tap a change to jump to it. Tap again for the next one.</p>' +
+        '<div class="mk-legend">' + chip(1) + chip(2) + chip(3) + '</div>' +
+        '<p class="mk-wide">You are on a wide screen, so changes 1 and 3 (phone-only) are not showing. Open this link on your phone, or use the phone frames on the <a href="./">notes page</a>.</p>' +
+        '<div class="mk-btns"><button type="button" class="mk-toggle">Hide tags</button>' + (framed ? '' : '<a href="./" target="_top">Notes + code</a>') + '</div>';
+    }
+    b.innerHTML = h + '</div>';
     document.body.insertBefore(b, document.body.firstChild);
-    var btn = document.getElementById('mk-toggle');
-    if (btn) btn.addEventListener('click', function () {
-      var off = root.classList.toggle('mk-off');
-      root.classList.toggle('mk-on', !off);
-      btn.textContent = off ? 'Show tags' : 'Hide tags';
-    });
+  }
+
+  function dock() {
+    var d = document.createElement('div');
+    d.className = 'mk-dock';
+    d.innerHTML = '<span>Jump to</span><button type="button" data-n="1">1</button><button type="button" data-n="2">2</button><button type="button" data-n="3">3</button>';
+    document.body.appendChild(d);
   }
 
   function notes() {
     root.classList.add('mk-on');
-    // 1: panels - a placeholder where each one was (phones), a tag on the image (desktop)
+    // 1: a bar where each panel was on phones (tap to show it), a tag on the image on wider screens
     document.querySelectorAll('img[src*="/panel-"]').forEach(function (img) {
       var w = img.closest('.elementor-widget');
-      var hidden = w, el = w;
-      while (el && el.parentElement) { el = el.parentElement; if (el.classList.contains('e-con') && !el.querySelector('.elementor-widget-text-editor, .elementor-widget-heading, .elementor-widget-icon-box, .elementor-widget-button')) hidden = el; else break; }
-      var gap = document.createElement('div');
+      var chain = [w], hidden = w, el = w;
+      while (el.parentElement) {
+        el = el.parentElement;
+        if (el.classList.contains('e-con') && !el.querySelector(TEXT)) { chain.push(el); hidden = el; } else break;
+      }
+      var gap = document.createElement('button');
+      gap.type = 'button';
       gap.className = 'mk-gap';
-      gap.innerHTML = '<b>1</b>Decorative panel hidden on phones (' + img.src.split('/').pop() + ')';
+      gap.innerHTML = '<b>1</b><span>Image hidden here on phones<br><small>' + img.src.split('/').pop() + '</small></span><u>Show it</u>';
+      gap.addEventListener('click', function () {
+        var showing = gap.classList.toggle('mk-showing');
+        chain.forEach(function (c) {
+          if (showing) c.style.setProperty('display', c === w ? 'block' : 'flex', 'important');
+          else c.style.removeProperty('display');
+        });
+        gap.querySelector('u').textContent = showing ? 'Hide it again' : 'Show it';
+        gap.querySelector('span').firstChild.textContent = showing ? 'This is what phones would no longer see' : 'Image hidden here on phones';
+      });
       hidden.parentElement.insertBefore(gap, hidden);
+      mark(gap, 1);
       tag(w, 1, 'Kept on desktop + tablet, hidden on phones');
     });
-    // 2: contents box + first section number
+    // 2: contents box + every section number
     tag(document.querySelector('.la-toc'), 2, 'Built automatically from the section headings');
     tag(document.querySelector('.la-mark'), 2, 'Number + link back, on every section heading');
-    // 3: lead, body, card text, FAQ
+    document.querySelectorAll('.la-mark').forEach(function (m) { mark(m, 2); });
+    // 3: leads, body, card text, FAQ
     tag(document.querySelector('.la-lead'), 3, 'First paragraph under a heading = lead');
     var body = [].filter.call(document.querySelectorAll('.elementor-widget-text-editor.la-body'), function (e) { return !e.querySelector('.la-lead') && !e.classList.contains('la-lead') && !e.closest('.la-card'); })[1];
     tag(body, 3, '16px dark body, 24px from the edge');
     tag(document.querySelector('.elementor-icon-box-description.la-body'), 3, 'Card text: same body style');
     tag(document.querySelector('.e-n-accordion-item[open] > .e-con'), 3, 'FAQ answers: same body style');
+    document.querySelectorAll('.la-lead').forEach(function (l) { mark(l, 3); });
+
+    dock();
+    document.querySelectorAll('.mk-chip em').forEach(function (e) {
+      var c = visible(e.parentElement.dataset.n).length;
+      e.textContent = c ? c + ' on this page ›' : '';
+    });
+    document.addEventListener('click', function (e) {
+      var j = e.target.closest('.mk-chip, .mk-dock [data-n]');
+      if (j) jump(j.dataset.n, j);
+      var t = e.target.closest('.mk-toggle');
+      if (t) {
+        var off = root.classList.toggle('mk-off');
+        root.classList.toggle('mk-on', !off);
+        t.textContent = off ? 'Show tags' : 'Hide tags';
+      }
+    });
   }
 
   function run() { banner(); if (!current) notes(); }
