@@ -1,0 +1,45 @@
+/* Lancefield: break up long hub and subpages. Paste once, site-wide. */
+
+/* MOVE 1 - decorative panels: keep on tablet and desktop, hide on phones */
+@media (max-width: 767px) {
+  .elementor-widget-image:has(img[src*="/panel-"]) { display: none !important; }
+  /* and the empty column that held it, so no gap is left behind */
+  .e-con:has(img[src*="/panel-"]):not(:has(.elementor-widget-text-editor, .elementor-widget-heading, .elementor-widget-icon-box, .elementor-widget-button)) { display: none !important; }
+}
+
+/* MOVE 2 - numbered section headings + "On this page" box (built by la-breakup.js) */
+.la-chapter { scroll-margin-top: 16px; }
+.la-mark { display: flex; align-items: center; gap: 12px; margin: 0 0 14px; font: 600 13px/1 "DM Sans", sans-serif; letter-spacing: .12em; color: #2A7B7B; }
+.la-mark i { flex: 1; height: 1px; background: #2A7B7B; opacity: .3; }
+.la-mark a { font-weight: 500; letter-spacing: 0; color: #2A7B7B; text-decoration: none; padding: 10px 0 10px 4px; margin: -10px 0; }
+.la-toc-band { padding: 32px 24px; background: #fff; }
+.la-toc { max-width: 1092px; margin: 0 auto; background: #F8F5EF; border: 1px solid #E6DFD2; border-top: 3px solid #2A7B7B; border-radius: 6px; padding: 18px 20px 6px; }
+.la-toc p { margin: 0 0 6px; font: 600 13px/1.2 "DM Sans", sans-serif; letter-spacing: .12em; text-transform: uppercase; color: #2A7B7B; }
+.la-toc ol { list-style: none; margin: 0; padding: 0; }
+.la-toc li { break-inside: avoid; }
+.la-toc a { display: flex; gap: 14px; padding: 10px 0; border-top: 1px solid #E6DFD2; font: 500 15px/1.35 "DM Sans", sans-serif; color: #1B2A4A; text-decoration: none; }
+.la-toc li:first-child a { border-top: 0; }
+.la-toc a span { flex: 0 0 22px; font-weight: 600; color: #2A7B7B; }
+@media (min-width: 768px) { .la-toc ol { columns: 2; column-gap: 48px; } .la-toc li:nth-child(2) a { border-top: 1px solid #E6DFD2; } }
+
+/* MOVE 3 - lead paragraph under each numbered heading */
+[data-elementor-type="wp-page"] .la-lead, [data-elementor-type="wp-page"] .la-lead p { font-size: 19px !important; line-height: 1.55 !important; color: #1B2A4A !important; }
+
+/* MOVE 3 - one text system on phones: one 24px edge, one body style */
+@media (max-width: 767px) {
+  [data-elementor-type="wp-page"] > .e-con { --padding-left: 24px !important; --padding-right: 24px !important; }
+  [data-elementor-type="wp-page"] > .e-con .e-con:not(.la-card) { --padding-left: 0px !important; --padding-right: 0px !important; }
+  [data-elementor-type="wp-page"] .la-card { --padding-left: 20px !important; --padding-right: 20px !important; }
+  .elementor-widget-text-editor.la-body, .elementor-widget-heading.la-chapter { padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; }
+  .elementor-widget-text-editor.la-body > .elementor-widget-container { padding-left: 0 !important; padding-right: 0 !important; }
+  .la-body, .la-body p, .la-body li,
+  [data-elementor-type="wp-page"] .e-n-accordion-item > .e-con,
+  [data-elementor-type="wp-page"] .e-n-accordion-item > .e-con .elementor-widget-container { font-size: 16px !important; line-height: 1.6 !important; color: #22252A !important; }
+  .la-body p { margin: 0 0 1em !important; }
+  .la-body p:last-child { margin-bottom: 0 !important; }
+  [data-elementor-type="wp-page"] .elementor-icon-box-title { font-size: 17px !important; line-height: 1.3 !important; }
+  [data-elementor-type="wp-page"] .la-lead, [data-elementor-type="wp-page"] .la-lead p { font-size: 18px !important; }
+  /* one 20px gap between paragraphs, headings and text in every section */
+  [data-elementor-type="wp-page"] .e-con:has(> .elementor-widget-text-editor),
+  [data-elementor-type="wp-page"] .e-con-inner:has(> .elementor-widget-text-editor) { row-gap: 20px !important; }
+}
